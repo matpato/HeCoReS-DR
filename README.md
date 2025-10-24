@@ -30,20 +30,15 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-(*Adaptar à situação*)
-
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Docker](https://img.shields.io/badge/Docker-Available-blue.svg)](https://www.docker.com/)
-[![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-017CEE.svg?logo=Apache%20Airflow&logoColor=white)](https://airflow.apache.org)
 [![Neo4j](https://img.shields.io/badge/Neo4j-008CC1?logo=neo4j&logoColor=white)](https://neo4j.com/)
-[![NLTK](https://img.shields.io/badge/NLTK-3776AB?logo=python&logoColor=fff)](https://www.nltk.org)
 [![Pandas](https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=fff)](https://pandas.pydata.org)
 [![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://shields.io/)
 
 ## Overview
 
-HeCoReS-DR a toolkit and reproducible code to study hetnet-based connectivity search for drug repositioning, addressing data sparsity and explainability. Includes dataset processing, knowledge-graph construction, recommender baselines, KG-enhanced models, and evaluation scripts.
-
+HeCoReS-DR: a toolkit and reproducible code to study hetnet-based connectivity search for drug repositioning, addressing data sparsity and explainability. Includes dataset processing, knowledge-graph construction, recommender baselines, KG-enhanced models, and evaluation scripts.
 
 <div align="center">
   <img src="./img/airflow_orchestration.png" width="600" alt="Airflow Orchestration Diagram"/>
@@ -82,23 +77,37 @@ hecores-dr/
 
 ## Key Features
 
-- **Multi-format Data Processing**: Converts XML, CSV, and TXT files to standardized JSON format
-- **Named Entity Recognition (NER)**: Extracts biomedical entities like drugs, diseases, and chemical compounds
-- **Knowledge Graph Construction**: Creates a structured graph in Neo4j representing relationships between entities
-- **Workflow Orchestration**: Uses Apache Airflow to manage and schedule the complete data pipeline
-- **Containerized Deployment**: Packaged with Docker for easy deployment and environment consistency
-- **Ontology Integration**: Leverages biomedical ontologies like ChEBI, Disease Ontology, and Orphanet
+- **Entity Extraction:** HunFlair2 framework applied to DrugBank Indication fields
+- **Knowledge Graph Construction:** Integration of multiple biomedical databases
+- **Metapath Analysis:** HCS applied to knowledge graph for identification of biologically plausible associations
+- **Similarity Computation:** Jaccard coefficient calculation across feature vectors
+- **Matrix Construction:** Sparse binary matrices with standardized identifiers
+
+## Quality Assurance
+- **Identifier Validation:** All DrugBank and MeSH IDs verified against current databases
+- **Consistency Checks:** Matrix dimensions and sparsity levels validated
+
+## Research Applications
+- **Drug Repositioning:** Identify new therapeutic applications for existing drugs
+- **Recommender Systems:** Develop and evaluate drug-disease prediction algorithms
+- **Network Analysis:** Study connectivity patterns in biomedical knowledge graphs
+- **Sparsity Mitigation:** Compare augmentation strategies in sparse datasets
+
+## Analyses
+- **Baseline Comparison:** Use HCS_0 as ground truth for evaluation
+- **Augmentation Evaluation:** Compare performance between HCS_1 and random controls
+- **Similarity Integration:** Leverage drug/disease similarities for enhanced predictions
+- **Cross-validation:** Employ multiple random controls for robust statistical analysis
 
 ## Technologies
 
 - **Python**: Core programming language
-- **Apache Airflow**: Workflow orchestration and scheduling
 - **Neo4j**: Graph database for knowledge representation
 - **Docker**: Containerization for deployment
-- **MER (Minimal Entity Recognition)**: Biomedical entity extraction
 - **NLTK**: Natural Language Processing for text preprocessing
-- **Pandas**: Data manipulation and transformation
+- **pandas**: Data manipulation and transformation
 - **lxml**: XML processing and XSLT transformations
+- **HunFlair2**: Named entity recognition and linking
 
 ## Installation
 
@@ -187,19 +196,12 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## How to Cite
 
-If you use MedJsonify in your research, please cite it as follows:
+...
 
-```
-@conference{Pereira2025,
-    author = Carolina Pereira, Matilde Pato and Nuno Datia,
-    booktitle = 12th ACM Celebration of Women in Computing: womENcourage™ 2025,
-    title = Knowledge Graphs as Educational Tools in Biomedical Education,
-    year = 2025
-}
 ```
 
 ---
 
 <div align="center">
-  <p>Developed by Carolina Pereira as part of the Workflow System for Data Integration's Project.</p>
+  <p>Developed by Donato Aveiro as part of the Hetnet Connectivity Search in Recommender Systems for Drug Repositioning: Addressing Data Sparsity and Explainability master's thesis.</p>
 </div>
