@@ -8,7 +8,7 @@
   </a>
   &nbsp;&nbsp;
   <a href="https://www.ipl.pt">
-    <img src="./img/IPL Horizontal MainPng.png" alt="IPL logo" height="60">
+    <img src="./img/IPL Horizontal MainPng.png" alt="IPL logo" height="50">
   </a>
   &nbsp;&nbsp;
   <a href="https://isel.pt">
