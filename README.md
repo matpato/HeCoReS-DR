@@ -1,17 +1,23 @@
 <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; margin: 20px 0;">
-  <a href="https://ciencias.ulisboa.pt" target="_blank">
-    <img src="./img/ciencias_ul_azul_h.png" alt="FCUL logo" style="width: 300px; height: auto;">
+  <a href="https://ciencias.ulisboa.pt">
+    <img src="./img/ciencias_ul_azul_h.png" alt="FCUL logo" height="60">
   </a>
-  <a href="https://lasige.pt" target="_blank">
-    <img src="./img/lasige_h_logo.png" alt="Lasige logo" style="width: 300px; height: auto;">
+  &nbsp;&nbsp;
+  <a href="https://lasige.pt">
+    <img src="./img/lasige_h_logo.png" alt="Lasige logo" height="50">
   </a>
-  <a href="https://www.ipl.pt" target="_blank">
-    <img src="./img/IPL Horizontal MainPng.png" alt="IPL logo" style="width: 400px; height: auto;">
+  &nbsp;&nbsp;
+  <a href="https://www.ipl.pt">
+    <img src="./img/IPL Horizontal MainPng.png" alt="IPL logo" height="70">
   </a>
-  <a href="https://isel.pt" target="_blank">
-    <img src="./img/01_ISEL-Logotipo-RGB_Horizontal.png" alt="ISEL logo" style="width: 400px; height: auto;">
+  &nbsp;&nbsp;
+  <a href="https://isel.pt">
+    <img src="./img/01_ISEL-Logotipo-RGB_Horizontal.png" alt="ISEL logo" height="70">
   </a>
 </div>
+
+---
+
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Docker](https://img.shields.io/badge/Docker-Available-blue.svg)](https://www.docker.com/)
