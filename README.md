@@ -1,18 +1,18 @@
 <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; margin: 20px 0;">
   <a href="https://ciencias.ulisboa.pt">
-    <img src="./img/ciencias_ul_azul_h.png" alt="FCUL logo" height="60">
+    <img src="./img/ciencias_ul_azul_h.png" alt="FCUL logo" height="50">
   </a>
   &nbsp;&nbsp;
   <a href="https://lasige.pt">
-    <img src="./img/lasige_h_logo.png" alt="Lasige logo" height="50">
+    <img src="./img/lasige_h_logo.png" alt="Lasige logo" height="40">
   </a>
   &nbsp;&nbsp;
   <a href="https://www.ipl.pt">
-    <img src="./img/IPL Horizontal MainPng.png" alt="IPL logo" height="70">
+    <img src="./img/IPL Horizontal MainPng.png" alt="IPL logo" height="60">
   </a>
   &nbsp;&nbsp;
   <a href="https://isel.pt">
-    <img src="./img/01_ISEL-Logotipo-RGB_Horizontal.png" alt="ISEL logo" height="70">
+    <img src="./img/01_ISEL-Logotipo-RGB_Horizontal.png" alt="ISEL logo" height="60">
   </a>
 </div>
 
