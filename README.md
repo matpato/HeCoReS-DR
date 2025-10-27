@@ -1,9 +1,9 @@
 <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; margin: 20px 0;">
   <a href="https://ciencias.ulisboa.pt" target="_blank">
-    <img src="./img/ciencias_ul_azul_h" alt="FCUL logo" style="width: 400px; height: auto;">
+    <img src="/img/ciencias_ul_azul_h.png" alt="FCUL logo" style="width: 300px; height: auto;">
   </a>
   <a href="https://lasige.pt" target="_blank">
-    <img src="./img/lasige_logo" alt="Lasige logo" style="width: 400px; height: auto;">
+    <img src="/img/lasige_h_logo.png" alt="Lasige logo" style="width: 300px; height: auto;">
   </a>
   <a href="https://www.ipl.pt" target="_blank">
     <img src="./img/IPL Horizontal MainPng.png" alt="IPL logo" style="width: 400px; height: auto;">
@@ -19,7 +19,7 @@
 [![Pandas](https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=fff)](https://pandas.pydata.org)
 [![Scipy](https://img.shields.io/badge/-Scipy-blue?style=flat&logo=Scipy&logoColor=white)](https://scipy.org)
 [![Scikit Learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/stable/#)
-[![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org)
+[![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white)](https://pytorch.org)
 [![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://shields.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
