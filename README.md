@@ -12,7 +12,7 @@
   </a>
   &nbsp;&nbsp;
   <a href="https://isel.pt">
-    <img src="./img/01_ISEL-Logotipo-RGB_Horizontal.png" alt="ISEL logo" height="60">
+    <img src="./img/01_ISEL-Logotipo-RGB_HorizontalC.png" alt="ISEL logo" height="70">
   </a>
 </div>
 
