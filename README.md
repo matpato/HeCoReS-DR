@@ -1,9 +1,9 @@
 <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; margin: 20px 0;">
   <a href="https://ciencias.ulisboa.pt" target="_blank">
-    <img src="/img/ciencias_ul_azul_h.png" alt="FCUL logo" style="width: 300px; height: auto;">
+    <img src="./img/ciencias_ul_azul_h.png" alt="FCUL logo" style="width: 300px; height: auto;">
   </a>
   <a href="https://lasige.pt" target="_blank">
-    <img src="/img/lasige_h_logo.png" alt="Lasige logo" style="width: 300px; height: auto;">
+    <img src="./img/lasige_h_logo.png" alt="Lasige logo" style="width: 300px; height: auto;">
   </a>
   <a href="https://www.ipl.pt" target="_blank">
     <img src="./img/IPL Horizontal MainPng.png" alt="IPL logo" style="width: 400px; height: auto;">
