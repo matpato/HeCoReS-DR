@@ -4,7 +4,7 @@ from flair.data import Sentence
 import nltk
 from nltk.tokenize import sent_tokenize
 nltk.download('punkt_tab')
-from utils import open_json, save_json, clean_text
+from utils.utils import open_json, save_json, clean_text
 import torch
 from tqdm import tqdm
 

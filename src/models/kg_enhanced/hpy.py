@@ -1,6 +1,6 @@
 import hetnetpy
 from hetnetpy import readwrite, hetnet
-from utils import open_json
+from utils.utils import open_json
 import pandas
 import matplotlib
 import matplotlib.backends.backend_pdf

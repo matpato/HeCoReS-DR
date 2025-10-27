@@ -1,6 +1,6 @@
 import requests
 from lxml import etree
-from utils import save_json, open_json
+from utils.utils import save_json, open_json
 
 # URL of the MeSH descriptors file
 url = "https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/desc2025.gz"

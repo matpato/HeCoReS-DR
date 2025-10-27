@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 import zipfile
-from utils import open_json, save_json
+from utils.utils import open_json, save_json
 
 def zip_reader(path, max_records=None):
     """

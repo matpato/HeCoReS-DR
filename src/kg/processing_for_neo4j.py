@@ -1,4 +1,4 @@
-from utils import save_json, open_json
+from utils.utils import save_json, open_json
 from collections import defaultdict
 from copy import deepcopy
 

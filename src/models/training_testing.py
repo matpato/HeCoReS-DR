@@ -3,11 +3,11 @@
 import pandas as pd
 import random
 import numpy as np
-import datasets
+import src.preprocessing.datasets as datasets
 from collections import defaultdict
 from scipy.sparse import coo_matrix
 import json
-from utils import open_json
+from utils.utils import open_json
 import os
 import json
 

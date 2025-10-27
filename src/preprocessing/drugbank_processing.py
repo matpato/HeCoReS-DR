@@ -1,5 +1,5 @@
 from lxml import etree
-from utils import save_json
+from utils.utils import save_json
 
 def get_text(elements, default=""):
     if isinstance(elements, list):

@@ -1,11 +1,11 @@
 import numpy as np
 import pandas as pd
 import csv
-from utils import open_json
+from utils.utils import open_json
 import random
-import datasets
-import validation
-import models
+import src.preprocessing.datasets as datasets
+import src.evaluation.validation as validation
+import src.models.models as models
 import random
 import csv
 from time import time
@@ -104,7 +104,7 @@ for (a, b) in ct_pairs34:
 # print(len(drugs)) # 636
 # print(len(conds)) # 613
 
-from training_testing import build_dataset_from_pairs, load_precomputed_pairs, reconstruct_datasets_from_pairs, \
+from src.models.training_testing import build_dataset_from_pairs, load_precomputed_pairs, reconstruct_datasets_from_pairs, \
 create_coo_matrix, unique_metapath_pairs, unrelated_pairs
 
 ct12 = build_dataset_from_pairs(list(ct_pairs12), users, items, 'CT12', same_item_user_features=False)

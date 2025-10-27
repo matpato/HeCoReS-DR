@@ -1,7 +1,7 @@
 import pandas as pd
-from utils import save_json
+from utils.utils import save_json
 
-ctd = pd.read_csv("CTD_diseases.csv")
+ctd = pd.read_csv("/data/processed/CTD_diseases.csv")
 ctd = ctd.drop(columns=['TreeNumbers', 'ParentTreeNumbers'])
 
 # Replace occurrences of '|' with '; ' for better readability

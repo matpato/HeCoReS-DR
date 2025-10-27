@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import copy
-from utils import open_json
+from utils.utils import open_json
 import csv
 
 drugs = open_json('drugs_with_conditions_final.json')

@@ -1,7 +1,7 @@
 import pandas as pd
-from utils import save_json, open_json
+from utils.utils import save_json, open_json
 
-atc_df = pd.read_csv('WHO ATC-DDD 2024-07-31.csv')
+atc_df = pd.read_csv('/data/processed/WHO ATC-DDD 2024-07-31.csv')
 atc_df = atc_df.drop(columns=['ddd', 'uom', 'adm_r', 'note'])
 atc_df['atc_name'] = atc_df['atc_name'].str.capitalize()
 atc_df = atc_df.drop_duplicates()

@@ -1,5 +1,5 @@
 from neo4j import GraphDatabase
-from utils import open_json, save_json
+from utils.utils import open_json, save_json
 
 drugs = open_json('drugs_with_conditions_final.json')
 conditions = open_json('conditions.json')

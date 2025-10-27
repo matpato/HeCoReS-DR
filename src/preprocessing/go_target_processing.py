@@ -1,5 +1,5 @@
 import pronto
-from utils import save_json, open_json
+from utils.utils import save_json, open_json
 
 proteins = open_json('proteins.json')
 

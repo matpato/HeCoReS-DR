@@ -5,11 +5,11 @@ from subprocess import call
 import calendar
 import time
 
-from preprocessing import CustomScaler
+from src.preprocessing.preprocessing import CustomScaler
 
-import AlternatingLeastSquares
-import BayesianPairwiseRanking
-from LogisticMatrixFactorization import LogisticMF as CoreLogisticMF
+import src.models.baselines.AlternatingLeastSquares as AlternatingLeastSquares
+import src.models.baselines.BayesianPairwiseRanking as BayesianPairwiseRanking
+from src.models.baselines.LogisticMatrixFactorization import LogisticMF as CoreLogisticMF
 
 current_GMT = time.gmtime()
 
