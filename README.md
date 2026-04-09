@@ -301,26 +301,29 @@ If you use HeCoReS-DR in your research, please cite:
   title = {HeCoReS-DR: Hetnet Connectivity Search for Drug Repositioning},
   year = {2025},
   publisher = {GitHub},
-  url = {https://github.com/matpato/hecores-dr},
-  version = {1.0}
+  version = {1.0},
+  url = {https://github.com/matpato/hecores-dr}
 }
 
 @mastersthesis{aveiro2025thesis,
   author = {Aveiro, Donato},
   title = {Hetnet Connectivity Search in Recommender Systems for Drug Repositioning: Addressing Data Sparsity and Explainability},
   school = {Faculty of Sciences, University of Lisbon},
-  year = {2025}
+  year = {2025},
+  url = {http://hdl.handle.net/10400.5/117006}
 }
 ```
 
 ### Dataset Citation
 ```bibtex
-@dataset{aveiro2025datasets,
+@dataset{aveiro_2025_17202171,
   author = {Aveiro, Donato and Pato, Matilde and Couto, Francisco},
-  title = {Drug Repositioning Datasets for Hetnet Connectivity Search},
+  title = {Hetnet Connectivity Search Datasets for Drug                   Repositioning},
+  month = {sep},
   year = {2025},
   publisher = {Zenodo},
-  doi = {[DOI_TO_BE_ASSIGNED]}
+  version = {1.0},
+  doi = {10.5281/zenodo.17202171}
 }
 ```
 
