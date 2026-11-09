@@ -2,7 +2,7 @@
 
 import pandas as pd
 import numpy as np
-from scipy.sparse import coo_array
+from scipy.sparse import coo_array, issparse
 
 def generate_dummy_dataset(npositive, nnegative, nfeatures, mean, std, random_state=12454):
     '''
@@ -73,26 +73,28 @@ class Dataset(object):
         assert users is not None and users.shape[1]==ratings.shape[1]
         assert items is not None and items.shape[1]==ratings.shape[0]
         ## get metadata
-        if (str(type(ratings))=="<class 'pandas.core.frame.DataFrame'>"):
+        # isinstance instead of comparing type names: pandas >= 3 and recent scipy print
+        # other names, so the name test failed and IDs and feature order were lost
+        if isinstance(ratings, pd.DataFrame):
             self.item_list = [str(x) for x in ratings.index]
             self.user_list = [str(x) for x in ratings.columns]
             ratings_ = ratings.values
         else:
             self.item_list = [str(x) for x in range(ratings.shape[0])]
             self.user_list = [str(x) for x in range(ratings.shape[1])]
-            if (str(type(ratings))=="<class 'scipy.sparse._arrays.coo_array'>"):
+            if issparse(ratings):
                 ratings_ = ratings.toarray()
             else:
                 ratings_ = ratings.copy()
             ratings_ = ratings_.copy()
-        if (str(type(users))=="<class 'pandas.core.frame.DataFrame'>"):
+        if isinstance(users, pd.DataFrame):
             users = users[self.user_list]
             self.user_features = [str(x) for x in users.index]
             users_ = users.values
         else:
             self.user_features = [str(x) for x in range(users.shape[0])]
             users_ = users.copy()
-        if (str(type(items))=="<class 'pandas.core.frame.DataFrame'>"):
+        if isinstance(items, pd.DataFrame):
             items = items[self.item_list]
             self.item_features = [str(x) for x in items.index]
             items_ = items.values
