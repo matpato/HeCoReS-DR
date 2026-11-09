@@ -474,3 +474,47 @@ class BNNR(BasicModel):
 
     
 
+
+### HCS alone, without collaborative filtering (baseline added for the revision)
+class HCS(BasicModel):
+    """
+    Ranks drug-condition pairs by their HCS evidence alone: the largest
+    -log10(adjusted p-value) over the 10 metapaths, 0 when no path exists.
+    No training: fit() only reads the p-values. It answers whether a
+    collaborative-filtering model trained on HCS_1 ranks better than HCS itself.
+
+    The p-values are those of the graph the matrices were built from
+    ({HETMAT_DIR}/path-counts/dwpc_results/all_dwpc_results_with_p.tsv), so
+    this baseline uses the same information as HCS_1.
+    """
+    _cache = {}
+
+    def __init__(self, params=None):
+        params = params if (params is not None) else self.default_parameters()
+        super(HCS, self).__init__(params)
+        self.name = "HCS"
+
+    def default_parameters(self):
+        from utils.config import HETMAT_DIR
+        return {"path": f"{HETMAT_DIR}/path-counts/dwpc_results/all_dwpc_results_with_p.tsv"}
+
+    def preprocessing(self, dataset, is_training=True):
+        return [dataset]
+
+    def model_fit(self, dataset):
+        if self.path not in HCS._cache:
+            import pandas as pd
+            df = pd.read_csv(self.path, sep="\t", usecols=["source_id", "target_id", "adjusted_p_value"],
+                             dtype={"source_id": str, "target_id": str})
+            df["score"] = -np.log10(df["adjusted_p_value"].clip(lower=1e-300))
+            HCS._cache[self.path] = df.groupby(["source_id", "target_id"])["score"].max().to_dict()
+        self.scores = HCS._cache[self.path]
+
+    def model_predict_proba(self, dataset):
+        preds = np.zeros((len(dataset.item_list), len(dataset.user_list)))
+        user_index = {u: j for j, u in enumerate(dataset.user_list)}
+        item_index = {d: i for i, d in enumerate(dataset.item_list)}
+        for (d, c), s in self.scores.items():
+            if d in item_index and c in user_index:
+                preds[item_index[d], user_index[c]] = s
+        return preds
