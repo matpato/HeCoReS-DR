@@ -1,0 +1,7 @@
+# The image needs only the requirements files; code and data are mounted at
+# run time (-v), so they are kept out of the build context.
+data/
+standalone/logs/
+venv/
+.git/
+**/__pycache__/

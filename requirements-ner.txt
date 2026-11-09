@@ -1,0 +1,13 @@
+# Extra packages for step 4 (src/preprocessing/extract_conditions.py,
+# HunFlair2 named-entity recognition and linking). Large: torch alone is
+# several GB with CUDA. The Docker image installs the CPU-only torch from
+# https://download.pytorch.org/whl/cpu; with a GPU, install torch for your
+# CUDA version first (https://pytorch.org).
+#
+#   pip install -r requirements.txt -r requirements-ner.txt
+#
+# Versions: flair 0.15.1 (HunFlair2 models "hunflair2" and "disease-linker",
+# downloaded on first use), nltk 3.10.4 (sentence splitting, punkt_tab).
+flair==0.15.1
+nltk==3.10.4
+torch

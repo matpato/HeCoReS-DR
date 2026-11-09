@@ -123,8 +123,8 @@ hecores-dr/
 | **Augmented Sparsity (hcs_1.csv)** | 96.18% |
 
 **Identifiers:**
-- Drugs: DrugBank IDs (columns)
-- Diseases: MeSH IDs (rows)
+- Drugs: DrugBank IDs (rows)
+- Diseases: MeSH IDs (columns)
 
 ### Dataset Files
 
@@ -152,6 +152,19 @@ hecores-dr/
 - **Machine Learning**: scikit-surprise, implicit, TensorFlow/PyTorch
 - **Evaluation**: scikit-learn, SciPy
 - **Visualization**: matplotlib, seaborn, Plotly
+
+## Running the pipeline
+
+`standalone/run_hecores.sh` runs all 16 steps, from the source files to the result tables, each in a Docker container (or with `--local`). Steps whose input files are missing are skipped, so the pipeline can also start from intermediate files.
+
+```bash
+bash standalone/run_hecores.sh --status     # which steps can run with the files in data/
+bash standalone/run_hecores.sh --quick      # installation test (minutes)
+bash standalone/run_hecores.sh              # everything
+bash standalone/run_hecores.sh --paper --from splits   # evaluation as published
+```
+
+Instructions: [`standalone/README.md`](standalone/README.md). Changes made for the revision, with the checks against the released data: [`CHANGES_REVISION.md`](CHANGES_REVISION.md).
 
 ## Installation
 
