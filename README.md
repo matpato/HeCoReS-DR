@@ -359,6 +359,10 @@ For questions, suggestions, or collaboration inquiries:
 
 We acknowledge the contributors to DrugBank, MeSH, MEDIC ontology, and the developers of HunFlair2 and Hetnet Connectivity Search frameworks, whose work made this research possible. This work was supported by LASIGE and the Faculty of Sciences of the University of Lisbon.
 
+## Disclaimer: use of AI assistance
+
+The revision of the code made in November 2026 (branch `revision`: the fixes that make the pipeline run, the corrections C1, C2 and RQ3, the HCS baseline, the runner in `standalone/` and its documentation) was prepared with the assistance of Claude (Anthropic), an AI assistant. All changes were reviewed by the authors, who take full responsibility for the code and the results. Each change, and how it was checked against the released data, is listed in [`CHANGES_REVISION.md`](CHANGES_REVISION.md).
+
 ---
 
 **Version:** 1.0  

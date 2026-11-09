@@ -2,6 +2,8 @@
 
 Branch `revision`, starting from commit `8b31f9d` (the code archived with the submitted manuscript BIOINF-2026-1006). Each change is a separate commit; `git log 8b31f9d..revision` lists them, and `git show <commit>` shows each one.
 
+These changes were prepared with the assistance of an AI assistant (see the disclaimer in [`README.md`](README.md#disclaimer-use-of-ai-assistance)).
+
 ## 1. Fixes that make the published code run
 
 | Problem in the published code | Change | Commit |
