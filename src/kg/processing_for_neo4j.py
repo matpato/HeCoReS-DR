@@ -1,3 +1,4 @@
+import os
 from utils.utils import save_json, open_json
 from collections import defaultdict
 from copy import deepcopy
@@ -5,9 +6,14 @@ from copy import deepcopy
 # Futher processing
 drugs = open_json('drugs_with_conditions.json')
 conditions = open_json('conditions.json')
-conditions_no_slims = open_json('conditions_no_slims.json')
-proteins = open_json('proteins.json')
-targets = open_json('targets.json')
+if os.path.exists('conditions_no_slims.json'):
+    conditions_no_slims = open_json('conditions_no_slims.json')
+else:
+    # same set, as written by ctd_processing.py: conditions without Slim terms
+    conditions_no_slims = [c for c, info in conditions.items() if not info.get('slim_terms')]
+# proteins.json and targets.json come from the DrugBank XML; without them only
+# the drug-condition part (drugs_with_conditions_final.json, conditions.json) is written
+have_proteins = os.path.exists('proteins.json') and os.path.exists('targets.json')
 
 print(len(drugs))
 
@@ -421,6 +427,12 @@ print(len(conditions))
 
 save_json(drugs, 'drugs_with_conditions_final.json')
 save_json(conditions, 'conditions.json')
+
+if not have_proteins:
+    print("proteins.json / targets.json not found: protein and target filtering skipped")
+    raise SystemExit(0)
+proteins = open_json('proteins.json')
+targets = open_json('targets.json')
 
 # Remove protein-condition assosciations for invalid conditions
 
