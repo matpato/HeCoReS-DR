@@ -456,8 +456,8 @@ class BNNR(BasicModel):
         time_stamp = calendar.timegm(current_GMT)+np.random.choice(range(int(1e8)), size=1)[0]
         filefolder = "BNNR_%s" % time_stamp 
         call("mkdir -p %s/" % filefolder, shell=True)
-        call("wget -qO %s/BNNR.m 'https://raw.githubusercontent.com/BioinformaticsCSU/BNNR/master/BNNR.m'" % filefolder, shell=True)
-        call("wget -qO %s/svt.m 'https://raw.githubusercontent.com/BioinformaticsCSU/BNNR/master/svt.m'" % filefolder, shell=True)
+        call("wget -qO %s/BNNR.m 'https://raw.githubusercontent.com/BioinformaticsCSU/BNNR/68f8e98c02459189b6eeac68a86306ccc1da0374/BNNR.m'" % filefolder, shell=True)
+        call("wget -qO %s/svt.m 'https://raw.githubusercontent.com/BioinformaticsCSU/BNNR/68f8e98c02459189b6eeac68a86306ccc1da0374/svt.m'" % filefolder, shell=True)
         np.savetxt("%s/X_p.csv" % filefolder, X_p, delimiter=",")
         np.savetxt("%s/A_sp.csv" % filefolder, A_sp, delimiter=",")
         np.savetxt("%s/X_s.csv" % filefolder, X_s, delimiter=",")
