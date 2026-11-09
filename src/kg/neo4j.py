@@ -1,5 +1,7 @@
+import os
 from neo4j import GraphDatabase
 from utils.utils import open_json, save_json
+from utils.config import NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD
 
 drugs = open_json('drugs_with_conditions_final.json')
 conditions = open_json('conditions.json')
@@ -36,8 +38,8 @@ class Neo4jHandler:
                 else:
                     return session.execute_read(lambda tx: tx.run(query, parameters or {}).data())
         except Exception as e:
-            print(f"Query failed: {e}")
-            return None
+            # Stop instead of continuing with a partly loaded or exported graph
+            raise RuntimeError(f"Query failed: {e}\n{query}") from e
 
 def create_atc_nodes(db, atc, group):
     """
@@ -371,13 +373,14 @@ def main1():
     """
     Main function to connect to the database and process the dictionaries.
     """
-    uri = "bolt://localhost:7687"
-    user = "neo4j"
-    password = "password"
-
-    db = Neo4jHandler(uri, user, password)
+    db = Neo4jHandler(NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD)
 
     try:
+        # Start from an empty database: MERGE keeps nodes and edges left by an
+        # earlier load, which would then be exported as part of this graph.
+        # Set NEO4J_KEEP=1 to keep the existing content.
+        if os.environ.get("NEO4J_KEEP", "0") != "1":
+            db.execute_query("MATCH (n) DETACH DELETE n")
         for group in ['therapeutic', 'pharmacological', 'chemical']:
             create_atc_nodes(db, atc, group)
         create_drug_nodes(db, drugs)
@@ -393,10 +396,7 @@ def main1():
         create_condition_protein_edges(db, proteins)
         create_protein_go_edges(db, proteins, go_name_to_id)
         delete_isolated_nodes(db)
-        
-    except Exception as e:
-        print(f"An error occurred: {e}")
-    
+
     finally:
         db.close()
 
@@ -430,8 +430,8 @@ class Neo4jLoader:
                     print(f"Warning: Query returned no results.\nQuery: {query}")
                 return results
         except Exception as e:
-            print(f"Query failed: {e}")
-            return None
+            # Stop instead of continuing with a partly loaded or exported graph
+            raise RuntimeError(f"Query failed: {e}\n{query}") from e
 
     def load_anatomical_groups(self):
         """Loads all anatomical ATC code nodes from Neo4j."""
@@ -680,15 +680,11 @@ class GraphExtractor:
         return node_dict
     
 def main2():
-    uri = "bolt://localhost:7687"
-    user = "neo4j"
-    password = "password"
-
+    loader = None
     try:
-        loader = Neo4jLoader(uri, user, password)
+        loader = Neo4jLoader(NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD)
         if loader.driver is None:
-            print("Failed to connect to Neo4j. Exiting...")
-            return  # Exit if the connection is not established
+            raise RuntimeError(f"Failed to connect to Neo4j at {NEO4J_URI}")
         
         extractor = GraphExtractor(loader)
         graph_triples = extractor.extract_triples()
@@ -698,9 +694,6 @@ def main2():
         graph_nodes = extractor.extract_nodes()
         save_json(graph_nodes, 'graph_nodes.json')
 
-    except Exception as e:
-        print(f"An error occurred: {e}")
-    
     finally:
         if loader:
             loader.close()
