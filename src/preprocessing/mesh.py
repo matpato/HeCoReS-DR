@@ -1,17 +1,24 @@
 import requests
 from lxml import etree
+import os
 from utils.utils import save_json, open_json
+from utils.config import raw
 
 # URL of the MeSH descriptors file
 url = "https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/desc2025.gz"
 
-# Download the file and save it directly as an XML file
-response = requests.get(url)
-with open("desc2025.xml", "wb") as f:
-    f.write(response.content)
+# Use a copy already downloaded to the raw folder if there is one; otherwise
+# download it (the file is gzip-compressed; lxml reads it transparently)
+mesh_file = raw("desc2025.xml")
+if not os.path.exists(mesh_file):
+    mesh_file = "desc2025.xml"
+    response = requests.get(url)
+    response.raise_for_status()
+    with open(mesh_file, "wb") as f:
+        f.write(response.content)
 
 # Parse the XML file
-tree = etree.parse("desc2025.xml")
+tree = etree.parse(mesh_file)
 root = tree.getroot()
 
 # Dictionary to map TreeNumbers to DescriptorUI

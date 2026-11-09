@@ -1,8 +1,9 @@
 import pandas as pd
 from utils.utils import open_json, save_json
 from collections import defaultdict
+from utils.config import raw
 
-genes = pd.read_csv('CTD_genes.csv')
+genes = pd.read_csv(raw('CTD_genes.csv'))
 proteins = open_json('proteins.json')
 
 geneprot_map = {}
@@ -14,7 +15,7 @@ for _, row in genes.iterrows():
         if len(uniprots) != 0:
             geneprot_map[ID] = uniprots
 
-condgenes = pd.read_csv('/data/processed/CTD_curated_genes_diseases.csv')
+condgenes = pd.read_csv(raw('CTD_curated_genes_diseases.csv'))
 
 gene_cond_map = defaultdict(list)
 for _, row in condgenes.iterrows():

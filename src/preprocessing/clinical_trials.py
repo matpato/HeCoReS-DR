@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 import zipfile
 from utils.utils import open_json, save_json
+from utils.config import raw
 
 def zip_reader(path, max_records=None):
     """
@@ -54,7 +55,7 @@ def load_all_studies(zip_path, max_records=None):
             studies[nct_id] = data
     return studies
 
-all_studies = load_all_studies("ctg-public-xml.zip")
+all_studies = load_all_studies(raw("ctg-public-xml.zip"))
 save_json(all_studies, "clinical_trials.json")
 
 conditions = open_json("conditions.json")

@@ -1,5 +1,6 @@
 from lxml import etree
 from utils.utils import save_json
+from utils.config import raw
 
 def get_text(elements, default=""):
     if isinstance(elements, list):
@@ -138,7 +139,7 @@ def parse_polypeptides(xml_file):
 # # curl -Lfv -o drugbank.zip -u USERNAME:PASSWORD https://go.drugbank.com/releases/5-1-13/downloads/all-full-database
 # # unzip drugbank.zip
 
-xml_file = "full database.xml"
+xml_file = raw("full database.xml")
 
 drugs = parse_drug_info(xml_file)
 save_json(drugs, 'drugs.json')

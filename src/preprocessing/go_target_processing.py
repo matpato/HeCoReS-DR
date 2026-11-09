@@ -1,5 +1,6 @@
 import pronto
 from utils.utils import save_json, open_json
+from utils.config import raw
 
 proteins = open_json('proteins.json')
 
@@ -14,7 +15,7 @@ for prot, info in proteins.items():
 
 save_json(protein_map, 'protein_map.json')
 
-ontology = pronto.Ontology("go.obo")
+ontology = pronto.Ontology(raw("go.obo"))
 go_dict = {}
 
 for term in ontology.terms():
