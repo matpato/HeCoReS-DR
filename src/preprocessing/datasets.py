@@ -372,7 +372,9 @@ class Dataset(object):
             1 if rating == 1 (positive), 0 if not (including -1 or 0 or NaN),
             or np.nan if ignore_nan=False and rating is NaN.
         """
-        rating = self.ratings.toarray()[drug_index, disease_index]
+        if getattr(self, "_dense_ratings", None) is None:      # convert once, not on every call
+            self._dense_ratings = self.ratings.toarray()
+        rating = self._dense_ratings[drug_index, disease_index]
         
         if np.isnan(rating):
             return 0 if ignore_nan else np.nan
