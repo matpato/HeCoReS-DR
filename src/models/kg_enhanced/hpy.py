@@ -38,11 +38,15 @@ for metanode, identifiers in node_data.items():
         graph.add_node(kind=metanode, identifier=ident[0], name=ident[1])
 
 # Graph creation (edges)
+# identifier -> kind of its first occurrence in node_data (same result as
+# scanning node_data for every edge, which took ~1.5e9 comparisons)
+node_kind = {}
+for kind, nodes in node_data.items():
+    for node in nodes:
+        node_kind.setdefault(node[0], kind)
+
 def get_node_kind(identifier):
-    for kind, nodes in node_data.items():
-        for node in nodes:
-            if node[0] == identifier:
-                return kind
+    return node_kind.get(identifier)
             
 with open('graph_triples.txt') as f:
     for line in f:
