@@ -175,7 +175,7 @@ def dcg_at_k(r, k, method=0):
     Returns:
         Discounted cumulative gain
     """
-    r = np.asfarray(r)[:k]
+    r = np.asarray(r, dtype=float)[:k]   # np.asfarray was removed in NumPy 2.0
     if r.size:
         if method == 0:
             return r[0] + np.sum(r[1:] / np.log2(np.arange(2, r.size + 1)))
@@ -213,6 +213,7 @@ def ndcg_at_k(r, k, method=0):
 ###################################
 from sklearn.metrics import roc_auc_score, fbeta_score
 from scipy.stats import kendalltau, spearmanr
+from utils.config import METRICS
 
 def ERR(y_true, y_pred, max=10, max_grade=2):
     '''
@@ -305,6 +306,11 @@ def compute_metrics(scores, predictions, dataset, metrics, k=1, beta=1, verbose=
     y_pred_all = predictions.data.ravel()
     scores_all = scores.data.ravel()
     assert y_true_all.shape==y_pred_all.shape==scores_all.shape
+    # Values the pairs are ranked by. Revision: the model scores (HECORES_METRICS=scores).
+    # Published version: the thresholded +1/-1 predictions (HECORES_METRICS=labels), which
+    # makes AUC, MRR, P@k, R@k, MAP, NDCG@k and HR@k depend on the 0.5 threshold and on
+    # the order of tied pairs. Fscore always uses the thresholded predictions.
+    y_rank_all = scores_all if METRICS == "scores" else y_pred_all
     ## Compute average metric per user
     user_ids = np.unique(dataset.folds.col)
     n_ignored = 0
@@ -319,10 +325,11 @@ def compute_metrics(scores, predictions, dataset, metrics, k=1, beta=1, verbose=
             continue
         user_truth = y_true_all[user_ids_i]
         user_pred = y_pred_all[user_ids_i]
+        user_rank = y_rank_all[user_ids_i]
         if ((len(np.unique(user_truth))==2) and (1 in user_truth)):
-            fpr, tpr, _ = ROC(user_truth, user_pred, pos_label=1.)
-            pres, rec, _ = PRC(user_truth, user_pred)
-            aucs.append(roc_auc_score(user_truth, user_pred, average="weighted"))
+            fpr, tpr, _ = ROC(user_truth, user_rank, pos_label=1.)
+            pres, rec, _ = PRC(user_truth, user_rank)
+            aucs.append(roc_auc_score(user_truth, user_rank, average="weighted"))
             fscores.append(fbeta_score(user_truth, user_pred, beta=beta, average="weighted"))
             tpr = np.interp(base_fpr, fpr, tpr)
             tpr[0] = 0.0
@@ -331,7 +338,8 @@ def compute_metrics(scores, predictions, dataset, metrics, k=1, beta=1, verbose=
             recs.append(rec)
             for metric in metrics:
                 #print(metric)
-                value = eval(metric)(user_truth.ravel(), user_pred.ravel(), k, beta)
+                values = user_pred if metric == "Fscore" else user_rank
+                value = eval(metric)(user_truth.ravel(), values.ravel(), k, beta)
                 metrics_list.update({metric: metrics_list[metric]+[value]})
         else:
             n_ignored += 1
