@@ -31,8 +31,8 @@ set -e
 #                                                           main ct12 ct34 mps)
 #   bash standalone/run_hecores.sh --jobs 4              -- CPU cores for step 12 (default 2)
 #   bash standalone/run_hecores.sh --local               -- no Docker (pip install -r requirements.txt)
-#   bash standalone/run_hecores.sh --sudo                -- use "sudo docker" (servers where docker needs sudo);
-#                                                           same as DOCKER="sudo docker" bash standalone/run_hecores.sh
+#   bash standalone/run_hecores.sh --no-sudo             -- plain "docker" instead of "sudo docker" (the default),
+#                                                           e.g. Docker Desktop on a Mac
 #   bash standalone/run_hecores.sh --check               -- check that the packages import
 #   bash standalone/run_hecores.sh --shell 'COMMAND'     -- run a command in the container (in data/work)
 #   bash standalone/run_hecores.sh --rebuild --check     -- rebuild the image first
@@ -76,11 +76,10 @@ cd "$ROOT"
 
 IMAGE=${IMAGE:-hecores-dr}
 DOCKERFILE=${DOCKERFILE:-$STANDALONE/Dockerfile}
-for arg in "$@"; do [ "$arg" == "--sudo" ] && DOCKER="sudo docker"; done
-if [ -z "$DOCKER" ]; then
-    # plain docker only if it can reach the Docker daemon; otherwise sudo docker
-    if docker version --format '{{.Server.Version}}' &>/dev/null; then DOCKER=docker; else DOCKER="sudo docker"; fi
-fi
+# "sudo docker" by default, as in PharmaLinKG (the server needs sudo for Docker).
+# --no-sudo (or DOCKER=docker) for computers where Docker runs without sudo, e.g. Docker Desktop on a Mac.
+DOCKER=${DOCKER:-sudo docker}
+for arg in "$@"; do [ "$arg" == "--no-sudo" ] && DOCKER=docker; done
 DOCKER_USER=${DOCKER_USER-"$(id -u):$(id -g)"}
 
 NEO4J_CONTAINER=${NEO4J_CONTAINER:-hecores_neo4j}
@@ -122,7 +121,8 @@ while [[ $# -gt 0 ]]; do
         --jobs)          JOBS="$2"; shift 2 ;;
         --work)          WORK="$2"; shift 2 ;;
         --local)         LOCAL=1; shift ;;
-        --sudo)          shift ;;   # handled above: DOCKER="sudo docker"
+        --no-sudo)       shift ;;   # handled above: DOCKER=docker
+        --sudo)          shift ;;   # the default; kept so older commands still work
         --rebuild)       REBUILD=1; shift ;;
         --dry-run)       DRY_RUN=1; shift ;;
         --list)          LIST=1; shift ;;

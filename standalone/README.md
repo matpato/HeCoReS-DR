@@ -4,7 +4,8 @@
 
 ## Requirements
 
-- Docker (Docker Desktop on Windows/macOS, Docker Engine on Linux), **or** Python 3.13 with `pip install -r requirements.txt`
+- Docker (Docker Engine on Linux, Docker Desktop on Windows/macOS) with the buildx plugin, **or** Python 3.13 with `pip install -r requirements.txt`
+- The runner calls `sudo docker`, as PharmaLinKG does (the server needs sudo for Docker); on a computer where Docker runs without sudo (e.g. Docker Desktop on a Mac) add `--no-sudo`
 - Internet: to build the image, for MeSH (step 3), the HunFlair2 models (step 4), BNNR's Octave code
 - 2 CPU cores and 8 GB RAM; about 5 GB disk (step 12 writes 200 permuted graphs)
 - Step 4 (text mining) uses a larger image with torch (`hecores-dr:ner`, CPU); a GPU makes it much faster
@@ -75,6 +76,7 @@ bash standalone/run_hecores.sh --paper --from splits    # evaluation as publishe
 bash standalone/run_hecores.sh --pct "20 40 60 80" --from hcs   # ablation (RQ2)
 bash standalone/run_hecores.sh --models "ALSWR HCS" --sets "main"   # some models / test sets
 bash standalone/run_hecores.sh --n-experiments 50   # fewer experiments
+bash standalone/run_hecores.sh --no-sudo            # plain docker instead of sudo docker (e.g. a Mac)
 bash standalone/run_hecores.sh --local              # without Docker
 bash standalone/run_hecores.sh --shell 'ls -la'     # a command in the container (in data/work)
 bash standalone/run_hecores.sh --rebuild --check    # rebuild the image (after editing requirements*.txt)
