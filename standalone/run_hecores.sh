@@ -235,6 +235,18 @@ ensure_image() {   # build hecores-dr:<variant> if needed (once per run with --r
     [[ " $BUILT " == *" $variant "* ]] && return
     if [ $REBUILD == 1 ]; then $DOCKER rmi "$IMAGE:$variant" &>/dev/null || true; fi
     if [ $DRY_RUN == 1 ] || [ $REBUILD == 1 ] || ! $DOCKER image inspect "$IMAGE:$variant" &>/dev/null; then
+        if [ $DRY_RUN == 0 ] && ! $DOCKER buildx version &>/dev/null; then
+            echo "ERROR: 'docker build' is not available: recent Docker needs the buildx plugin."
+            echo "  Check:    docker buildx version"
+            echo "  Install:  sudo apt-get install docker-buildx-plugin   (Debian/Ubuntu, Docker's apt repository)"
+            echo "            sudo dnf install docker-buildx-plugin       (Fedora/RHEL)"
+            if [ -e "$HOME/.docker" ] && [ ! -r "$HOME/.docker/config.json" -o ! -w "$HOME/.docker" ]; then
+                echo "  Also: $HOME/.docker is not yours (Docker was run with sudo), so Docker cannot read it:"
+                echo "            sudo chown -R \"\$USER\":\"\$(id -gn)\" ~/.docker"
+            fi
+            echo "  Or run without Docker: pip install -r requirements.txt, then add --local"
+            exit 1
+        fi
         echo "Building $IMAGE:$variant"
         run $DOCKER build -t "$IMAGE:$variant" --build-arg WITH_NER=$ner --build-arg WITH_OCTAVE=$octave \
             -f "$DOCKERFILE" "$ROOT"
