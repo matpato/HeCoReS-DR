@@ -14,8 +14,8 @@ Environment variables (all optional)
                          ctg-public-xml.zip (ClinicalTrials.gov)
   HECORES_PCT            ablation (RQ2): percentage of edges removed, e.g. 20; empty = full graph
   HECORES_N_EXPERIMENTS  experiments per model (default 100; BNNR 5, metapaths 50)
-  HECORES_MODELS         comma-separated models to evaluate (default ALSWR,PMF,LogisticMF;
-                         add BNNR, which needs Octave)
+  HECORES_MODELS         comma-separated models to evaluate (default ALSWR,PMF,LogisticMF,HCS;
+                         HCS = HCS alone, no collaborative filtering; add BNNR, which needs Octave)
   HECORES_N_PERMS        HCS permutations (default 200)
   HECORES_JOBS           CPU cores for HCS (default 2)
   NEO4J_URI / NEO4J_USER / NEO4J_PASSWORD   Neo4j connection (default bolt://localhost:7687,
@@ -42,7 +42,7 @@ HETMAT_DIR = f"graph.hetmat{PCT}"            # graph.hetmat (full) or graph.hetm
 N_EXPERIMENTS = int(os.environ.get("HECORES_N_EXPERIMENTS", "100"))
 N_EXPERIMENTS_BNNR = min(5, N_EXPERIMENTS)
 N_EXPERIMENTS_MPS = min(50, N_EXPERIMENTS)
-MODELS = [m.strip() for m in os.environ.get("HECORES_MODELS", "ALSWR,PMF,LogisticMF").split(",") if m.strip()]
+MODELS = [m.strip() for m in os.environ.get("HECORES_MODELS", "ALSWR,PMF,LogisticMF,HCS").split(",") if m.strip()]
 N_PERMS = int(os.environ.get("HECORES_N_PERMS", "200"))
 JOBS = int(os.environ.get("HECORES_JOBS", "2"))
 

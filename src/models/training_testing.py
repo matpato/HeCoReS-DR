@@ -10,11 +10,23 @@ import json
 from utils.utils import open_json
 import os
 import json
+from utils.config import (PCT, SFX, HETMAT_DIR, N_EXPERIMENTS, N_EXPERIMENTS_MPS,
+                          NEGATIVES, RQ3, describe)
 
 # === 1. Precompute and Save ===
 
 def precompute_and_save_pairs(main_dataset, other_datasets, n_experiments, test_size,
-                              per_positives, n_negatives, n_negatives_per_positive, output_path):
+                              per_positives, n_negatives, n_negatives_per_positive, output_path,
+                              negative_filter=None):
+    """
+    other_datasets: datasets for which training sets are written (as before).
+    negative_filter: datasets in which a test negative must NOT be positive.
+        None = other_datasets (published behaviour: negatives may not be
+        positive in HCS_1 or any random control, i.e. pairs flagged by HCS
+        cannot be negatives). See main() for what the revision uses.
+    """
+    if negative_filter is None:
+        negative_filter = other_datasets
 
     def to_serializable_tuple(triple):
         # Ensure (user, item, label) are all native Python ints
@@ -34,7 +46,7 @@ def precompute_and_save_pairs(main_dataset, other_datasets, n_experiments, test_
             per_positives=per_positives,
             n_negatives=n_negatives,
             seed=i,
-            other_datasets=other_datasets
+            other_datasets=negative_filter
         )
         test_set_serializable = [to_serializable_tuple(t) for t in test_set]
 
@@ -367,172 +379,57 @@ def build_dataset_from_pairs(drug_disease_pairs, users, items, name, same_item_u
     
     return dataset
 
-pct = 80 # (remove pct from file names for normal graph)
+def unique_metapath_pairs(file_path, metapath, base_pairs=None, known_pairs=frozenset()):
+    """
+    Pairs to keep when metapath `metapath` is removed (RQ3), as (condition, drug).
 
-ratings_hcs0 = pd.read_csv(f'ratings_hcs0_{pct}pct.csv', index_col=0)
-ratings_hcs1 = pd.read_csv(f'ratings_hcs1_{pct}pct.csv', index_col=0)
-ratings_hcs_random1 = pd.read_csv(f'ratings_hcs_random1_{pct}pct.csv', index_col=0)
-ratings_hcs0_random2 = pd.read_csv(f'ratings_hcs_random2_{pct}pct.csv', index_col=0)
-ratings_hcs0_random3 = pd.read_csv(f'ratings_hcs_random3_{pct}pct.csv', index_col=0)
+    file_path: all_dwpc_results_with_p.tsv (one row per pair and metapath).
+    A pair is unique to `metapath` if that is its only significant metapath
+    (adjusted p <= 0.05).
 
-users = pd.read_csv(f'cond_sims_{pct}pct.csv', index_col=0)
-items = pd.read_csv(f'drug_sims_{pct}pct.csv', index_col=0)
-
-hcs_0 = datasets.Dataset(ratings=ratings_hcs0, users=users, items=items, 
-                                    same_item_user_features=False, name="HCS_0")
-
-hcs_1 = datasets.Dataset(ratings=ratings_hcs1, users=users, items=items, 
-                                    same_item_user_features=False, name="HCS_1")
-
-hcs_random1 = datasets.Dataset(ratings=ratings_hcs_random1, users=users, items=items, 
-                                    same_item_user_features=False, name="HCS_RANDOM1")
-
-hcs_random2 = datasets.Dataset(ratings=ratings_hcs0_random2, users=users, items=items, 
-                                    same_item_user_features=False, name="HCS_RANDOM2")
-
-hcs_random3 = datasets.Dataset(ratings=ratings_hcs0_random3, users=users, items=items, 
-                                    same_item_user_features=False, name="HCS_RANDOM3")
-
-precompute_and_save_pairs(
-    main_dataset=hcs_0,
-    other_datasets=[hcs_1, hcs_random1, hcs_random2, hcs_random3],
-    n_experiments=100,
-    test_size=0.2,
-    per_positives=0.2,
-    n_negatives=100,
-    n_negatives_per_positive=5,
-    output_path=f"train_test_pairs_{pct}pct100.json"
-)
-
-ct = open_json('clinical_trials.json')
-
-ct_pairs = set()
-ct_pairs12 = set()
-ct_pairs34 = set()
-
-for k, v in ct.items():
-    conditions = v['conditions']
-    drugs = v['drugs']
-    phase = v['phase']
-    if phase:
-        if '1' in phase or '2' in phase:
-            for c in conditions:
-                for d in drugs:
-                    ct_pairs12.add((c, d))
-        elif '3' in phase or '4' in phase:
-            for c in conditions:
-                for d in drugs:
-                    ct_pairs34.add((c, d))
-
-# print(len(ct_pairs12)) # 9180
-# print(len(ct_pairs34)) # 7964
-
-drugs = open_json("drugs_with_conditions_final.json")
-
-orig_pairs = set()
-for k, v in drugs.items():
-    conditions = v['treats']
-    for c in conditions:
-        orig_pairs.add((c, k))
-
-count = 0
-for p in ct_pairs12.copy():
-    if p in orig_pairs:
-        ct_pairs12.remove(p)
-        count += 1
-# print(count) # 1112 pairs from the external dataset (phases 1/2) appear in the original dataset
-# print(len(ct_pairs12)) # 8058
-
-count = 0
-for p in ct_pairs34.copy():
-    if p in orig_pairs:
-        ct_pairs34.remove(p)
-        count += 1
-# print(count) # 1417 pairs from the external dataset (phases 3/4) appear in the original dataset
-# print(len(ct_pairs34)) # 6547
-
-drugs = set()
-conds = set()
-
-for (a, b) in ct_pairs12:
-    drugs.add(b)
-    conds.add(a)
-
-# print(len(drugs)) # 601
-# print(len(conds)) # 540
-
-drugs = set()
-conds = set()
-
-for (a, b) in ct_pairs34:
-    drugs.add(b)
-    conds.add(a)
-
-# print(len(drugs)) # 611
-# print(len(conds)) # 565
-
-ct12 = build_dataset_from_pairs(list(ct_pairs12), users, items, 'CT12', same_item_user_features=False)
-ct34 = build_dataset_from_pairs(list(ct_pairs34), users, items, 'CT34', same_item_user_features=False)
-
-precompute_and_save_pairs(
-    main_dataset=ct12,
-    other_datasets=[hcs_0, hcs_1, hcs_random1, hcs_random2, hcs_random3],
-    n_experiments=100,
-    test_size=0.2,
-    per_positives=0.2,
-    n_negatives=100,
-    n_negatives_per_positive=5,
-    output_path="train_test_pairs_ct12_100.json"
-)
-
-precompute_and_save_pairs(
-    main_dataset=ct34,
-    other_datasets=[hcs_0, hcs_1, hcs_random1, hcs_random2, hcs_random3],
-    n_experiments=100,
-    test_size=0.2,
-    per_positives=0.2,
-    n_negatives=100,
-    n_negatives_per_positive=5,
-    output_path="train_test_pairs_ct34_100.json"
-)
-
-def unique_metapath_pairs(file_path, metapath):
-
-    df = pd.read_csv(file_path, sep="\t", dtype=str)
-
+    Published version (base_pairs=None): all significant pairs minus those
+    unique to `metapath`. This set lacks the known drug-condition pairs that
+    are not significant themselves (1,902 of the 4,478 on the full graph),
+    while the HCS_1 it is compared with contains them.
+    Revision (base_pairs = HCS_1 pairs): HCS_1 minus the pairs unique to
+    `metapath`, keeping known pairs (known_pairs), i.e. HCS_1 as if that
+    metapath did not exist -- the analysis described in the thesis.
+    """
+    df = pd.read_csv(file_path, sep="\t", usecols=["source_id", "target_id", "metapath", "adjusted_p_value"],
+                     dtype=str)
+    df = df[df["adjusted_p_value"].astype(float) <= 0.05]
     all_pairs = set(zip(df["target_id"], df["source_id"]))
+    n_mps = df.groupby(["target_id", "source_id"])["metapath"].nunique()
+    only_one = set(n_mps[n_mps == 1].index)
+    of_this = set(zip(df.loc[df["metapath"] == metapath, "target_id"], df.loc[df["metapath"] == metapath, "source_id"]))
+    unique_to_this = only_one & of_this
+    if base_pairs is None:
+        return all_pairs - unique_to_this
+    return set(base_pairs) - (unique_to_this - set(known_pairs))
 
-    # Group pairs by how many distinct metapaths they appear in
-    pair_metapaths = (
-        df.groupby(["target_id", "source_id"])["metapath"]
-        .nunique()
-        .reset_index(name="metapath_count")
-    )
 
-    # Keep only pairs that appear in exactly 1 metapath
-    unique_pairs = pair_metapaths.loc[pair_metapaths["metapath_count"] == 1, ["target_id", "source_id"]]
+def ct_pair_sets(ct_file, drugs_file):
+    """Clinical-trial test pairs (condition, drug), phases I/II and III/IV,
+    minus known indications -- as in the published code."""
+    ct = open_json(ct_file)
+    ct_pairs12, ct_pairs34 = set(), set()
+    for k, v in ct.items():
+        conditions = v['conditions']
+        drugs = v['drugs']
+        phase = v['phase']
+        if phase:
+            if '1' in phase or '2' in phase:
+                for c in conditions:
+                    for d in drugs:
+                        ct_pairs12.add((c, d))
+            elif '3' in phase or '4' in phase:
+                for c in conditions:
+                    for d in drugs:
+                        ct_pairs34.add((c, d))
+    drugs = open_json(drugs_file)
+    orig_pairs = {(c, k) for k, v in drugs.items() for c in v['treats']}
+    return ct_pairs12 - orig_pairs, ct_pairs34 - orig_pairs
 
-    # Filter further: only those where the metapath is the one requested
-    valid_pairs = set(
-        zip(
-            df.loc[
-                (df["metapath"] == metapath) &
-                (df[["target_id", "source_id"]].apply(tuple, axis=1).isin(
-                    set(zip(unique_pairs["target_id"], unique_pairs["source_id"]))
-                )),
-                "target_id"
-            ],
-            df.loc[
-                (df["metapath"] == metapath) &
-                (df[["target_id", "source_id"]].apply(tuple, axis=1).isin(
-                    set(zip(unique_pairs["target_id"], unique_pairs["source_id"]))
-                )),
-                "source_id"
-            ]
-        )
-    )
-
-    return all_pairs - valid_pairs
 
 n_metapaths = {
     'Dt>PRa>CO': 1,
@@ -547,27 +444,108 @@ n_metapaths = {
     'Dt>PRh>M<hPRa>CO': 3
 }
 
-f = 'graph.hetmat/path-counts/dwpc_results/sig_dwpc_results_path_scores.tsv'
-# print(list(n_metapaths.keys())[0])
 
-m0 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[0])), users, items, list(n_metapaths.keys())[0], same_item_user_features=False)
-m1 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[1])), users, items, list(n_metapaths.keys())[1], same_item_user_features=False)
-m2 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[2])), users, items, list(n_metapaths.keys())[2], same_item_user_features=False)
-m3 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[3])), users, items, list(n_metapaths.keys())[3], same_item_user_features=False)
-m4 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[4])), users, items, list(n_metapaths.keys())[4], same_item_user_features=False)
-m5 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[5])), users, items, list(n_metapaths.keys())[5], same_item_user_features=False)
-m6 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[6])), users, items, list(n_metapaths.keys())[6], same_item_user_features=False)
-m7 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[7])), users, items, list(n_metapaths.keys())[7], same_item_user_features=False)
-m8 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[8])), users, items, list(n_metapaths.keys())[8], same_item_user_features=False)
-m9 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[9])), users, items, list(n_metapaths.keys())[9], same_item_user_features=False)
+def load_datasets():
+    """HCS_0, HCS_1, the three random controls and the similarity matrices
+    of the current graph (HECORES_PCT)."""
+    users = pd.read_csv(f'cond_sims{SFX}.csv', index_col=0)
+    items = pd.read_csv(f'drug_sims{SFX}.csv', index_col=0)
+    out = {}
+    for name, f in [("HCS_0", "hcs0"), ("HCS_1", "hcs1"), ("HCS_RANDOM1", "hcs_random1"),
+                    ("HCS_RANDOM2", "hcs_random2"), ("HCS_RANDOM3", "hcs_random3")]:
+        ratings = pd.read_csv(f'ratings_{f}{SFX}.csv', index_col=0)
+        out[name] = datasets.Dataset(ratings=ratings, users=users, items=items,
+                                     same_item_user_features=False, name=name)
+    return out, users, items
 
-precompute_and_save_pairs(
-    main_dataset=hcs_0,
-    other_datasets=[hcs_1, m0, m1, m2, m3, m4, m5, m6, m7, m8, m9],
-    n_experiments=50,
-    test_size=0.2,
-    per_positives=0.2,
-    n_negatives=100,
-    n_negatives_per_positive=5,
-    output_path="train_test_pairs_mps_all.json"
-)
+
+def main(sets=("main", "ct", "mps")):
+    """
+    Precomputes the train/test pairs of every experiment.
+
+    main  test = 20% of HCS_0, train on each dataset   -> train_test_pairs{sfx}{n}.json
+    ct    test = clinical-trial pairs I/II and III/IV  -> train_test_pairs_ct12_{n}.json, ..._ct34_{n}.json
+    mps   RQ3, HCS_1 without each metapath             -> train_test_pairs_mps_{n}.json
+    (ct and mps only on the full graph, as in the paper)
+
+    Test negatives (HECORES_NEGATIVES):
+      independent  (revision) a negative may not be a known positive of the test set's own
+                   source: HCS_0 for the DrugBank and RQ3 test sets, HCS_0 + the clinical-trial
+                   pairs for the clinical-trial test sets
+      paper        a negative may also not be positive in HCS_1 or any random control (or any
+                   RQ3 matrix), so pairs that HCS flagged can never be test negatives
+    """
+    print(describe())
+    d, users, items = load_datasets()
+    hcs_0, hcs_1 = d["HCS_0"], d["HCS_1"]
+    others = [d["HCS_1"], d["HCS_RANDOM1"], d["HCS_RANDOM2"], d["HCS_RANDOM3"]]
+    paper = NEGATIVES == "paper"
+    n = N_EXPERIMENTS
+
+    if "main" in sets:
+        precompute_and_save_pairs(
+            main_dataset=hcs_0,
+            other_datasets=others,
+            n_experiments=n,
+            test_size=0.2,
+            per_positives=0.2,
+            n_negatives=100,
+            n_negatives_per_positive=5,
+            output_path=f"train_test_pairs{SFX}{n}.json",
+            negative_filter=None if paper else []
+        )
+
+    if PCT:
+        return
+
+    if "ct" in sets:
+        if not os.path.exists('clinical_trials.json'):
+            print("clinical_trials.json not found: clinical-trial test sets skipped")
+        else:
+            ct_pairs12, ct_pairs34 = ct_pair_sets('clinical_trials.json', "drugs_with_conditions_final.json")
+            print(f"clinical-trial pairs: {len(ct_pairs12)} (phases I/II), {len(ct_pairs34)} (phases III/IV)")
+            for name, pairs in (("CT12", ct_pairs12), ("CT34", ct_pairs34)):
+                ct_ds = build_dataset_from_pairs(list(pairs), users, items, name, same_item_user_features=False)
+                precompute_and_save_pairs(
+                    main_dataset=ct_ds,
+                    other_datasets=[hcs_0] + others,
+                    n_experiments=n,
+                    test_size=0.2,
+                    per_positives=0.2,
+                    n_negatives=100,
+                    n_negatives_per_positive=5,
+                    output_path=f"train_test_pairs_{name.lower()}_{n}.json",
+                    negative_filter=None if paper else [hcs_0]
+                )
+
+    if "mps" in sets:
+        f = f'{HETMAT_DIR}/path-counts/dwpc_results/all_dwpc_results_with_p.tsv'
+        if not os.path.exists(f):
+            print(f"{f} not found: RQ3 (metapaths) skipped")
+            return
+        hcs1_pairs = {(hcs_1.user_list[u], hcs_1.item_list[i]) for i, u in hcs_1.get_positive_indices()}
+        known = {(hcs_0.user_list[u], hcs_0.item_list[i]) for i, u in hcs_0.get_positive_indices()}
+        mps = []
+        for mp in n_metapaths:
+            pairs = unique_metapath_pairs(f, mp, base_pairs=None if RQ3 == "paper" else hcs1_pairs,
+                                          known_pairs=known)
+            print(f"  without {mp}: {len(pairs)} positive pairs")
+            mps.append(build_dataset_from_pairs(list(pairs), users, items, mp, same_item_user_features=False))
+        precompute_and_save_pairs(
+            main_dataset=hcs_0,
+            other_datasets=[hcs_1] + mps,
+            n_experiments=N_EXPERIMENTS_MPS,
+            test_size=0.2,
+            per_positives=0.2,
+            n_negatives=100,
+            n_negatives_per_positive=5,
+            output_path=f"train_test_pairs_mps_{N_EXPERIMENTS_MPS}.json",
+            negative_filter=None if paper else []
+        )
+
+
+if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser(description="Precompute train/test pairs (see main()).")
+    ap.add_argument("--sets", nargs="+", default=["main", "ct", "mps"], choices=["main", "ct", "mps"])
+    main(ap.parse_args().sets)
