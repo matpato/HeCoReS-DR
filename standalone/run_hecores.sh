@@ -31,6 +31,8 @@ set -e
 #                                                           main ct12 ct34 mps)
 #   bash standalone/run_hecores.sh --jobs 4              -- CPU cores for step 12 (default 2)
 #   bash standalone/run_hecores.sh --local               -- no Docker (pip install -r requirements.txt)
+#   bash standalone/run_hecores.sh --sudo                -- use "sudo docker" (servers where docker needs sudo);
+#                                                           same as DOCKER="sudo docker" bash standalone/run_hecores.sh
 #   bash standalone/run_hecores.sh --check               -- check that the packages import
 #   bash standalone/run_hecores.sh --shell 'COMMAND'     -- run a command in the container (in data/work)
 #   bash standalone/run_hecores.sh --rebuild --check     -- rebuild the image first
@@ -74,8 +76,10 @@ cd "$ROOT"
 
 IMAGE=${IMAGE:-hecores-dr}
 DOCKERFILE=${DOCKERFILE:-$STANDALONE/Dockerfile}
+for arg in "$@"; do [ "$arg" == "--sudo" ] && DOCKER="sudo docker"; done
 if [ -z "$DOCKER" ]; then
-    if docker info &>/dev/null; then DOCKER=docker; else DOCKER="sudo docker"; fi
+    # plain docker only if it can reach the Docker daemon; otherwise sudo docker
+    if docker version --format '{{.Server.Version}}' &>/dev/null; then DOCKER=docker; else DOCKER="sudo docker"; fi
 fi
 DOCKER_USER=${DOCKER_USER-"$(id -u):$(id -g)"}
 
@@ -118,13 +122,14 @@ while [[ $# -gt 0 ]]; do
         --jobs)          JOBS="$2"; shift 2 ;;
         --work)          WORK="$2"; shift 2 ;;
         --local)         LOCAL=1; shift ;;
+        --sudo)          shift ;;   # handled above: DOCKER="sudo docker"
         --rebuild)       REBUILD=1; shift ;;
         --dry-run)       DRY_RUN=1; shift ;;
         --list)          LIST=1; shift ;;
         --status)        STATUS=1; shift ;;
         --check)         CHECK=1; shift ;;
         --shell)         SHELL_CMD="$2"; shift 2 ;;
-        -h|--help)       sed -n '4,62p' "$0"; exit 0 ;;
+        -h|--help)       sed -n '4,64p' "$0"; exit 0 ;;
         *)               echo "Unknown argument: $1"; exit 1 ;;
     esac
 done
@@ -212,7 +217,8 @@ else
     py() {   # py <dir> <variant: core|ner|octave> <python args...>
         local dir=$1 variant=$2; shift 2
         local args=(--rm -v "$ROOT:/work" -w "/work/$dir" -e PYTHONPATH=/work -e PYTHONUNBUFFERED=1)
-        for v in "${ENV_ARGS[@]}"; do args+=(-e "$v"); done
+        # explicit values: "sudo docker" starts with an empty environment, so "-e NAME" alone would pass nothing
+        for v in "${ENV_ARGS[@]}"; do args+=(-e "$v=${!v}"); done
         [ -n "$DOCKER_USER" ] && args+=(--user "$DOCKER_USER")
         [ -n "$NETWORK" ] && args+=(--network "$NETWORK")
         ensure_image "$variant"
