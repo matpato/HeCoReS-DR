@@ -1,5 +1,7 @@
 # Running the HeCoReS-DR pipeline
 
+Step-by-step guide for the lab server (Docker with sudo, tmux, parallel evaluation, expected log lines, troubleshooting): [`RUNNING_ON_THE_SERVER.md`](RUNNING_ON_THE_SERVER.md).
+
 `run_hecores.sh` runs every step of the pipeline, each in its own Docker container (or with your own Python with `--local`). Run every command from the HeCoReS-DR main folder.
 
 ## Requirements
