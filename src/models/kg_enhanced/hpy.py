@@ -220,6 +220,12 @@ def prune_edges_cumulative(file_path, percentages, output_dir, seed=None):
         with open(stage_file, "w", encoding="utf-8") as f:
             json.dump(current_graph, f, indent=2, ensure_ascii=False)
 
+        # Same graph as triples, read by sims.py (graph_triples_{pct}pct.txt);
+        # the format of graph_triples.txt written by neo4j.py: "head RELATION tail"
+        with open(f"graph_triples_{target_percent}pct.txt", "w", encoding="utf-8") as f:
+            for e in current_graph["edges"]:
+                f.write(f"{e['source_id'][1]} {e['kind'].upper()} {e['target_id'][1]}\n")
+
         print(f"Stage {stage_idx}: Removed {target_percent}% of original edges → saved to {stage_file}")
 
         # --- Reporting: count edges per kind in the current graph ---

@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import copy
 from utils.utils import open_json
+from utils.config import PCT, SFX, HETMAT_DIR
 import csv
 
 drugs = open_json('drugs_with_conditions_final.json')
@@ -19,9 +20,10 @@ rels = (
     'ASSOCIATED_WITH'
 )
 
-pct = 20 # for pruned graphs (remove pct from the file names for full graph)
+# Full graph, or an ablation stage with HECORES_PCT (file names get the suffix _{pct}pct)
+print(f"graph: {'full' if not PCT else PCT + '% of edges removed'}")
 
-with open(f'graph_triples_{pct}pct.txt', 'r') as f:
+with open(f'graph_triples{SFX}.txt', 'r') as f:
     for line in f:
         line = line.strip()
         source, rel, target = line.split()
@@ -66,7 +68,7 @@ for i in range(n):
         
 cond_df = pd.DataFrame(similarity_matrix_cond, index=cond_list, columns=cond_list)
 cond_df = cond_df.sort_index(axis=0).sort_index(axis=1)
-cond_df.to_csv(f'cond_sims_{pct}pct.csv', index=True)
+cond_df.to_csv(f'cond_sims{SFX}.csv', index=True)
 
 drug_list = list(drug_dict.keys())
 n = len(drug_list)
@@ -89,7 +91,7 @@ for i in range(n):
         
 drug_df = pd.DataFrame(similarity_matrix_drug, index=drug_list, columns=drug_list)
 drug_df = drug_df.sort_index(axis=0).sort_index(axis=1)
-drug_df.to_csv(f'drug_sims_{pct}pct.csv', index=True)
+drug_df.to_csv(f'drug_sims{SFX}.csv', index=True)
 
 print((drug_df == 0).sum().sum()/(len(drug_df))**2) # percentage of zeros
 print((cond_df == 0).sum().sum()/(len(cond_df))**2)
@@ -97,7 +99,7 @@ print((cond_df == 0).sum().sum()/(len(cond_df))**2)
 # HCS_0
 associations = {}
 
-with open(f'graph_triples_{pct}pct.txt', 'r') as f:
+with open(f'graph_triples{SFX}.txt', 'r') as f:
     for line in f:
         line = line.strip()
         source, rel, target = line.split()
@@ -115,9 +117,9 @@ ratings = pd.DataFrame(0, index=sources, columns=targets)
 for (src, tgt), val in associations.items():
     ratings.at[src, tgt] = val
 
-ratings.to_csv(f'ratings_hcs0_{pct}pct.csv', index=True)
+ratings.to_csv(f'ratings_hcs0{SFX}.csv', index=True)
 
-input_path = f'/workspace/hcs/graph.hetmat{pct}/path-counts/dwpc_results/all_dwpc_results_with_p.tsv'
+input_path = f'{HETMAT_DIR}/path-counts/dwpc_results/all_dwpc_results_with_p.tsv'
 
 # HCS_1
 with open(input_path, 'r', newline='', encoding='utf-8') as tsvfile:
@@ -140,7 +142,7 @@ df_associations = pd.DataFrame(0, index=sources, columns=targets)
 for (src, tgt), val in associations.items():
     df_associations.at[src, tgt] = val
 
-df_associations.to_csv(f'ratings_hcs1_{pct}pct.csv', index=True)
+df_associations.to_csv(f'ratings_hcs1{SFX}.csv', index=True)
 
 # HCS_RANDOM(1,2,3)
 def generate_random_hcs_matrices(n, original, hcs):
@@ -167,6 +169,6 @@ def generate_random_hcs_matrices(n, original, hcs):
                     )
                     ratings.loc[selected_rows, col] = 1
 
-        ratings.to_csv(f'ratings_hcs_random{i+1}_{pct}pct.csv')
+        ratings.to_csv(f'ratings_hcs_random{i+1}{SFX}.csv')
 
-generate_random_hcs_matrices(3, f'ratings_hcs0_{pct}pct.csv', f'ratings_hcs1_{pct}pct.csv')
+generate_random_hcs_matrices(3, f'ratings_hcs0{SFX}.csv', f'ratings_hcs1{SFX}.csv')
