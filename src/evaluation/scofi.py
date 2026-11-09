@@ -1,137 +1,68 @@
-import numpy as np
-import pandas as pd
+"""
+Evaluation of the collaborative-filtering models on the precomputed
+train/test pairs (src/models/training_testing.py).
+
+    python -m src.evaluation.scofi [--sets main ct12 ct34 mps] [--models ALSWR PMF LogisticMF HCS BNNR]
+
+main   DrugBank test set (20% of HCS_0), models trained on HCS_0, HCS_1 and the
+       random controls -- Table 4 (full graph) or one ablation stage (HECORES_PCT)
+ct12   clinical-trial test set, phases I/II   (full graph only)
+ct34   clinical-trial test set, phases III/IV (full graph only)
+mps    RQ3: HCS_1 and HCS_1 without each metapath (full graph only)
+
+Models: HECORES_MODELS or --models. HCS = HCS alone (no collaborative
+filtering), the baseline added for the revision. BNNR needs Octave and runs
+HECORES_N_EXPERIMENTS capped at 5 experiments, as in the paper.
+
+Output: results_{model}_{n}{suffix}.csv (main), results_{model}_{n}_ct12.csv,
+results_{model}_{n}_ct34.csv, results_{model}_{n}_mps.csv in the work folder,
+one row per experiment and training dataset; written after every experiment,
+and an interrupted run continues where it stopped (rows already present are kept).
+
+Metrics: on the model scores (HECORES_METRICS=scores, revision) or on the
+thresholded labels (HECORES_METRICS=labels, published); see validation.py.
+"""
 import csv
-from utils.utils import open_json
+import os
 import random
-import src.preprocessing.datasets as datasets
-import src.evaluation.validation as validation
-import src.models.models as models
-import random
-import csv
 from time import time
 
-pct = 80
-print(pct)
+import numpy as np
+import pandas as pd
 
-ratings_hcs0 = pd.read_csv(f'ratings_hcs0_{pct}pct.csv', index_col=0)
-ratings_hcs1 = pd.read_csv(f'ratings_hcs1_{pct}pct.csv', index_col=0)
-ratings_hcs_random1 = pd.read_csv(f'ratings_hcs_random1_{pct}pct.csv', index_col=0)
-ratings_hcs0_random2 = pd.read_csv(f'ratings_hcs_random2_{pct}pct.csv', index_col=0)
-ratings_hcs0_random3 = pd.read_csv(f'ratings_hcs_random3_{pct}pct.csv', index_col=0)
+import src.evaluation.validation as validation
+import src.models.models as models
+from src.models.training_testing import (build_dataset_from_pairs, ct_pair_sets, create_coo_matrix,
+                                         load_datasets, load_precomputed_pairs, n_metapaths,
+                                         reconstruct_datasets_from_pairs, unique_metapath_pairs)
+from utils.config import (PCT, SFX, HETMAT_DIR, MODELS, N_EXPERIMENTS, N_EXPERIMENTS_BNNR,
+                          N_EXPERIMENTS_MPS, RQ3, describe)
 
-users = pd.read_csv(f'cond_sims_{pct}pct.csv', index_col=0)
-items = pd.read_csv(f'drug_sims_{pct}pct.csv', index_col=0)
 
-hcs_0 = datasets.Dataset(ratings=ratings_hcs0, users=users, items=items, 
-                                    same_item_user_features=False, name="HCS_0")
-
-hcs_1 = datasets.Dataset(ratings=ratings_hcs1, users=users, items=items, 
-                                    same_item_user_features=False, name="HCS_1")
-
-hcs_random1 = datasets.Dataset(ratings=ratings_hcs_random1, users=users, items=items, 
-                                    same_item_user_features=False, name="HCS_RANDOM1")
-
-hcs_random2 = datasets.Dataset(ratings=ratings_hcs0_random2, users=users, items=items, 
-                                    same_item_user_features=False, name="HCS_RANDOM2")
-
-hcs_random3 = datasets.Dataset(ratings=ratings_hcs0_random3, users=users, items=items, 
-                                    same_item_user_features=False, name="HCS_RANDOM3")
-
-ct = open_json('clinical_trials.json')
-
-ct_pairs = set()
-ct_pairs12 = set()
-ct_pairs34 = set()
-
-for k, v in ct.items():
-    conditions = v['conditions']
-    drugs = v['drugs']
-    phase = v['phase']
-    if phase:
-        if '1' in phase or '2' in phase:
-            for c in conditions:
-                for d in drugs:
-                    ct_pairs12.add((c, d))
-        elif '3' in phase or '4' in phase:
-            for c in conditions:
-                for d in drugs:
-                    ct_pairs34.add((c, d))
-
-# print(len(ct_pairs12)) # 13604
-# print(len(ct_pairs34)) # 11255
-
-drugs = open_json("drugs_with_conditions_final.json")
-
-orig_pairs = set()
-for k, v in drugs.items():
-    conditions = v['treats']
-    for c in conditions:
-        orig_pairs.add((c, k))
-
-count = 0
-for p in ct_pairs12.copy():
-    if p in orig_pairs:
-        ct_pairs12.remove(p)
-        count += 1
-# print(count) # 1364 pairs from the external dataset (phases 1/2) appear in the original dataset
-# print(len(ct_pairs12)) # 12240
-
-count = 0
-for p in ct_pairs34.copy():
-    if p in orig_pairs:
-        ct_pairs34.remove(p)
-        count += 1
-# print(count) # 1681 pairs from the external dataset (phases 3/4) appear in the original dataset
-# print(len(ct_pairs34)) # 9574
-
-drugs = set()
-conds = set()
-
-for (a, b) in ct_pairs12:
-    drugs.add(b)
-    conds.add(a)
-
-# print(len(drugs)) # 623
-# print(len(conds)) # 590
-
-drugs = set()
-conds = set()
-
-for (a, b) in ct_pairs34:
-    drugs.add(b)
-    conds.add(a)
-
-# print(len(drugs)) # 636
-# print(len(conds)) # 613
-
-from src.models.training_testing import build_dataset_from_pairs, load_precomputed_pairs, reconstruct_datasets_from_pairs, \
-create_coo_matrix, unique_metapath_pairs, unrelated_pairs
-
-ct12 = build_dataset_from_pairs(list(ct_pairs12), users, items, 'CT12', same_item_user_features=False)
-ct34 = build_dataset_from_pairs(list(ct_pairs34), users, items, 'CT34', same_item_user_features=False)
-
-def run_pipeline(model_class, reconstructed_sets, params=None, n_experiments=10, ct=None):
+def run_pipeline(model_class, reconstructed_sets, params=None, n_experiments=10, output_file="results.csv"):
     """
     Run experiments using precomputed and reconstructed train/test datasets.
-    
+
     Parameters:
         model_class: a class (not instance) that implements .fit() and .predict_proba()
         reconstructed_sets: output from `reconstruct_datasets_from_pairs(...)`
         params: parameters passed to the model
         n_experiments: number of experiments to run
+        output_file: CSV written after every experiment
     """
-    results = []
-    model_name = model_class.__name__
-    if ct:
-        print(f"\n========== HCS (CLINICAL TRIAL TEST SET: PHASES {ct[0]} and {ct[1]}) ==========")
-        output_file = f"results_{model_name}_{n_experiments}_ct{ct}.csv"
-    else:
-        print(f"========== HCS (ORIGINAL DATA) ==========")
-        output_file = f"results_{model_name}_{n_experiments}_{pct}pct.csv"
-        # output_file = f"results_{model_name}_{n_experiments}_.csv"
-
+    results, done = [], set()
+    if os.path.exists(output_file):
+        old = pd.read_csv(output_file)
+        old = old[old["experiment"] <= n_experiments]
+        results = old.to_dict("records")
+        done = set(old["experiment"])
+        if done:
+            print(f"{output_file}: experiments {sorted(done)[:3]}... already done, continuing")
+    print(f"========== {model_class.__name__} -> {output_file} ==========")
 
     for i in range(n_experiments):
+        if i + 1 in done:
+            continue
         print(f"\n========== EXPERIMENT {i+1} ==========")
         random.seed(i)
         np.random.seed(i)
@@ -140,149 +71,87 @@ def run_pipeline(model_class, reconstructed_sets, params=None, n_experiments=10,
         train_datasets = reconstructed_sets[i]['train_datasets']
 
         for name, train_dataset in train_datasets.items():
-            print(f"\n--------------- {name.upper()} ---------------")
+            if model_class is models.HCS and results and any(r["experiment"] == i + 1 for r in results):
+                break                     # HCS does not depend on the training dataset: once per experiment
+            print(f"--------------- {name.upper()} ---------------")
             start = time()
-
-            # Initialize and fit the model
-            print("Fitting model...")
             model = model_class(params)
             model.fit(train_dataset, seed=i)
-
-            # Make predictions
-            print("Predicting...")
             scores = model.predict_proba(test_dataset)
             predictions = model.predict(scores)
-
-
-            # Evaluate
-            print("Computing metrics...")
             metrics, _ = validation.compute_metrics(
                 scores, predictions, test_dataset,
                 metrics=validation.metrics_list, k=10, beta=1, verbose=False
             )
-
-            duration = time() - start
-
-            # Save metrics
-            row = {
-                'experiment': i + 1,
-                'dataset': name,
-                'time_seconds': duration
-            }
+            row = {'experiment': i + 1,
+                   'dataset': name if model_class is not models.HCS else "-",
+                   'time_seconds': time() - start}
             for metric_name, values in metrics.iterrows():
                 row[f'{metric_name}_avg'] = values['Average']
                 row[f'{metric_name}_std'] = values['StandardDeviation']
-
             results.append(row)
 
-    fieldnames = results[0].keys()
-    with open(output_file, mode='w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(results)
+        with open(output_file, mode='w', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=list(results[0].keys()))
+            writer.writeheader()
+            writer.writerows(results)
 
-    print(f"\n✅ Results saved to {output_file}")
+    print(f"\nResults saved to {output_file}")
 
-n_metapaths = {
-    'Dt>PRa>CO': 1,
-    'Dh>CA<hDi>CO': 6,
-    'Dh>CH<hDi>CO': 6,
-    'Di>CO<aPRa>CO': 6,
-    'Dh>PH<hDi>CO': 6,
-    'Dh>T<hDi>CO': 6,
-    'Dt>PR<tDi>CO': 6,
-    'Dt>PRh>B<hPRa>CO': 3,
-    'Dt>PRh>CE<hPRa>CO': 3,
-    'Dt>PRh>M<hPRa>CO': 3
-}
 
-f = 'graph.hetmat/path-counts/dwpc_results/sig_dwpc_results_path_scores.tsv'
-m0 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[0])), users, items, list(n_metapaths.keys())[0], same_item_user_features=False)
-m1 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[1])), users, items, list(n_metapaths.keys())[1], same_item_user_features=False)
-m2 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[2])), users, items, list(n_metapaths.keys())[2], same_item_user_features=False)
-m3 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[3])), users, items, list(n_metapaths.keys())[3], same_item_user_features=False)
-m4 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[4])), users, items, list(n_metapaths.keys())[4], same_item_user_features=False)
-m5 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[5])), users, items, list(n_metapaths.keys())[5], same_item_user_features=False)
-m6 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[6])), users, items, list(n_metapaths.keys())[6], same_item_user_features=False)
-m7 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[7])), users, items, list(n_metapaths.keys())[7], same_item_user_features=False)
-m8 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[8])), users, items, list(n_metapaths.keys())[8], same_item_user_features=False)
-m9 = build_dataset_from_pairs(list(unique_metapath_pairs(f, list(n_metapaths.keys())[9])), users, items, list(n_metapaths.keys())[9], same_item_user_features=False)
+def main(sets, model_names):
+    print(describe())
+    d, users, items = load_datasets()
+    hcs_0 = d["HCS_0"]
+    shape = hcs_0.ratings.shape
+    lookup = dict(d)
+    n = N_EXPERIMENTS
 
-saved_sets = load_precomputed_pairs(f"train_test_pairs_{pct}pct100.json") # pruned graphs
-saved_sets = load_precomputed_pairs(f"train_test_pairs100.json") # complete graph
-saved_sets12 = load_precomputed_pairs(f"train_test_pairs_ct12_100.json") # clinical trials phases I/II
-saved_sets34 = load_precomputed_pairs(f"train_test_pairs_ct34_100.json") # clinical trials phases III/IV
-saved_sets_mps = load_precomputed_pairs(f"train_test_pairs_mps_all.json") # importance of metapaths
+    jobs = []   # (set name, main dataset name, pairs file, n experiments, output suffix, datasets)
+    if "main" in sets:
+        jobs.append(("main", "HCS_0", f"train_test_pairs{SFX}{n}.json", n, SFX, lookup))
+    if not PCT and ({"ct12", "ct34"} & set(sets)):
+        ct_pairs12, ct_pairs34 = ct_pair_sets('clinical_trials.json', "drugs_with_conditions_final.json")
+        for name, pairs in (("CT12", ct_pairs12), ("CT34", ct_pairs34)):
+            if name.lower() in sets:
+                ct_lookup = {**lookup, name: build_dataset_from_pairs(list(pairs), users, items, name,
+                                                                      same_item_user_features=False)}
+                jobs.append((name.lower(), name, f"train_test_pairs_{name.lower()}_{n}.json", n,
+                             f"_{name.lower()}", ct_lookup))
+    if not PCT and "mps" in sets:
+        f = f'{HETMAT_DIR}/path-counts/dwpc_results/all_dwpc_results_with_p.tsv'
+        hcs_1 = d["HCS_1"]
+        hcs1_pairs = {(hcs_1.user_list[u], hcs_1.item_list[i]) for i, u in hcs_1.get_positive_indices()}
+        known = {(hcs_0.user_list[u], hcs_0.item_list[i]) for i, u in hcs_0.get_positive_indices()}
+        mps_lookup = {"HCS_0": hcs_0, "HCS_1": hcs_1}
+        for mp in n_metapaths:
+            pairs = unique_metapath_pairs(f, mp, base_pairs=None if RQ3 == "paper" else hcs1_pairs, known_pairs=known)
+            mps_lookup[mp] = build_dataset_from_pairs(list(pairs), users, items, mp, same_item_user_features=False)
+        jobs.append(("mps", "HCS_0", f"train_test_pairs_mps_{N_EXPERIMENTS_MPS}.json", N_EXPERIMENTS_MPS,
+                     "_mps", mps_lookup))
 
-# comment out ct12 and ct34 for complete and pruned graphs
-dataset_lookup = {
-    'CT12': ct12,
-    'CT34': ct34,
-    'HCS_0': hcs_0,
-    'HCS_1': hcs_1,
-    'HCS_RANDOM1': hcs_random1,
-    'HCS_RANDOM2': hcs_random2,
-    'HCS_RANDOM3': hcs_random3,
-}
+    for set_name, main_name, pairs_file, n_exp, suffix, lookup in jobs:
+        if not os.path.exists(pairs_file):
+            print(f"{pairs_file} not found (run training_testing.py first): '{set_name}' skipped")
+            continue
+        saved = load_precomputed_pairs(pairs_file)
+        n_exp = min(n_exp, len(saved))
+        sets_ = reconstruct_datasets_from_pairs(main_name, saved, dataset_lookup=lookup, shape=shape,
+                                                create_coo_matrix=create_coo_matrix)
+        for model_name in model_names:
+            model_class = getattr(models, model_name)
+            if set_name == "mps" and model_name in ("BNNR", "HCS"):
+                continue              # RQ3 compares training sets; BNNR excluded as in the paper
+            n_model = min(n_exp, N_EXPERIMENTS_BNNR) if model_name == "BNNR" else n_exp
+            run_pipeline(model_class, reconstructed_sets=sets_, n_experiments=n_model,
+                         output_file=f"results_{model_name}_{n_model}{suffix}.csv")
 
-dataset_lookup_mps = {
-    'HCS_0': hcs_0,
-    'HCS_1': hcs_1,
-    'Dt>PRa>CO': m0,
-    'Dh>CA<hDi>CO': m1,
-    'Dh>CH<hDi>CO': m2,
-    'Di>CO<aPRa>CO': m3,
-    'Dh>PH<hDi>CO': m4,
-    'Dh>T<hDi>CO': m5,
-    'Dt>PR<tDi>CO': m6,
-    'Dt>PRh>B<hPRa>CO': m7,
-    'Dt>PRh>CE<hPRa>CO': m8,
-    'Dt>PRh>M<hPRa>CO': m9,
-}
 
-reconstructed_sets = reconstruct_datasets_from_pairs(
-    'HCS_0',
-    saved_sets,
-    dataset_lookup=dataset_lookup,
-    shape=hcs_0.ratings.shape,
-    create_coo_matrix=create_coo_matrix
-)
-
-reconstructed_sets12 = reconstruct_datasets_from_pairs(
-    'CT12',
-    saved_sets12,
-    dataset_lookup=dataset_lookup,
-    shape=hcs_0.ratings.shape,
-    create_coo_matrix=create_coo_matrix
-)
-
-reconstructed_sets34 = reconstruct_datasets_from_pairs(
-    'CT34',
-    saved_sets34,
-    dataset_lookup=dataset_lookup,
-    shape=hcs_0.ratings.shape,
-    create_coo_matrix=create_coo_matrix
-)
-
-reconstructed_sets_mps = reconstruct_datasets_from_pairs(
-    'HCS_0',
-    saved_sets_mps,
-    dataset_lookup=dataset_lookup_mps,
-    shape=hcs_0.ratings.shape,
-    create_coo_matrix=create_coo_matrix
-)
-
-run_pipeline(models.ALSWR, reconstructed_sets=reconstructed_sets, n_experiments=100)
-run_pipeline(models.PMF, reconstructed_sets=reconstructed_sets, n_experiments=100)
-run_pipeline(models.LogisticMF, reconstructed_sets=reconstructed_sets, n_experiments=100)
-run_pipeline(models.BNNR, reconstructed_sets=reconstructed_sets, n_experiments=5)
-
-run_pipeline(models.ALSWR, reconstructed_sets=reconstructed_sets12, n_experiments=100, ct='12')
-run_pipeline(models.PMF, reconstructed_sets=reconstructed_sets12, n_experiments=100, ct='12')
-run_pipeline(models.LogisticMF, reconstructed_sets=reconstructed_sets12, n_experiments=100, ct='12')
-run_pipeline(models.BNNR, reconstructed_sets=reconstructed_sets12, n_experiments=5, ct='12')
-
-run_pipeline(models.ALSWR, reconstructed_sets=reconstructed_sets34, n_experiments=100, ct='34')
-run_pipeline(models.PMF, reconstructed_sets=reconstructed_sets34, n_experiments=100, ct='34')
-run_pipeline(models.LogisticMF, reconstructed_sets=reconstructed_sets34, n_experiments=100, ct='34')
-run_pipeline(models.BNNR, reconstructed_sets=reconstructed_sets34, n_experiments=5, ct='34')
+if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser(description="Evaluate the models (see the docstring).")
+    ap.add_argument("--sets", nargs="+", default=["main", "ct12", "ct34"],
+                    choices=["main", "ct12", "ct34", "mps"])
+    ap.add_argument("--models", nargs="+", default=MODELS)
+    a = ap.parse_args()
+    main(a.sets, a.models)
