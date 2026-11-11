@@ -212,3 +212,9 @@ __marimo__/
 # Pipeline data and run logs (large; not part of the code)
 data/
 standalone/logs/
+
+# Personal notes, kept locally only: everything in private/ and these names anywhere
+private/
+RUNNING_ON_THE_SERVER.md
+AUDIT_LOG.md
+UPDATING_THE_CODE_AND_RUNNING.md
