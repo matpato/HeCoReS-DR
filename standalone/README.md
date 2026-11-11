@@ -2,6 +2,8 @@
 
 `run_hecores.sh` runs every step of the pipeline, each in its own Docker container (or with your own Python with `--local`). Run every command from the HeCoReS-DR main folder.
 
+Long runs on a Linux server (tmux, the evaluation in three parallel windows, troubleshooting, measured times): [`RUNNING_ON_A_SERVER.md`](RUNNING_ON_A_SERVER.md).
+
 ## Requirements
 
 - Docker (Docker Engine on Linux, Docker Desktop on Windows/macOS) with the buildx plugin, **or** Python 3.13 with `pip install -r requirements.txt`
@@ -83,7 +85,7 @@ bash standalone/run_hecores.sh --rebuild --check    # rebuild the image (after e
 bash standalone/run_hecores.sh --dry-run            # print the commands only
 ```
 
-Steps 12, 14 and 15 keep their work when interrupted: rerun the same command and they continue.
+Steps 12 and 15 keep their work when interrupted: rerun the same command and they continue. Step 14 starts again from the first experiment and produces the same splits (fixed random seeds).
 
 ## Settings
 
