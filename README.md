@@ -245,6 +245,43 @@ print(results)
 
 ## Pipeline Workflow
 
+```mermaid
+flowchart TB
+    subgraph SRC["Sources"]
+        DB[(DrugBank XML)]
+        CTD[(CTD / MEDIC)]
+        ONT[(MeSH, ATC, GO)]
+        CTG[(ClinicalTrials.gov)]
+    end
+    subgraph KG["Knowledge graph (steps 1-11)"]
+        NER["Indications by text mining<br/>HunFlair2 (1-4)"]
+        FIL["Filter drugs and conditions (8)"]
+        NEO["Graph in Neo4j (5-7, 9)"]
+        G["graph.json<br/>19,114 nodes, 78,375 edges (11)"]
+    end
+    subgraph AUG["Augmentation (12-13)"]
+        HCS["Hetnet Connectivity Search<br/>200 permutations (12)"]
+        M["HCS_0 · HCS_1 · 3 random controls<br/>similarity matrices (13)"]
+    end
+    subgraph EV["Evaluation (14-16)"]
+        CF["ALS-WR · BPR · LMF · BNNR<br/>HCS alone"]
+        T["Test sets: DrugBank,<br/>trials I/II, III/IV, RQ3"]
+        S["summary_*.csv"]
+    end
+    DB --> NER
+    CTD --> NER
+    NER --> FIL --> NEO
+    ONT --> NEO
+    DB --> NEO
+    NEO --> G --> HCS --> M --> CF --> S
+    CTG -->|"trials (10)"| T --> CF
+    M --> T
+    STU[/"Student's intermediate files"/] -.->|"start here without DrugBank XML"| FIL
+    STU -.-> G
+```
+
+Numbers in brackets are the steps of `standalone/run_hecores.sh` ([`standalone/README.md`](standalone/README.md)).
+
 The HeCoReS-DR pipeline consists of the following stages:
 
 1. **Data Acquisition**: Download and parse DrugBank, MeSH, and other biomedical databases
