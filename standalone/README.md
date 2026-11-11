@@ -68,7 +68,7 @@ Then `bash standalone/run_hecores.sh` runs steps 8 and 11–16 and skips the oth
 ```bash
 bash standalone/run_hecores.sh --check              # build the image, check the packages
 bash standalone/run_hecores.sh --status             # which steps can run
-bash standalone/run_hecores.sh --quick              # installation test (minutes), in data/quick
+bash standalone/run_hecores.sh --quick              # installation test (about 1 h), in data/quick; compare with standalone/expected/quick/
 bash standalone/run_hecores.sh                      # all steps (about 6-8 h from step 8 on 2 cores)
 bash standalone/run_hecores.sh --step hcs           # one step (name or number)
 bash standalone/run_hecores.sh --from matrices      # from a step to the end
