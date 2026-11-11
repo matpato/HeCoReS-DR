@@ -392,7 +392,8 @@ run_step() {   # run_step <name>   (uses PCT/SFX for steps 12-16)
         matrices)   py "$WORK_REL" core -m src.models.similarity_based.sims ;;
         splits)
             link_eval_inputs
-            local ts=(main)
+            local ts=()
+            [[ " $SETS " == *" main "* ]] && ts+=(main)
             [ -z "$PCT" ] && [[ " $SETS " == *" ct1"* || " $SETS " == *" ct3"* ]] && ts+=(ct)
             [ -z "$PCT" ] && [[ " $SETS " == *" mps "* ]] && ts+=(mps)
             py "$EVAL_REL" core -m src.models.training_testing --sets "${ts[@]}" ;;
