@@ -33,7 +33,7 @@
 
 # HeCoReS-DR: Hetnet Connectivity Search for Drug Repositioning
 
-**Version:** 1.0 (2025-09-19)
+**Version:** 2.0 (2026-11-11)
 
 ## Overview
 
@@ -272,6 +272,7 @@ flowchart TB
     CTD --> NER
     NER --> FIL --> NEO
     ONT --> NEO
+    CTD --> NEO
     DB --> NEO
     NEO --> G --> HCS --> M --> CF --> S
     CTG -->|"trials (10)"| T --> CF
