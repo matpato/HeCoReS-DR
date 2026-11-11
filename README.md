@@ -250,14 +250,14 @@ flowchart TB
     subgraph SRC["Sources"]
         DB[(DrugBank XML)]
         CTD[(CTD / MEDIC)]
-        ONT[(MeSH, ATC, GO)]
+        ONT[(UniProt, MeSH, ATC, GO)]
         CTG[(ClinicalTrials.gov)]
     end
     subgraph KG["Knowledge graph (steps 1-11)"]
         NER["Indications by text mining<br/>HunFlair2 (1-4)"]
         FIL["Filter drugs and conditions (8)"]
         NEO["Graph in Neo4j (5-7, 9)"]
-        G["graph.json<br/>19,114 nodes, 78,375 edges (11)"]
+        G["Knowledge graph (11)<br/>19,114 nodes, 78,375 edges"]
     end
     subgraph AUG["Augmentation (12-13)"]
         HCS["Hetnet Connectivity Search<br/>200 permutations (12)"]
@@ -265,8 +265,8 @@ flowchart TB
     end
     subgraph EV["Evaluation (14-16)"]
         CF["ALS-WR · BPR · LMF · BNNR<br/>HCS alone"]
-        T["Test sets: DrugBank,<br/>trials I/II, III/IV, RQ3"]
-        S["summary_*.csv"]
+        T["Test sets: DrugBank,<br/>trials I/II, III/IV, metapath analysis (RQ3)"]
+        S["Ranking metrics<br>(NDCG@10,...)"]
     end
     DB --> NER
     CTD --> NER
@@ -389,7 +389,7 @@ Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for de
 ## Contact
 
 For questions, suggestions, or collaboration inquiries:
-- **Donato Aveiro**: fc46269@alunos.fc.ul.pt
+- **Matilde Pato**: matilde.pato@isel.pt
 - **Issues**: Please use the GitHub issue tracker
 
 ## Acknowledgments
@@ -402,6 +402,6 @@ The revision of the code made in November 2026 (branch `revision`: the fixes tha
 
 ---
 
-**Version:** 1.0  
+**Version:** 2.0  
 **Release Date:** September 19, 2025  
-**Last Updated:** October 27, 2025
+**Last Updated:** November 11, 2026
