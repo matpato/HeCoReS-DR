@@ -72,10 +72,12 @@ def precompute_and_save_pairs(main_dataset, other_datasets, n_experiments, test_
 
         # --- Save every 10 iterations OR at the very end ---
         if (i + 1) % 10 == 0 or (i + 1) == n_experiments:
-            with open(output_path, "w") as f:
+            tmp_path = f"{output_path}.{os.getpid()}.tmp"
+            with open(tmp_path, "w") as f:
                 json.dump(saved_sets, f)
                 f.flush()              # flush Python buffer
                 os.fsync(f.fileno())   # force OS write to disk
+            os.replace(tmp_path, output_path)   # never leave a half-written file
             print(f"Progress saved to {output_path} (iteration {i+1})")
 
     print(f"All precomputed train/test pairs finished. Final saved to {output_path}")
