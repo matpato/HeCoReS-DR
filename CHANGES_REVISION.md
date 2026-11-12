@@ -41,6 +41,7 @@ Each correction can be switched back to the published behaviour (`HECORES_PAPER_
 - RQ3 is evaluated by `scofi.py --sets mps` (the published script built the sets but never ran them) — "scofi.py: run as a script"
 - `src/evaluation/summarize.py`: mean ± SD tables, random controls averaged (Reviewer 1), RQ3 bootstrap CIs — "Add summarize.py"
 - `standalone/`: Docker image and runner, as in MedJsonify — "Add the pipeline runner"
+- `sample/`: a real subset of the data (133 cardiovascular drugs, 105 conditions, 570 indications, 4,624 trials) that runs steps 11–16 in about 5 minutes and is compared with expected tables; `run_hecores.sh --n-perms` sets the number of HCS permutations (Reviewers) — "Add a runnable sample of the data"
 
 ## 4. Checks (9–11 November 2026)
 
@@ -53,6 +54,7 @@ Starting from the student's `drugs_with_conditions.json`, `conditions.json`, `gr
 | step 13: similarity matrices, HCS_0 | released `drug_sims.csv`, `disease_sims.csv`, `hcs_0.csv` | identical |
 | step 12: pairs added by HCS | released `hcs_1.csv` (28,054 added pairs) | 27,512 reproduced, 0 extra; the other 542 have adjusted p 0.050–0.069 here (533 for `Dt>PRh>M<hPRa>CO`): the student's null distribution for that metapath was slightly less conservative in some degree groups; the cause cannot be checked without his intermediate files |
 | step 15 (HCS_0, experiments 1–2) | independent re-implementation (audit) | equal to 4 decimals for ALS-WR, BPR, LMF |
+| sample (`sample/run_sample.sh`, 12 Nov 2026) | a second run from scratch, with another number of cores | identical tables and per-experiment metrics; `--local`, Python 3.13 |
 | full run, steps 8 and 11–16, in Docker on the lab server (8 cores) | – | completed 9–10 Nov 2026: 100 experiments for ALS-WR, BPR, LMF and HCS on the DrugBank and both clinical-trial test sets, 50 for RQ3; the quick test gave the same numbers on the server and on the test machine |
 
 ## 5. Not tested here

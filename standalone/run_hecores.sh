@@ -25,6 +25,7 @@ set -e
 #   bash standalone/run_hecores.sh --quick               -- installation test (minutes): 2
 #                                                           experiments, 2 permutations, in data/quick
 #   bash standalone/run_hecores.sh --n-experiments 50    -- fewer experiments (default 100)
+#   bash standalone/run_hecores.sh --n-perms 50          -- HCS permutations (default 200)
 #   bash standalone/run_hecores.sh --models "ALSWR HCS"  -- models for step 15 (default
 #                                                           ALSWR PMF LogisticMF HCS; BNNR needs Octave)
 #   bash standalone/run_hecores.sh --sets "main mps"     -- test sets for step 15 (default
@@ -116,6 +117,7 @@ while [[ $# -gt 0 ]]; do
         --pct)           PCTS="$2"; shift 2 ;;
         --quick)         QUICK=1; N_EXP=2; N_PERMS=2; shift ;;
         --n-experiments) N_EXP="$2"; shift 2 ;;
+        --n-perms)       N_PERMS="$2"; shift 2 ;;
         --models)        MODELS="$2"; shift 2 ;;
         --sets)          SETS="$2"; shift 2 ;;
         --jobs)          JOBS="$2"; shift 2 ;;
@@ -129,7 +131,7 @@ while [[ $# -gt 0 ]]; do
         --status)        STATUS=1; shift ;;
         --check)         CHECK=1; shift ;;
         --shell)         SHELL_CMD="$2"; shift 2 ;;
-        -h|--help)       sed -n '4,64p' "$0"; exit 0 ;;
+        -h|--help)       sed -n '4,65p' "$0"; exit 0 ;;
         *)               echo "Unknown argument: $1"; exit 1 ;;
     esac
 done
@@ -392,7 +394,8 @@ run_step() {   # run_step <name>   (uses PCT/SFX for steps 12-16)
         matrices)   py "$WORK_REL" core -m src.models.similarity_based.sims ;;
         splits)
             link_eval_inputs
-            local ts=(main)
+            local ts=()
+            [[ " $SETS " == *" main "* ]] && ts+=(main)
             [ -z "$PCT" ] && [[ " $SETS " == *" ct1"* || " $SETS " == *" ct3"* ]] && ts+=(ct)
             [ -z "$PCT" ] && [[ " $SETS " == *" mps "* ]] && ts+=(mps)
             py "$EVAL_REL" core -m src.models.training_testing --sets "${ts[@]}" ;;
