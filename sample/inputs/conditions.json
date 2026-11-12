@@ -1,0 +1,2757 @@
+{
+ "MESH:D054058": {
+  "name": "Acute Coronary Syndrome",
+  "definition": "An episode of MYOCARDIAL ISCHEMIA that generally lasts longer than a transient anginal episode that ultimately may lead to MYOCARDIAL INFARCTION.",
+  "parents": [
+   "MESH:D017202"
+  ],
+  "synonyms": [
+   "Acute Coronary Syndromes",
+   "Coronary Syndrome, Acute",
+   "Coronary Syndromes, Acute",
+   "Syndrome, Acute Coronary",
+   "Syndromes, Acute Coronary"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease"
+  ]
+ },
+ "MESH:D000224": {
+  "name": "Addison Disease",
+  "definition": "An adrenal disease characterized by the progressive destruction of the ADRENAL CORTEX, resulting in insufficient production of ALDOSTERONE and HYDROCORTISONE. Clinical symptoms include ANOREXIA; NAUSEA; WEIGHT LOSS; MUSCLE WEAKNESS; and HYPERPIGMENTATION of the SKIN due to increase in circulating levels of ACTH precursor hormone which stimulates MELANOCYTES.",
+  "parents": [
+   "MESH:D000309",
+   "MESH:D001327"
+  ],
+  "synonyms": [
+   "Addison's Disease",
+   "Addisons Disease",
+   "Adrenal Insufficiency, Primary",
+   "Adrenocortical Insufficiencies, Primary",
+   "Adrenocortical Insufficiency, Primary",
+   "Disease, Addison",
+   "Hypoadrenalism, Primary",
+   "Hypoadrenalisms, Primary",
+   "Insufficiencies, Primary Adrenocortical",
+   "Insufficiency, Primary Adrenocortical",
+   "Primary Adrenal Insufficiency",
+   "Primary Adrenocortical Insufficiencies",
+   "Primary Adrenocortical Insufficiency",
+   "Primary Hypoadrenalism"
+  ],
+  "slim_terms": [
+   "Endocrine system disease",
+   "Immune system disease"
+  ]
+ },
+ "MESH:D000419": {
+  "name": "Albuminuria",
+  "definition": "The presence of albumin in the urine, an indicator of KIDNEY DISEASES.",
+  "parents": [
+   "MESH:D011507"
+  ],
+  "synonyms": [
+   "Albuminurias"
+  ],
+  "slim_terms": [
+   "Signs and symptoms",
+   "Urogenital disease (female)",
+   "Urogenital disease (male)"
+  ]
+ },
+ "MESH:D000505": {
+  "name": "Alopecia",
+  "definition": "Absence of hair from areas where it is normally present.",
+  "parents": [
+   "MESH:D007039",
+   "MESH:D020763"
+  ],
+  "synonyms": [
+   "AGA1",
+   "Alopecia, Androgenetic",
+   "ALOPECIA, ANDROGENETIC, 1",
+   "Alopecia, Androgenic",
+   "Alopecia Cicatrisata",
+   "Alopecia Cicatrisatas",
+   "Alopecia, Male Pattern",
+   "Alopecias, Androgenic",
+   "Androgenetic Alopecia",
+   "ANDROGENETIC ALOPECIA;AGA BALDNESS, MALE PATTERN, INCLUDED",
+   "Androgenic Alopecia",
+   "Androgenic Alopecias",
+   "Baldness",
+   "Baldness, Female Pattern",
+   "Baldness, Male Pattern",
+   "Baldness, Pattern",
+   "Female Pattern Baldness",
+   "Hair Loss",
+   "Hair Losses",
+   "Losses, Hair",
+   "Loss, Hair",
+   "Male Pattern Alopecia",
+   "Male Pattern Baldness",
+   "MPB, INCLUDED",
+   "Pattern Baldness",
+   "Pseudopelade"
+  ],
+  "slim_terms": [
+   "Pathology (anatomical condition)",
+   "Skin disease"
+  ]
+ },
+ "MESH:D000787": {
+  "name": "Angina Pectoris",
+  "definition": "The symptom of paroxysmal pain consequent to MYOCARDIAL ISCHEMIA usually of distinctive character, location and radiation. It is thought to be provoked by a transient stressful situation during which the oxygen requirements of the MYOCARDIUM exceed that supplied by the CORONARY CIRCULATION.",
+  "parents": [
+   "MESH:D002637",
+   "MESH:D017202"
+  ],
+  "synonyms": [
+   "Angor Pectoris",
+   "Stenocardia",
+   "Stenocardias"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Signs and symptoms"
+  ]
+ },
+ "MESH:D000788": {
+  "name": "Angina Pectoris, Variant",
+  "definition": "A clinical syndrome characterized by the development of CHEST PAIN at rest with concomitant transient ST segment elevation in the ELECTROCARDIOGRAM, but with preserved exercise capacity.",
+  "parents": [
+   "MESH:D000789"
+  ],
+  "synonyms": [
+   "Angina, Prinzmetal",
+   "Angina, Prinzmetal's",
+   "Prinzmetal Angina",
+   "Prinzmetal's Angina",
+   "Prinzmetals Angina",
+   "Variant Angina Pectoris"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Signs and symptoms"
+  ]
+ },
+ "MESH:D060050": {
+  "name": "Angina, Stable",
+  "definition": "Persistent and reproducible chest discomfort usually precipitated by a physical exertion that dissipates upon cessation of such an activity. The symptoms are manifestations of MYOCARDIAL ISCHEMIA.",
+  "parents": [
+   "MESH:D000787"
+  ],
+  "synonyms": [
+   "Angina, Chronic Stable",
+   "Angina Pectoris, Stable",
+   "Angina Pectori, Stable",
+   "Anginas, Chronic Stable",
+   "Anginas, Stable",
+   "Chronic Stable Angina",
+   "Chronic Stable Anginas",
+   "Pectoris, Stable Angina",
+   "Pectori, Stable Angina",
+   "Stable Angina",
+   "Stable Angina, Chronic",
+   "Stable Angina Pectori",
+   "Stable Angina Pectoris",
+   "Stable Anginas",
+   "Stable Anginas, Chronic"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Signs and symptoms"
+  ]
+ },
+ "MESH:D000789": {
+  "name": "Angina, Unstable",
+  "definition": "Precordial pain at rest, which may precede a MYOCARDIAL INFARCTION.",
+  "parents": [
+   "MESH:D000787"
+  ],
+  "synonyms": [
+   "Angina at Rest",
+   "Angina Pectoris, Unstable",
+   "Angina Pectori, Unstable",
+   "Angina, Preinfarction",
+   "Anginas, Preinfarction",
+   "Anginas, Unstable",
+   "Myocardial Preinfarction Syndrome",
+   "Myocardial Preinfarction Syndromes",
+   "Preinfarction Angina",
+   "Preinfarction Anginas",
+   "Preinfarction Syndrome, Myocardial",
+   "Preinfarction Syndromes, Myocardial",
+   "Syndrome, Myocardial Preinfarction",
+   "Syndromes, Myocardial Preinfarction",
+   "Unstable Angina",
+   "Unstable Angina Pectori",
+   "Unstable Angina Pectoris",
+   "Unstable Anginas"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Signs and symptoms"
+  ]
+ },
+ "MESH:C565230": {
+  "name": "Aortic Aneurysm, Familial Abdominal 1",
+  "definition": "",
+  "parents": [
+   "MESH:D017544"
+  ],
+  "synonyms": [
+   "AAA",
+   "AAA1",
+   "ABDOMINAL AORTIC ANEURYSM",
+   "ANEURYSM, ABDOMINAL AORTIC",
+   "AORTIC ANEURYSM, FAMILIAL ABDOMINAL, 1"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease"
+  ]
+ },
+ "MESH:D001145": {
+  "name": "Arrhythmias, Cardiac",
+  "definition": "Any disturbances of the normal rhythmic beating of the heart or MYOCARDIAL CONTRACTION. Cardiac arrhythmias can be classified by the abnormalities in HEART RATE, disorders of electrical impulse generation, or impulse conduction.",
+  "parents": [
+   "MESH:D006331",
+   "MESH:D010335"
+  ],
+  "synonyms": [
+   "Arrhythmia",
+   "Arrhythmia, Cardiac",
+   "Arrythmia",
+   "Cardiac Arrhythmia",
+   "Cardiac Arrhythmias",
+   "Cardiac Dysrhythmia",
+   "Dysrhythmia, Cardiac",
+   "RYR2 CALCIUM RELEASE DEFICIENCY SYNDROME",
+   "VACRDS",
+   "VENTRICULAR ARRHYTHMIAS DUE TO CARDIAC RYANODINE RECEPTOR CALCIUM RELEASE DEFICIENCY SYNDROME"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Pathology (process)"
+  ]
+ },
+ "MESH:D001161": {
+  "name": "Arteriosclerosis",
+  "definition": "Thickening and loss of elasticity of the walls of ARTERIES of all sizes. There are many forms classified by the types of lesions and arteries involved, such as ATHEROSCLEROSIS with fatty lesions in the ARTERIAL INTIMA of medium and large muscular arteries.",
+  "parents": [
+   "MESH:D001157"
+  ],
+  "synonyms": [
+   "Arterioscleroses"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease"
+  ]
+ },
+ "MESH:D015210": {
+  "name": "Arthritis, Gouty",
+  "definition": "Arthritis, especially of the great toe, as a result of gout. Acute gouty arthritis often is precipitated by trauma, infection, surgery, etc. The initial attacks are usually monoarticular but later attacks are often polyarticular. Acute and chronic gouty arthritis are associated with accumulation of MONOSODIUM URATE in and around affected joints.",
+  "parents": [
+   "MESH:D006073"
+  ],
+  "synonyms": [
+   "Arthritides, Gouty",
+   "Gouty Arthritides",
+   "Gouty Arthritis"
+  ],
+  "slim_terms": [
+   "Genetic disease (inborn)",
+   "Metabolic disease",
+   "Musculoskeletal disease"
+  ]
+ },
+ "MESH:D001172": {
+  "name": "Arthritis, Rheumatoid",
+  "definition": "A chronic systemic disease, primarily of the joints, marked by inflammatory changes in the synovial membranes and articular structures, widespread fibrinoid degeneration of the collagen fibers in mesenchymal tissues, and by atrophy and rarefaction of bony structures. Etiology is unknown, but autoimmune mechanisms have been implicated.",
+  "parents": [
+   "MESH:D001168",
+   "MESH:D001327",
+   "MESH:D012216"
+  ],
+  "synonyms": [
+   "RA",
+   "Rheumatoid Arthritis",
+   "RHEUMATOID ARTHRITIS, SUSCEPTIBILITY TO"
+  ],
+  "slim_terms": [
+   "Connective tissue disease",
+   "Immune system disease",
+   "Musculoskeletal disease"
+  ]
+ },
+ "MESH:D001249": {
+  "name": "Asthma",
+  "definition": "A form of bronchial disorder with three distinct components: airway hyper-responsiveness (RESPIRATORY HYPERSENSITIVITY), airway INFLAMMATION, and intermittent AIRWAY OBSTRUCTION. It is characterized by spasmodic contraction of airway smooth muscle, WHEEZING, and dyspnea (DYSPNEA, PAROXYSMAL).",
+  "parents": [
+   "MESH:D001982",
+   "MESH:D008173",
+   "MESH:D012130"
+  ],
+  "synonyms": [
+   "Asthma, Bronchial",
+   "ASTHMA, DIMINISHED RESPONSE TO ANTILEUKOTRIENE TREATMENT IN, INCLUDED",
+   "ASTHMA-RELATED TRAITS, SUSCEPTIBILITY TO ASTHMA, PROTECTION AGAINST, INCLUDED",
+   "Asthmas",
+   "ASTHMA, SUSCEPTIBILITY TO",
+   "Bronchial Asthma"
+  ],
+  "slim_terms": [
+   "Immune system disease",
+   "Respiratory tract disease"
+  ]
+ },
+ "MESH:D050197": {
+  "name": "Atherosclerosis",
+  "definition": "A thickening and loss of elasticity of the walls of ARTERIES that occurs with formation of ATHEROSCLEROTIC PLAQUES within the ARTERIAL INTIMA.",
+  "parents": [
+   "MESH:D001161"
+  ],
+  "synonyms": [
+   "ALP",
+   "Atherogeneses",
+   "Atherogenesis",
+   "ATHEROGENIC LIPOPROTEIN PHENOTYPE",
+   "Atheroscleroses",
+   "ATHEROSCLEROSIS SUSCEPTIBILITY",
+   "ATHS"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease"
+  ]
+ },
+ "MESH:D001281": {
+  "name": "Atrial Fibrillation",
+  "definition": "Abnormal cardiac rhythm that is characterized by rapid, uncoordinated firing of electrical impulses in the upper chambers of the heart (HEART ATRIA). In such case, blood cannot be effectively pumped into the lower chambers of the heart (HEART VENTRICLES). It is caused by abnormal impulse generation.",
+  "parents": [
+   "MESH:D001145"
+  ],
+  "synonyms": [
+   "Atrial Fibrillation, Familial",
+   "Atrial Fibrillation, Paroxysmal",
+   "Atrial Fibrillation, Persistent",
+   "Atrial Fibrillations",
+   "Atrial Fibrillations, Familial",
+   "Atrial Fibrillations, Paroxysmal",
+   "Atrial Fibrillations, Persistent",
+   "Auricular Fibrillation",
+   "Auricular Fibrillations",
+   "Familial Atrial Fibrillation",
+   "Familial Atrial Fibrillations",
+   "Fibrillation, Atrial",
+   "Fibrillation, Auricular",
+   "Fibrillation, Familial Atrial",
+   "Fibrillation, Paroxysmal Atrial",
+   "Fibrillation, Persistent Atrial",
+   "Fibrillations, Atrial",
+   "Fibrillations, Auricular",
+   "Fibrillations, Familial Atrial",
+   "Fibrillations, Paroxysmal Atrial",
+   "Fibrillations, Persistent Atrial",
+   "Paroxysmal Atrial Fibrillation",
+   "Paroxysmal Atrial Fibrillations",
+   "Persistent Atrial Fibrillation",
+   "Persistent Atrial Fibrillations"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Pathology (process)"
+  ]
+ },
+ "MESH:D001282": {
+  "name": "Atrial Flutter",
+  "definition": "Rapid, irregular atrial contractions caused by a block of electrical impulse conduction in the right atrium and a reentrant wave front traveling up the inter-atrial septum and down the right atrial free wall or vice versa. Unlike ATRIAL FIBRILLATION which is caused by abnormal impulse generation, typical atrial flutter is caused by abnormal impulse conduction. As in atrial fibrillation, patients with atrial flutter cannot effectively pump blood into the lower chambers of the heart (HEART VENTRICLES).",
+  "parents": [
+   "MESH:D001145"
+  ],
+  "synonyms": [
+   "Atrial Flutters",
+   "Auricular Flutter",
+   "Auricular Flutters",
+   "Flutter, Atrial",
+   "Flutter, Auricular",
+   "Flutters, Atrial",
+   "Flutters, Auricular"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Pathology (process)"
+  ]
+ },
+ "MESH:D020526": {
+  "name": "Brain Stem Infarctions",
+  "definition": "Infarctions that occur in the BRAIN STEM which is comprised of the MIDBRAIN; PONS; and MEDULLA OBLONGATA. There are several named syndromes characterized by their distinctive clinical manifestations and specific sites of ischemic injury.",
+  "parents": [
+   "MESH:D020520"
+  ],
+  "synonyms": [
+   "Benedict Syndrome",
+   "Brain Stem Infarct",
+   "Brainstem Infarction",
+   "Brain Stem Infarction",
+   "Brainstem Infarctions",
+   "Brain Stem Infarcts",
+   "Brainstem Stroke",
+   "Claude Syndrome",
+   "Foville Syndrome",
+   "Infarct, Brain Stem",
+   "Infarction, Brainstem",
+   "Infarction, Brain Stem",
+   "Infarctions, Brainstem",
+   "Infarctions, Brain Stem",
+   "Infarcts, Brain Stem",
+   "Millard Gublar Syndrome",
+   "Millard-Gublar Syndrome",
+   "Stem Infarct, Brain",
+   "Stem Infarcts, Brain",
+   "Stroke, Brainstem",
+   "Syndrome, Millard-Gublar",
+   "Top of the Basilar Syndrome",
+   "Weber Syndrome"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Nervous system disease",
+   "Pathology (process)"
+  ]
+ },
+ "MESH:D002056": {
+  "name": "Burns",
+  "definition": "Injuries to tissues caused by contact with heat, steam, chemicals (BURNS, CHEMICAL), electricity (BURNS, ELECTRIC), or the like.",
+  "parents": [
+   "MESH:D014947"
+  ],
+  "synonyms": [
+   "Burn"
+  ],
+  "slim_terms": [
+   "Wounds and injuries"
+  ]
+ },
+ "MESH:D002062": {
+  "name": "Bursitis",
+  "definition": "Inflammation or irritation of a SYNOVIAL BURSA, the fibrous sac that acts as a cushion between moving structures of bones, muscles, tendons or skin.",
+  "parents": [
+   "MESH:D007592"
+  ],
+  "synonyms": [
+   "Adhesive Capsulitides",
+   "Adhesive Capsulitides, Shoulder",
+   "Adhesive Capsulitis",
+   "Adhesive Capsulitis of the Shoulder",
+   "Adhesive Capsulitis, Shoulder",
+   "Bursitides",
+   "Bursitides, Pes Anserine",
+   "Bursitis, Pes Anserine",
+   "Capsulitides",
+   "Capsulitides, Adhesive",
+   "Capsulitides, Shoulder Adhesive",
+   "Capsulitis",
+   "Capsulitis, Adhesive",
+   "Capsulitis, Shoulder Adhesive",
+   "Frozen Shoulder",
+   "Frozen Shoulders",
+   "Pes Anserine Bursitides",
+   "Pes Anserine Bursitis",
+   "Shoulder Adhesive Capsulitides",
+   "Shoulder Adhesive Capsulitis",
+   "Shoulder, Frozen"
+  ],
+  "slim_terms": [
+   "Musculoskeletal disease"
+  ]
+ },
+ "MESH:D002311": {
+  "name": "Cardiomyopathy, Dilated",
+  "definition": "A form of CARDIAC MUSCLE disease that is characterized by ventricular dilation, VENTRICULAR DYSFUNCTION, and HEART FAILURE. Risk factors include SMOKING; ALCOHOL DRINKING; HYPERTENSION; INFECTION; PREGNANCY; and mutations in the LMNA gene encoding LAMIN TYPE A, a NUCLEAR LAMINA protein.",
+  "parents": [
+   "MESH:D000083083",
+   "MESH:D006332",
+   "MESH:D009202"
+  ],
+  "synonyms": [
+   "Cardiomyopathies, Congestive",
+   "Cardiomyopathies, Dilated",
+   "Cardiomyopathies, Familial Idiopathic",
+   "Cardiomyopathies, Idiopathic Dilated",
+   "Cardiomyopathy, Congestive",
+   "Cardiomyopathy, Dilated, 1a",
+   "CARDIOMYOPATHY, DILATED, 1GG",
+   "CARDIOMYOPATHY, DILATED, 1R",
+   "Cardiomyopathy, Dilated, Autosomal Recessive",
+   "Cardiomyopathy, Dilated, CMD1A",
+   "Cardiomyopathy, Dilated, LMNA",
+   "Cardiomyopathy, Dilated, With Conduction Defect 1",
+   "Cardiomyopathy, Dilated, with Conduction Deffect1",
+   "Cardiomyopathy, Familial Idiopathic",
+   "Cardiomyopathy, Idiopathic Dilated",
+   "CDCD1",
+   "CMD1A",
+   "CMD1GG",
+   "CMD1R",
+   "Congestive Cardiomyopathies",
+   "Congestive Cardiomyopathy",
+   "Dilated Cardiomyopathies",
+   "Dilated Cardiomyopathies, Idiopathic",
+   "Dilated Cardiomyopathy",
+   "Dilated Cardiomyopathy, Idiopathic",
+   "Familial Idiopathic Cardiomyopathies",
+   "Familial Idiopathic Cardiomyopathy",
+   "Idiopathic Cardiomyopathies, Familial",
+   "Idiopathic Cardiomyopathy, Familial",
+   "Idiopathic Dilated Cardiomyopathies",
+   "Idiopathic Dilated Cardiomyopathy",
+   "LEFT VENTRICULAR NONCOMPACTION 4, INCLUDED",
+   "LVNC4, INCLUDED"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Genetic disease (inborn)"
+  ]
+ },
+ "MESH:D002544": {
+  "name": "Cerebral Infarction",
+  "definition": "The formation of an area of NECROSIS in the CEREBRUM caused by an insufficiency of arterial or venous blood flow. Infarcts of the cerebrum are generally classified by hemisphere (i.e., left vs. right), lobe (e.g., frontal lobe infarction), arterial distribution (e.g., INFARCTION, ANTERIOR CEREBRAL ARTERY), and etiology (e.g., embolic infarction).",
+  "parents": [
+   "MESH:D020520"
+  ],
+  "synonyms": [
+   "Anterior Choroidal Artery Infarction",
+   "Cerebral Infarct",
+   "Cerebral Infarction, Left Hemisphere",
+   "Cerebral Infarction, Right Hemisphere",
+   "Cerebral Infarctions",
+   "Cerebral Infarcts",
+   "Cerebral, Left Hemisphere, Infarction",
+   "Cerebral, Right Hemisphere, Infarction",
+   "Infarct, Cerebral",
+   "Infarction, Cerebral",
+   "Infarction, Cerebral, Left Hemisphere",
+   "Infarction, Cerebral, Right Hemisphere",
+   "Infarction, Left Hemisphere, Cerebral",
+   "Infarction, Right Hemisphere, Cerebral",
+   "Infarctions, Cerebral",
+   "Infarctions, Subcortical",
+   "Infarction, Subcortical",
+   "Infarcts, Cerebral",
+   "Left Hemisphere, Cerebral Infarction",
+   "Left Hemisphere, Infarction, Cerebral",
+   "Posterior Choroidal Artery Infarction",
+   "Right Hemisphere, Cerebral Infarction",
+   "Right Hemisphere, Infarction, Cerebral",
+   "Subcortical Infarction",
+   "Subcortical Infarctions"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Nervous system disease",
+   "Pathology (process)"
+  ]
+ },
+ "MESH:D003093": {
+  "name": "Colitis, Ulcerative",
+  "definition": "Inflammation of the COLON that is predominantly confined to the MUCOSA. Its major symptoms include DIARRHEA, rectal BLEEDING, the passage of MUCUS, and ABDOMINAL PAIN.",
+  "parents": [
+   "MESH:D003092",
+   "MESH:D015212"
+  ],
+  "synonyms": [
+   "Colitis Gravis",
+   "IBD11",
+   "Idiopathic Proctocolitis",
+   "INFLAMMATORY BOWEL DISEASE 11",
+   "Inflammatory Bowel Disease, Ulcerative Colitis Type",
+   "Ulcerative Colitis"
+  ],
+  "slim_terms": [
+   "Digestive system disease"
+  ]
+ },
+ "MESH:D003324": {
+  "name": "Coronary Artery Disease",
+  "definition": "Pathological processes of CORONARY ARTERIES that may derive from a congenital abnormality, atherosclerotic, or non-atherosclerotic cause.",
+  "parents": [
+   "MESH:D001161",
+   "MESH:D003327"
+  ],
+  "synonyms": [
+   "Arterioscleroses, Coronary",
+   "Arteriosclerosis, Coronary",
+   "Artery Disease, Coronary",
+   "Artery Diseases, Coronary",
+   "Atheroscleroses, Coronary",
+   "Atherosclerosis, Coronary",
+   "Coronary Arterioscleroses",
+   "Coronary Arteriosclerosis",
+   "Coronary Artery Diseases",
+   "Coronary Atheroscleroses",
+   "Coronary Atherosclerosis",
+   "Left Main Coronary Artery Disease",
+   "Left Main Coronary Disease",
+   "Left Main Disease",
+   "Left Main Diseases"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease"
+  ]
+ },
+ "MESH:D003327": {
+  "name": "Coronary Disease",
+  "definition": "An imbalance between myocardial functional requirements and the capacity of the CORONARY VESSELS to supply sufficient blood flow. It is a form of MYOCARDIAL ISCHEMIA (insufficient blood supply to the heart muscle) caused by a decreased capacity of the coronary vessels.",
+  "parents": [
+   "MESH:D017202"
+  ],
+  "synonyms": [
+   "CHDS1",
+   "CHDS2",
+   "CHDS3",
+   "CHDS4",
+   "CHDS5",
+   "CHDS6",
+   "CHDS7",
+   "CHDS8",
+   "CHDS9",
+   "CORONARY ARTERY DISEASE, EARLY-ONSET",
+   "Coronary Diseases",
+   "Coronary Heart Disease",
+   "Coronary Heart Diseases",
+   "CORONARY HEART DISEASE, SUSCEPTIBILITY TO, 1",
+   "CORONARY HEART DISEASE, SUSCEPTIBILITY TO, 2",
+   "CORONARY HEART DISEASE, SUSCEPTIBILITY TO, 3",
+   "CORONARY HEART DISEASE, SUSCEPTIBILITY TO, 4",
+   "CORONARY HEART DISEASE, SUSCEPTIBILITY TO, 5",
+   "CORONARY HEART DISEASE, SUSCEPTIBILITY TO, 6",
+   "CORONARY HEART DISEASE, SUSCEPTIBILITY TO, 7",
+   "CORONARY HEART DISEASE, SUSCEPTIBILITY TO, 8",
+   "CORONARY HEART DISEASE, SUSCEPTIBILITY TO, 9",
+   "Disease, Coronary",
+   "Disease, Coronary Heart",
+   "Diseases, Coronary",
+   "Diseases, Coronary Heart",
+   "Heart Disease, Coronary",
+   "Heart Diseases, Coronary"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease"
+  ]
+ },
+ "MESH:D003876": {
+  "name": "Dermatitis, Atopic",
+  "definition": "A chronic inflammatory genetically determined disease of the skin marked by increased ability to form reagin (IgE), with increased susceptibility to allergic rhinitis and asthma, and hereditary disposition to a lowered threshold for pruritus. It is manifested by lichenification, excoriation, and crusting, mainly on the flexural surfaces of the elbow and knee. In infants it is known as infantile eczema.",
+  "parents": [
+   "MESH:D003872",
+   "MESH:D006969",
+   "MESH:D012873",
+   "MESH:D017443"
+  ],
+  "synonyms": [
+   "Atopic Dermatitis",
+   "Atopic Eczema",
+   "Atopic Neurodermatitis",
+   "Disseminated Neurodermatitis",
+   "Eczema, Atopic",
+   "Eczema, Infantile",
+   "Infantile Eczema",
+   "Neurodermatitis, Atopic",
+   "Neurodermatitis, Disseminated"
+  ],
+  "slim_terms": [
+   "Genetic disease (inborn)",
+   "Immune system disease",
+   "Skin disease"
+  ]
+ },
+ "MESH:D003920": {
+  "name": "Diabetes Mellitus",
+  "definition": "A heterogeneous group of disorders characterized by HYPERGLYCEMIA and GLUCOSE INTOLERANCE.",
+  "parents": [
+   "MESH:D004700",
+   "MESH:D044882"
+  ],
+  "synonyms": [],
+  "slim_terms": [
+   "Endocrine system disease",
+   "Metabolic disease"
+  ]
+ },
+ "MESH:D003924": {
+  "name": "Diabetes Mellitus, Type 2",
+  "definition": "A subclass of DIABETES MELLITUS that is not INSULIN-responsive or dependent (NIDDM). It is characterized initially by INSULIN RESISTANCE and HYPERINSULINEMIA; and eventually by GLUCOSE INTOLERANCE; HYPERGLYCEMIA; and overt diabetes. Type II diabetes mellitus is no longer considered a disease exclusively found in adults. Patients seldom develop KETOSIS but often exhibit OBESITY.",
+  "parents": [
+   "MESH:D003920"
+  ],
+  "synonyms": [
+   "Adult-Onset Diabetes Mellitus",
+   "Diabetes, Maturity-Onset",
+   "Diabetes Mellitus, Adult Onset",
+   "Diabetes Mellitus, Adult-Onset",
+   "Diabetes Mellitus, Ketosis Resistant",
+   "Diabetes Mellitus, Ketosis-Resistant",
+   "Diabetes Mellitus, Maturity Onset",
+   "Diabetes Mellitus, Maturity-Onset",
+   "Diabetes Mellitus, Noninsulin Dependent",
+   "Diabetes Mellitus, Noninsulin-Dependent",
+   "Diabetes Mellitus, Non Insulin Dependent",
+   "Diabetes Mellitus, Non-Insulin-Dependent",
+   "Diabetes Mellitus, Slow Onset",
+   "Diabetes Mellitus, Slow-Onset",
+   "Diabetes Mellitus, Stable",
+   "DIABETES MELLITUS, TYPE 2, PROTECTION AGAINST, INCLUDED",
+   "Diabetes Mellitus, Type II",
+   "Diabetes, Type 2",
+   "Ketosis-Resistant Diabetes Mellitus",
+   "Maturity Onset Diabetes",
+   "Maturity-Onset Diabetes",
+   "MATURITY-ONSET DIABETES INSULIN RESISTANCE, SUSCEPTIBILITY TO, INCLUDED",
+   "Maturity Onset Diabetes Mellitus",
+   "Maturity-Onset Diabetes Mellitus",
+   "MODY",
+   "NIDDM",
+   "Noninsulin Dependent Diabetes Mellitus",
+   "Noninsulin-Dependent Diabetes Mellitus",
+   "Non-Insulin-Dependent Diabetes Mellitus",
+   "Slow-Onset Diabetes Mellitus",
+   "Stable Diabetes Mellitus",
+   "T2D",
+   "Type 2 Diabetes",
+   "Type 2 Diabetes Mellitus"
+  ],
+  "slim_terms": [
+   "Endocrine system disease",
+   "Metabolic disease"
+  ]
+ },
+ "MESH:D003928": {
+  "name": "Diabetic Nephropathies",
+  "definition": "KIDNEY injuries associated with diabetes mellitus and affecting KIDNEY GLOMERULUS; ARTERIOLES; KIDNEY TUBULES; and the interstitium. Clinical signs include persistent PROTEINURIA, from microalbuminuria progressing to ALBUMINURIA of greater than 300 mg/24 h, leading to reduced GLOMERULAR FILTRATION RATE and END-STAGE RENAL DISEASE.",
+  "parents": [
+   "MESH:D007674",
+   "MESH:D048909"
+  ],
+  "synonyms": [
+   "Diabetic Glomerulosclerosis",
+   "Diabetic Kidney Disease",
+   "Diabetic Kidney Diseases",
+   "Diabetic Nephropathy",
+   "Glomerulosclerosis, Diabetic",
+   "Glomerulosclerosis, Nodular",
+   "Intracapillary Glomerulosclerosis",
+   "Kidney Disease, Diabetic",
+   "Kidney Diseases, Diabetic",
+   "Kimmelstiel Wilson Disease",
+   "Kimmelstiel-Wilson Disease",
+   "Kimmelstiel Wilson Syndrome",
+   "Kimmelstiel-Wilson Syndrome",
+   "Nephropathies, Diabetic",
+   "Nephropathy, Diabetic",
+   "Nodular Glomerulosclerosis",
+   "Syndrome, Kimmelstiel-Wilson"
+  ],
+  "slim_terms": [
+   "Endocrine system disease",
+   "Urogenital disease (female)",
+   "Urogenital disease (male)"
+  ]
+ },
+ "MESH:D003967": {
+  "name": "Diarrhea",
+  "definition": "An increased liquidity or decreased consistency of FECES, such as running stool. Fecal consistency is related to the ratio of water-holding capacity of insoluble solids to total water, rather than the amount of water present. Diarrhea is not hyperdefecation or increased fecal weight.",
+  "parents": [
+   "MESH:D012817"
+  ],
+  "synonyms": [
+   "DIAR6",
+   "DIAR7",
+   "DIARRHEA 6",
+   "DIARRHEA 7, PROTEIN-LOSING ENTEROPATHY TYPE",
+   "Diarrheas"
+  ],
+  "slim_terms": [
+   "Signs and symptoms"
+  ]
+ },
+ "MESH:D004374": {
+  "name": "Ductus Arteriosus, Patent",
+  "definition": "A congenital heart defect characterized by the persistent opening of fetal DUCTUS ARTERIOSUS that connects the PULMONARY ARTERY to the descending aorta (AORTA, DESCENDING) allowing unoxygenated blood to bypass the lung and flow to the PLACENTA. Normally, the ductus is closed shortly after birth.",
+  "parents": [
+   "MESH:D006330"
+  ],
+  "synonyms": [
+   "Patency of the Ductus Arteriosus",
+   "Patent Ductus Arteriosus",
+   "PATENT DUCTUS ARTERIOSUS 1",
+   "PATENT DUCTUS ARTERIOSUS 2",
+   "PATENT DUCTUS ARTERIOSUS 3",
+   "Patent Ductus Arteriosus Familial",
+   "PDA",
+   "PDA1",
+   "PDA2",
+   "PDA3"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Congenital abnormality"
+  ]
+ },
+ "MESH:D050171": {
+  "name": "Dyslipidemias",
+  "definition": "Abnormalities in the serum levels of LIPIDS, including overproduction or deficiency. Abnormal serum lipid profiles may include high total CHOLESTEROL, high TRIGLYCERIDES, low HIGH DENSITY LIPOPROTEIN CHOLESTEROL, and elevated LOW DENSITY LIPOPROTEIN CHOLESTEROL.",
+  "parents": [
+   "MESH:D052439"
+  ],
+  "synonyms": [
+   "Dyslipidemia",
+   "Dyslipoproteinemia",
+   "Dyslipoproteinemias"
+  ],
+  "slim_terms": [
+   "Metabolic disease"
+  ]
+ },
+ "MESH:D004412": {
+  "name": "Dysmenorrhea",
+  "definition": "Painful menstruation.",
+  "parents": [
+   "MESH:D008599",
+   "MESH:D017699"
+  ],
+  "synonyms": [
+   "Dysmenorrheas",
+   "Menstrual Pain",
+   "Menstrual Pains",
+   "Menstruation, Painful",
+   "Menstruations, Painful",
+   "Painful Menstruation",
+   "Painful Menstruations",
+   "Pain, Menstrual",
+   "Pains, Menstrual"
+  ],
+  "slim_terms": [
+   "Pathology (process)",
+   "Signs and symptoms"
+  ]
+ },
+ "MESH:D004417": {
+  "name": "Dyspnea",
+  "definition": "Difficult or labored breathing.",
+  "parents": [
+   "MESH:D012120",
+   "MESH:D012818"
+  ],
+  "synonyms": [
+   "Breathlessness",
+   "Breath Shortness",
+   "Dyspnea, Recumbent",
+   "Dyspnea, Rest",
+   "Dyspneas, Rest",
+   "Orthopnea",
+   "Platypnea",
+   "Recumbent Dyspnea",
+   "Rest Dyspnea",
+   "Shortness of Breath",
+   "Trepopnea"
+  ],
+  "slim_terms": [
+   "Respiratory tract disease",
+   "Signs and symptoms"
+  ]
+ },
+ "MESH:D004487": {
+  "name": "Edema",
+  "definition": "Abnormal fluid accumulation in TISSUES or body cavities. Most cases of edema are present under the SKIN in SUBCUTANEOUS TISSUE.",
+  "parents": [
+   "MESH:D012816"
+  ],
+  "synonyms": [
+   "Anasarca",
+   "Dropsy",
+   "Hydrops"
+  ],
+  "slim_terms": [
+   "Signs and symptoms"
+  ]
+ },
+ "MESH:D007172": {
+  "name": "Erectile Dysfunction",
+  "definition": "The inability in the male to have a PENILE ERECTION due to psychological or organ dysfunction.",
+  "parents": [
+   "MESH:D005832",
+   "MESH:D012735",
+   "MESH:D020018"
+  ],
+  "synonyms": [
+   "Dysfunction, Erectile",
+   "Impotence",
+   "Impotence, Male",
+   "Impotence, Male Sexual",
+   "Male Impotence",
+   "Male Sexual Impotence",
+   "Sexual Impotence, Male"
+  ],
+  "slim_terms": [
+   "Mental disorder",
+   "Urogenital disease (male)"
+  ]
+ },
+ "MESH:D000075222": {
+  "name": "Essential Hypertension",
+  "definition": "Hypertension that occurs without known cause, or preexisting renal disease. Associated polymorphisms for a number of genes have been identified, including AGT, GNB3, and ECE1. OMIM: 145500",
+  "parents": [
+   "MESH:D006973"
+  ],
+  "synonyms": [
+   "EHT",
+   "Hypertension, Essential",
+   "HYPERTENSION, ESSENTIAL, BODY MASS-RELATED",
+   "HYPERTENSION, ESSENTIAL, KIDNEY FUNCTION-RELATED",
+   "HYPERTENSION, ESSENTIAL, SUSCEPTIBILITY TO, 1",
+   "HYPERTENSION, ESSENTIAL, SUSCEPTIBILITY TO, 2",
+   "HYPERTENSION, ESSENTIAL, SUSCEPTIBILITY TO, 3",
+   "HYPERTENSION, ESSENTIAL, SUSCEPTIBILITY TO, 4",
+   "HYPERTENSION, ESSENTIAL, SUSCEPTIBILITY TO, 5",
+   "HYPERTENSION, ESSENTIAL, SUSCEPTIBILITY TO, 6",
+   "HYPERTENSION, ESSENTIAL, SUSCEPTIBILITY TO, 7",
+   "HYPERTENSION, ESSENTIAL, SUSCEPTIBILITY TO, 8",
+   "Hypertension, Primary",
+   "Hypertensions, Primary",
+   "HYT1",
+   "HYT2",
+   "HYT3",
+   "HYT4",
+   "HYT5",
+   "HYT6",
+   "HYT7",
+   "HYT8",
+   "Primary Hypertension",
+   "Primary Hypertensions"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease"
+  ]
+ },
+ "MESH:D005157": {
+  "name": "Facial Pain",
+  "definition": "Pain in the facial region including orofacial pain and craniofacial pain. Associated conditions include local inflammatory and neoplastic disorders and neuralgic syndromes involving the trigeminal, facial, and glossopharyngeal nerves. Conditions which feature recurrent or persistent facial pain as the primary manifestation of disease are referred to as FACIAL PAIN SYNDROMES.",
+  "parents": [
+   "MESH:D010146"
+  ],
+  "synonyms": [
+   "Craniofacial Pain",
+   "Face Pain",
+   "Facial Pain, Neuralgic",
+   "Myofacial Pain",
+   "Neuralgic Facial Pain",
+   "Orofacial Pain",
+   "Pain, Craniofacial",
+   "Pain, Face",
+   "Pain, Facial",
+   "Pain, Myofacial",
+   "Pain, Neuralgic Facial",
+   "Pain, Orofacial"
+  ],
+  "slim_terms": [
+   "Signs and symptoms"
+  ]
+ },
+ "MESH:D005334": {
+  "name": "Fever",
+  "definition": "An abnormal elevation of body temperature, usually as a result of a pathologic process.",
+  "parents": [
+   "MESH:D001832"
+  ],
+  "synonyms": [
+   "Fevers",
+   "Pyrexia",
+   "Pyrexias"
+  ],
+  "slim_terms": [
+   "Signs and symptoms"
+  ]
+ },
+ "MESH:D005401": {
+  "name": "Fissure in Ano",
+  "definition": "A painful linear tear at the margin of the anus. It appears as a crack or slit in the mucous membrane of the anus and is very painful and difficult to heal.",
+  "parents": [
+   "MESH:D001004"
+  ],
+  "synonyms": [
+   "Anal Fissure",
+   "Anal Ulcer",
+   "Anal Ulcers",
+   "Fissure, Anal",
+   "Ulcer, Anal",
+   "Ulcers, Anal"
+  ],
+  "slim_terms": [
+   "Digestive system disease"
+  ]
+ },
+ "MESH:C537067": {
+  "name": "Focal cortical dysplasia of Taylor",
+  "definition": "",
+  "parents": [
+   "MESH:D004827",
+   "MESH:D065703"
+  ],
+  "synonyms": [
+   "CDT",
+   "CDTBC, INCLUDED",
+   "CDTD, INCLUDED",
+   "Cortical dysplasia of Taylor",
+   "CORTICAL DYSPLASIA OF TAYLOR, DYSPLASIA ONLY, INCLUDED",
+   "Cortical Dysplasia of Taylor with Balloon Cells",
+   "CORTICAL DYSPLASIA OF TAYLOR WITH BALLOON CELLS, INCLUDED",
+   "CORTICAL DYSPLASIA OF TAYLOR WITHOUT BALLOON CELLS, INCLUDED",
+   "FCD2 FOCAL CORTICAL DYSPLASIA, TYPE IIA, INCLUDED",
+   "FCD IIA, INCLUDED",
+   "FCD IIB, INCLUDED",
+   "FCDT",
+   "FCORD2",
+   "FCORD2A, INCLUDED",
+   "FCORD2B, INCLUDED",
+   "FOCAL CORTICAL DYSPLASIA OF TAYLOR",
+   "Focal Cortical Dysplasia of Taylor, Type IIa",
+   "Focal Cortical Dysplasia of Taylor, Type IIb",
+   "Focal cortical dysplasia, type 2",
+   "Focal Cortical Dysplasia, Type II",
+   "FOCAL CORTICAL DYSPLASIA, TYPE IIB, INCLUDED"
+  ],
+  "slim_terms": [
+   "Congenital abnormality",
+   "Nervous system disease"
+  ]
+ },
+ "MESH:D005901": {
+  "name": "Glaucoma",
+  "definition": "An ocular disease, occurring in many forms, having as its primary characteristics an unstable or a sustained increase in the intraocular pressure which the eye cannot withstand without damage to its structure or impairment of its function. The consequences of the increased pressure may be manifested in a variety of symptoms, depending upon type and severity, such as excavation of the optic disk, hardness of the eyeball, corneal anesthesia, reduced visual acuity, seeing of colored halos around lights, disturbed dark adaptation, visual field defects, and headaches. (Dictionary of Visual Science, 4th ed)",
+  "parents": [
+   "MESH:D009798"
+  ],
+  "synonyms": [
+   "Glaucomas"
+  ],
+  "slim_terms": [
+   "Eye disease"
+  ]
+ },
+ "MESH:D005902": {
+  "name": "Glaucoma, Open-Angle",
+  "definition": "Glaucoma in which the angle of the anterior chamber is open and the trabecular meshwork does not encroach on the base of the iris.",
+  "parents": [
+   "MESH:D005901"
+  ],
+  "synonyms": [
+   "Chronic Primary Open Angle Glaucoma",
+   "Compensated Glaucoma",
+   "Compensative Glaucoma",
+   "GLAUCOMA 1, OPEN ANGLE, E, INCLUDED",
+   "Glaucoma, Compensated",
+   "Glaucoma, Compensative",
+   "Glaucoma, Open Angle",
+   "Glaucoma, Pigmentary",
+   "Glaucoma, Primary Open Angle",
+   "GLAUCOMA, PRIMARY OPEN ANGLE, ADULT-ONSET, INCLUDED",
+   "Glaucoma, Secondary Open Angle",
+   "Glaucoma, Simple",
+   "Glaucoma Simplex",
+   "GLC1E, INCLUDED",
+   "Open Angle Glaucoma",
+   "Open-Angle Glaucoma",
+   "Open Angle Glaucomas",
+   "Open-Angle Glaucomas",
+   "Pigmentary Glaucoma",
+   "POAG",
+   "Primary Open Angle Glaucoma",
+   "Secondary Open Angle Glaucoma",
+   "Simple Glaucoma",
+   "Simplex, Glaucoma",
+   "Simplices, Glaucoma"
+  ],
+  "slim_terms": [
+   "Eye disease"
+  ]
+ },
+ "MESH:D005921": {
+  "name": "Glomerulonephritis",
+  "definition": "Inflammation of the renal glomeruli (KIDNEY GLOMERULUS) that can be classified by the type of glomerular injuries including antibody deposition, complement activation, cellular proliferation, and glomerulosclerosis. These structural and functional abnormalities usually lead to HEMATURIA; PROTEINURIA; HYPERTENSION; and RENAL INSUFFICIENCY.",
+  "parents": [
+   "MESH:D009393"
+  ],
+  "synonyms": [
+   "Bright Disease",
+   "Glomerulonephritides",
+   "Kidney Scarring",
+   "Scarring, Kidney"
+  ],
+  "slim_terms": [
+   "Urogenital disease (female)",
+   "Urogenital disease (male)"
+  ]
+ },
+ "MESH:D006261": {
+  "name": "Headache",
+  "definition": "The symptom of PAIN in the cranial region. It may be an isolated benign occurrence or manifestation of a wide variety of HEADACHE DISORDERS.",
+  "parents": [
+   "MESH:D010146"
+  ],
+  "synonyms": [
+   "Bilateral Headache",
+   "Bilateral Headaches",
+   "Cephalalgia",
+   "Cephalalgias",
+   "Cephalgia",
+   "Cephalgias",
+   "Cephalodynia",
+   "Cephalodynias",
+   "Cranial Pain",
+   "Cranial Pains",
+   "Generalized Headache",
+   "Generalized Headaches",
+   "Headache, Bilateral",
+   "Headache, Generalized",
+   "Headache, Ocular",
+   "Headache, Orthostatic",
+   "Headache, Periorbital",
+   "Headache, Retro-Ocular",
+   "Headaches",
+   "Headaches, Bilateral",
+   "Headaches, Generalized",
+   "Headache, Sharp",
+   "Headaches, Ocular",
+   "Headaches, Orthostatic",
+   "Headaches, Periorbital",
+   "Headaches, Retro-Ocular",
+   "Headaches, Sharp",
+   "Headaches, Throbbing",
+   "Headaches, Unilateral",
+   "Headaches, Vertex",
+   "Headache, Throbbing",
+   "Headache, Unilateral",
+   "Headache, Vertex",
+   "Head Pain",
+   "Head Pains",
+   "Hemicrania",
+   "Ocular Headache",
+   "Ocular Headaches",
+   "Orthostatic Headache",
+   "Orthostatic Headaches",
+   "Pain, Cranial",
+   "Pain, Head",
+   "Pains, Cranial",
+   "Pains, Head",
+   "Periorbital Headache",
+   "Periorbital Headaches",
+   "Retro Ocular Headache",
+   "Retro-Ocular Headache",
+   "Retro-Ocular Headaches",
+   "Sharp Headache",
+   "Sharp Headaches",
+   "Throbbing Headache",
+   "Throbbing Headaches",
+   "Unilateral Headache",
+   "Unilateral Headaches",
+   "Vertex Headache",
+   "Vertex Headaches"
+  ],
+  "slim_terms": [
+   "Signs and symptoms"
+  ]
+ },
+ "MESH:D006323": {
+  "name": "Heart Arrest",
+  "definition": "Cessation of heart beat or MYOCARDIAL CONTRACTION. If it is treated within a few minutes, heart arrest can be reversed in most cases to normal cardiac rhythm and effective circulation.",
+  "parents": [
+   "MESH:D006331"
+  ],
+  "synonyms": [
+   "Arrest, Cardiac",
+   "Arrest, Cardiopulmonary",
+   "Arrest, Heart",
+   "Asystole",
+   "Asystoles",
+   "Cardiac Arrest",
+   "Cardiopulmonary Arrest"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease"
+  ]
+ },
+ "MESH:D006333": {
+  "name": "Heart Failure",
+  "definition": "A heterogeneous condition in which the heart is unable to pump out sufficient blood to meet the metabolic need of the body. Heart failure can be caused by structural defects, functional abnormalities (VENTRICULAR DYSFUNCTION), or a sudden overload beyond its capacity. Chronic heart failure is more common than acute heart failure which results from sudden insult to cardiac function, such as MYOCARDIAL INFARCTION.",
+  "parents": [
+   "MESH:D006331"
+  ],
+  "synonyms": [
+   "Cardiac Failure",
+   "Congestive Heart Failure",
+   "Decompensation, Heart",
+   "Heart Decompensation",
+   "Heart Failure, Congestive",
+   "Heart Failure, Left Sided",
+   "Heart Failure, Left-Sided",
+   "Heart Failure, Right Sided",
+   "Heart Failure, Right-Sided",
+   "Left Sided Heart Failure",
+   "Left-Sided Heart Failure",
+   "Myocardial Failure",
+   "Right Sided Heart Failure",
+   "Right-Sided Heart Failure"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease"
+  ]
+ },
+ "MESH:D006470": {
+  "name": "Hemorrhage",
+  "definition": "Bleeding or escape of blood from a vessel.",
+  "parents": [
+   "MESH:D010335"
+  ],
+  "synonyms": [
+   "Bleeding",
+   "Hemorrhages"
+  ],
+  "slim_terms": [
+   "Pathology (process)"
+  ]
+ },
+ "MESH:D006484": {
+  "name": "Hemorrhoids",
+  "definition": "Swollen veins in the lower part of the RECTUM or ANUS. Hemorrhoids can be inside the anus (internal), under the skin around the anus (external), or protruding from inside to outside of the anus. People with hemorrhoids may or may not exhibit symptoms which include bleeding, itching, and pain.",
+  "parents": [
+   "MESH:D012002",
+   "MESH:D014652"
+  ],
+  "synonyms": [
+   "Hemorrhoid"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Digestive system disease"
+  ]
+ },
+ "MESH:D000090542": {
+  "name": "Homozygous Familial Hypercholesterolemia",
+  "definition": "A rare inherited genetic disorder, one form of HYPERLIPOPROTEINEMIA TYPE II, characterized by high level of LOW-DENSITY LIPOPROTEIN (LDL) which if not treated could elevate the chance of heart attack at an early age.",
+  "parents": [
+   "MESH:D006938"
+  ],
+  "synonyms": [
+   "HoFH",
+   "Hypercholesterolemias, Homozygous Familial"
+  ],
+  "slim_terms": [
+   "Genetic disease (inborn)",
+   "Metabolic disease"
+  ]
+ },
+ "MESH:D006929": {
+  "name": "Hyperaldosteronism",
+  "definition": "A condition caused by the overproduction of ALDOSTERONE. It is characterized by sodium retention and potassium excretion with resultant HYPERTENSION and HYPOKALEMIA.",
+  "parents": [
+   "MESH:D000308"
+  ],
+  "synonyms": [
+   "Aldosteronism",
+   "Conn's Syndrome",
+   "Conns Syndrome",
+   "Conn Syndrome",
+   "Hyperaldosteronism, Primary",
+   "Primary Hyperaldosteronism",
+   "Syndrome, Conn",
+   "Syndrome, Conn's"
+  ],
+  "slim_terms": [
+   "Endocrine system disease"
+  ]
+ },
+ "MESH:D006937": {
+  "name": "Hypercholesterolemia",
+  "definition": "A condition with abnormally high levels of CHOLESTEROL in the blood. It is defined as a cholesterol value exceeding the 95th percentile for the population.",
+  "parents": [
+   "MESH:D006949"
+  ],
+  "synonyms": [
+   "Cholesterol, Elevated",
+   "Cholesterol Level, High",
+   "Cholesterol Levels, High",
+   "Cholesterols, Elevated",
+   "Elevated Cholesterol",
+   "Elevated Cholesterols",
+   "High Cholesterol Level",
+   "High Cholesterol Levels",
+   "Hypercholesteremia",
+   "Hypercholesteremias",
+   "Hypercholesterolemias",
+   "Level, High Cholesterol",
+   "Levels, High Cholesterol"
+  ],
+  "slim_terms": [
+   "Metabolic disease"
+  ]
+ },
+ "MESH:D006940": {
+  "name": "Hyperemia",
+  "definition": "The presence of an increased amount of blood in a body part or an organ leading to congestion or engorgement of blood vessels. Hyperemia can be due to increase of blood flow into the area (active or arterial), or due to obstruction of outflow of blood from the area (passive or venous).",
+  "parents": [
+   "MESH:D014652"
+  ],
+  "synonyms": [
+   "Active Hyperemia",
+   "Arterial Hyperemia",
+   "Congestion, Venous",
+   "Engorgement, Venous",
+   "Hyperemia, Active",
+   "Hyperemia, Arterial",
+   "Hyperemia, Passive",
+   "Hyperemia, Reactive",
+   "Hyperemias",
+   "Hyperemias, Reactive",
+   "Passive Hyperemia",
+   "Reactive Hyperemia",
+   "Reactive Hyperemias",
+   "Venous Congestion",
+   "Venous Engorgement"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease"
+  ]
+ },
+ "MESH:D006949": {
+  "name": "Hyperlipidemias",
+  "definition": "Conditions with excess LIPIDS in the blood.",
+  "parents": [
+   "MESH:D050171"
+  ],
+  "synonyms": [
+   "Hyperlipemia",
+   "Hyperlipemias",
+   "Hyperlipidemia",
+   "Lipemia",
+   "Lipemias",
+   "Lipidemia",
+   "Lipidemias"
+  ],
+  "slim_terms": [
+   "Metabolic disease"
+  ]
+ },
+ "MESH:D006938": {
+  "name": "Hyperlipoproteinemia Type II",
+  "definition": "A group of familial disorders characterized by elevated circulating cholesterol contained in either LOW-DENSITY LIPOPROTEINS alone or also in VERY-LOW-DENSITY LIPOPROTEINS (pre-beta lipoproteins).",
+  "parents": [
+   "MESH:D006951",
+   "MESH:D008052"
+  ],
+  "synonyms": [
+   "Apolipoprotein B 100, Familial Defective",
+   "Apolipoprotein B-100, Familial Defective",
+   "Apolipoprotein B 100, Familial Ligand Defective",
+   "Apolipoprotein B-100, Familial Ligand-Defective",
+   "Autosomal Dominant Hypercholesterolemia",
+   "Autosomal Dominant Hypercholesterolemias",
+   "Combined Hyperlipoproteinemia, Familial",
+   "Combined Hyperlipoproteinemias, Familial",
+   "Density Lipoproteinemia, Hyper-Low",
+   "Density Lipoproteinemias, Hyper-Low",
+   "Disorder, LDL Receptor",
+   "Disorders, LDL Receptor",
+   "Dominant Hypercholesterolemia, Autosomal",
+   "Dominant Hypercholesterolemias, Autosomal",
+   "Essential Hypercholesterolemia",
+   "Essential Hypercholesterolemias",
+   "Familial Combined Hyperlipoproteinemia",
+   "Familial Combined Hyperlipoproteinemias",
+   "Familial Hypercholesterolemia",
+   "Familial Hypercholesterolemias",
+   "Familial Hypercholesterolemic Xanthomatoses",
+   "Familial Hypercholesterolemic Xanthomatosis",
+   "FHCL2",
+   "Hyperbetalipoproteinemia",
+   "Hyper beta Lipoproteinemia",
+   "Hyper-beta-Lipoproteinemia",
+   "Hyperbetalipoproteinemias",
+   "Hyper-beta-Lipoproteinemias",
+   "Hypercholesterolemia, Autosomal Dominant",
+   "Hypercholesterolemia, Autosomal Dominant, Type B",
+   "Hypercholesterolemia, Essential",
+   "Hypercholesterolemia, Familial",
+   "HYPERCHOLESTEROLEMIA, FAMILIAL, 2",
+   "HYPERCHOLESTEROLEMIA, FAMILIAL, DUE TO LIGAND-DEFECTIVE APOLIPOPROTEIN B",
+   "Hypercholesterolemias, Autosomal Dominant",
+   "Hypercholesterolemias, Essential",
+   "Hypercholesterolemias, Familial",
+   "Hypercholesterolemic Xanthomatoses, Familial",
+   "Hypercholesterolemic Xanthomatosis, Familial",
+   "Hyperlipoproteinemia, Familial Combined",
+   "Hyperlipoproteinemias, Familial Combined",
+   "Hyperlipoproteinemias, Type II",
+   "Hyperlipoproteinemias, Type IIa",
+   "Hyperlipoproteinemia Type 2",
+   "Hyperlipoproteinemia Type 2s",
+   "Hyperlipoproteinemia, Type II",
+   "Hyperlipoproteinemia Type IIa",
+   "Hyperlipoproteinemia, Type IIa",
+   "Hyperlipoproteinemia Type IIas",
+   "Hyperlipoproteinemia Type IIb",
+   "Hyperlipoproteinemia Type IIbs",
+   "Hyperlipoproteinemia Type IIs",
+   "Hyper Low Density Lipoproteinemia",
+   "Hyper-Low Density Lipoproteinemia",
+   "Hyper-Low-Density-Lipoproteinemia",
+   "Hyper-Low Density Lipoproteinemias",
+   "Hyper-Low-Density-Lipoproteinemias",
+   "LDL Receptor Disorder",
+   "LDL Receptor Disorders",
+   "Lipoproteinemia, Hyper-Low Density",
+   "Lipoproteinemias, Hyper-Low Density",
+   "Receptor Disorder, LDL",
+   "Receptor Disorders, LDL",
+   "Type 2, Hyperlipoproteinemia",
+   "Type IIa Hyperlipoproteinemia",
+   "Type IIa Hyperlipoproteinemias",
+   "Type II Hyperlipoproteinemia",
+   "Type II Hyperlipoproteinemias",
+   "Xanthomatoses, Familial Hypercholesterolemic",
+   "Xanthomatosis, Familial Hypercholesterolemic"
+  ],
+  "slim_terms": [
+   "Genetic disease (inborn)",
+   "Metabolic disease"
+  ]
+ },
+ "MESH:D006952": {
+  "name": "Hyperlipoproteinemia Type III",
+  "definition": "An autosomal recessively inherited disorder characterized by the accumulation of intermediate-density lipoprotein (IDL or broad-beta-lipoprotein). IDL has a CHOLESTEROL to TRIGLYCERIDES ratio greater than that of VERY-LOW-DENSITY LIPOPROTEINS. This disorder is due to mutation of APOLIPOPROTEINS E, a receptor-binding component of VLDL and CHYLOMICRONS, resulting in their reduced clearance and high plasma levels of both cholesterol and triglycerides.",
+  "parents": [
+   "MESH:D006951",
+   "MESH:D008052"
+  ],
+  "synonyms": [
+   "APOLIPOPROTEIN E, DEFICIENCY OR DEFECT OF",
+   "ARH",
+   "ARH1, FORMERLY",
+   "ARH2, FORMERLY",
+   "Autosomal Recessive Hypercholesterolemia",
+   "Autosomal Recessive Hypercholesterolemias",
+   "Broad Beta Disease",
+   "Broad-beta Hyperlipoproteinemia",
+   "BROAD-BETALIPOPROTEINEMIA",
+   "Dysbetalipoproteinemia",
+   "DYSBETALIPOPROTEINEMIA DUE TO DEFECT IN APOLIPOPROTEIN E-d",
+   "Dysbetalipoproteinemia, Familial",
+   "Familial Dysbetalipoproteinemia",
+   "FAMILIAL HYPERBETA- AND PREBETALIPOPROTEINEMIA",
+   "Familial Hypercholesterolemia with Hyperlipemia",
+   "FHCB1, FORMERLY",
+   "FHCB2, FORMERLY",
+   "FHCL4",
+   "FLOATING-BETALIPOPROTEINEMIA CORONARY ARTERY DISEASE, SEVERE, SUSCEPTIBILITY TO, INCLUDED",
+   "Hypercholesterolemia, Autosomal Recessive",
+   "HYPERCHOLESTEROLEMIA, AUTOSOMAL RECESSIVE, 1, FORMERLY",
+   "HYPERCHOLESTEROLEMIA, AUTOSOMAL RECESSIVE, 2, FORMERLY",
+   "HYPERCHOLESTEROLEMIA, FAMILIAL, 4",
+   "HYPERLIPEMIA WITH FAMILIAL HYPERCHOLESTEROLEMIC XANTHOMATOSIS",
+   "Hyperlipoproteinemia, Broad beta",
+   "Hyperlipoproteinemia, Broad-beta",
+   "Hyperlipoproteinemias, Type III",
+   "Hyperlipoproteinemia, Type III",
+   "LDLCQ5, INCLUDED",
+   "LOW DENSITY LIPOPROTEIN CHOLESTEROL LEVEL QUANTITATIVE TRAIT LOCUS 5, INCLUDED",
+   "Recessive Hypercholesterolemia, Autosomal",
+   "Type III Hyperlipoproteinemia",
+   "Type III Hyperlipoproteinemias"
+  ],
+  "slim_terms": [
+   "Genetic disease (inborn)",
+   "Metabolic disease"
+  ]
+ },
+ "MESH:D006953": {
+  "name": "Hyperlipoproteinemia Type IV",
+  "definition": "A hypertriglyceridemia disorder, often with autosomal dominant inheritance. It is characterized by the persistent elevations of plasma TRIGLYCERIDES, endogenously synthesized and contained predominantly in VERY-LOW-DENSITY LIPOPROTEINS (pre-beta lipoproteins). In contrast, the plasma CHOLESTEROL and PHOSPHOLIPIDS usually remain within normal limits.",
+  "parents": [
+   "MESH:D006951",
+   "MESH:D008052",
+   "MESH:D015228"
+  ],
+  "synonyms": [
+   "Carbohydrate Inducible Hyperlipemia",
+   "Carbohydrate-Inducible Hyperlipemia",
+   "Carbohydrate Inducible Hyperlipemias",
+   "Carbohydrate-Inducible Hyperlipemias",
+   "Familial Hyperlipoproteinemia Type 4",
+   "Familial Hypertriglyceridemia",
+   "Familial Type IV Hyperlipoproteinemia",
+   "Hyperlipemia, Carbohydrate Inducible",
+   "Hyperlipemia, Carbohydrate-Inducible",
+   "Hyperlipemias, Carbohydrate Inducible",
+   "Hyperlipemias, Carbohydrate-Inducible",
+   "Hyperlipoproteinemias, Type IV",
+   "Hyperlipoproteinemia, Type IV",
+   "Hyper prebeta lipoproteinemia",
+   "Hyperprebetalipoproteinemia",
+   "HYPERTRIGLYCERIDEMIA 1",
+   "Hypertriglyceridemia, Familial",
+   "HYTG1",
+   "Inducible Hyperlipemia, Carbohydrate",
+   "Inducible Hyperlipemias, Carbohydrate",
+   "Type IV Hyperlipoproteinemia",
+   "Type IV, Hyperlipoproteinemia",
+   "Type IV Hyperlipoproteinemias"
+  ],
+  "slim_terms": [
+   "Genetic disease (inborn)",
+   "Metabolic disease"
+  ]
+ },
+ "MESH:D006954": {
+  "name": "Hyperlipoproteinemia Type V",
+  "definition": "A severe type of hyperlipidemia, sometimes familial, that is characterized by the elevation of both plasma CHYLOMICRONS and TRIGLYCERIDES contained in VERY-LOW-DENSITY LIPOPROTEINS. Type V hyperlipoproteinemia is often associated with DIABETES MELLITUS and is not caused by reduced LIPOPROTEIN LIPASE activity as in HYPERLIPOPROTEINEMIA TYPE I .",
+  "parents": [
+   "MESH:D006951",
+   "MESH:D008052",
+   "MESH:D015228"
+  ],
+  "synonyms": [
+   "Hyperchylomicronemia Late Onset",
+   "Hyperchylomicronemia, Late Onset",
+   "Hyperchylomicronemia, Late-Onset",
+   "Hyperchylomicronemia Late Onsets",
+   "Hyperchylomicronemias, Late-Onset",
+   "Hyperchylomicronemia With Hyperprebetalipoproteinemia, Familial",
+   "Hyperlipemia, Combined Fat And Carbohydrate Induced",
+   "Hyperlipemia, Combined Fat And Carbohydrate-Induced",
+   "Hyperlipemia, Mixed",
+   "Hyperlipemias, Mixed",
+   "Hyperlipidemias, Type V",
+   "Hyperlipidemia, Type V",
+   "Hyperlipoproteinemias, Type V",
+   "Hyperlipoproteinemia Type 5",
+   "Hyperlipoproteinemia Type 5s",
+   "Hyperlipoproteinemia, Type V",
+   "Late-Onset Hyperchylomicronemia",
+   "Late-Onset Hyperchylomicronemias",
+   "Mixed Hyperlipemia",
+   "Mixed Hyperlipemias",
+   "Type V Hyperlipidemia",
+   "Type V Hyperlipidemias",
+   "Type V Hyperlipoproteinemia",
+   "Type V Hyperlipoproteinemias"
+  ],
+  "slim_terms": [
+   "Genetic disease (inborn)",
+   "Metabolic disease"
+  ]
+ },
+ "MESH:D006973": {
+  "name": "Hypertension",
+  "definition": "Persistently high systemic arterial BLOOD PRESSURE. Based on multiple readings (BLOOD PRESSURE DETERMINATION), hypertension is currently defined as when SYSTOLIC PRESSURE is consistently greater than 140 mm Hg or when DIASTOLIC PRESSURE is consistently 90 mm Hg or more.",
+  "parents": [
+   "MESH:D014652"
+  ],
+  "synonyms": [
+   "Blood Pressure, High",
+   "Blood Pressures, High",
+   "High Blood Pressure",
+   "High Blood Pressures"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease"
+  ]
+ },
+ "MESH:D006974": {
+  "name": "Hypertension, Malignant",
+  "definition": "A condition of markedly elevated BLOOD PRESSURE with DIASTOLIC PRESSURE usually greater than 120 mm Hg. Malignant hypertension is characterized by widespread vascular damage, PAPILLEDEMA, retinopathy, HYPERTENSIVE ENCEPHALOPATHY, and renal dysfunction.",
+  "parents": [
+   "MESH:D006973"
+  ],
+  "synonyms": [
+   "Malignant Hypertension"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease"
+  ]
+ },
+ "MESH:D006976": {
+  "name": "Hypertension, Pulmonary",
+  "definition": "Increased VASCULAR RESISTANCE in the PULMONARY CIRCULATION, usually secondary to HEART DISEASES or LUNG DISEASES.",
+  "parents": [
+   "MESH:D006973",
+   "MESH:D008171"
+  ],
+  "synonyms": [
+   "PHT",
+   "PPH1",
+   "PPH1 WITH HHT, INCLUDED",
+   "PULMONARY ARTERIAL HYPERTENSION;PAH PULMONARY HYPERTENSION, PRIMARY, DEXFENFLURAMINE-ASSOCIATED, INCLUDED",
+   "Pulmonary Hypertension",
+   "PULMONARY HYPERTENSION, PRIMARY, 1",
+   "PULMONARY HYPERTENSION, PRIMARY, 1, WITH HEREDITARY HEMORRHAGIC TELANGIECTASIA, INCLUDED",
+   "PULMONARY HYPERTENSION, PRIMARY, FENFLURAMINE-ASSOCIATED, INCLUDED"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Respiratory tract disease"
+  ]
+ },
+ "MESH:D006977": {
+  "name": "Hypertension, Renal",
+  "definition": "Persistent high BLOOD PRESSURE due to KIDNEY DISEASES, such as those involving the renal parenchyma, the renal vasculature, or tumors that secrete RENIN.",
+  "parents": [
+   "MESH:D006973",
+   "MESH:D007674"
+  ],
+  "synonyms": [
+   "Hypertensions, Renal",
+   "Renal Hypertension",
+   "Renal Hypertensions"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Urogenital disease (female)",
+   "Urogenital disease (male)"
+  ]
+ },
+ "MESH:D015228": {
+  "name": "Hypertriglyceridemia",
+  "definition": "A condition of elevated levels of TRIGLYCERIDES in the blood.",
+  "parents": [
+   "MESH:D006949"
+  ],
+  "synonyms": [
+   "Hypertriglyceridemias"
+  ],
+  "slim_terms": [
+   "Metabolic disease"
+  ]
+ },
+ "MESH:D007022": {
+  "name": "Hypotension",
+  "definition": "Abnormally low BLOOD PRESSURE that can result in inadequate blood flow to the brain and other vital organs. Common symptom is DIZZINESS but greater negative impacts on the body occur when there is prolonged depravation of oxygen and nutrients.",
+  "parents": [
+   "MESH:D014652"
+  ],
+  "synonyms": [
+   "Blood Pressure, Low",
+   "Hypotension, Vascular",
+   "Low Blood Pressure",
+   "Vascular Hypotension"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease"
+  ]
+ },
+ "MESH:D007024": {
+  "name": "Hypotension, Orthostatic",
+  "definition": "A significant drop in BLOOD PRESSURE after assuming a standing position. Orthostatic hypotension is a finding, and defined as a 20-mm Hg decrease in systolic pressure or a 10-mm Hg decrease in diastolic pressure 3 minutes after the person has risen from supine to standing. Symptoms generally include DIZZINESS, blurred vision, and SYNCOPE.",
+  "parents": [
+   "MESH:D007022",
+   "MESH:D054971"
+  ],
+  "synonyms": [
+   "Hypotension, Postural",
+   "Orthostatic Hypotension",
+   "Postural Hypotension"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Nervous system disease"
+  ]
+ },
+ "MESH:D007238": {
+  "name": "Infarction",
+  "definition": "Formation of an infarct, which is NECROSIS in tissue due to local ISCHEMIA resulting from obstruction of BLOOD CIRCULATION, most commonly by a THROMBUS or EMBOLUS.",
+  "parents": [
+   "MESH:D007511",
+   "MESH:D009336"
+  ],
+  "synonyms": [
+   "Infarct",
+   "Infarctions",
+   "Infarcts"
+  ],
+  "slim_terms": [
+   "Pathology (process)"
+  ]
+ },
+ "MESH:D002546": {
+  "name": "Ischemic Attack, Transient",
+  "definition": "Brief reversible episodes of focal, nonconvulsive ischemic dysfunction of the brain having a duration of less than 24 hours, and usually less than one hour, caused by transient thrombotic or embolic blood vessel occlusion or stenosis. Events may be classified by arterial distribution, temporal pattern, or etiology (e.g., embolic vs. thrombotic). (From Adams et al., Principles of Neurology, 6th ed, pp814-6)",
+  "parents": [
+   "MESH:D002545"
+  ],
+  "synonyms": [
+   "Anterior Circulation Transient Ischemic Attack",
+   "Attacks, Transient Ischemic",
+   "Attack, Transient Ischemic",
+   "Brainstem Ischemias, Transient",
+   "Brainstem Ischemia, Transient",
+   "Brain Stem Ischemia, Transient",
+   "Brainstem Transient Ischemic Attack",
+   "Brain Stem Transient Ischemic Attack",
+   "Brain TIA",
+   "Carotid Circulation Transient Ischemic Attack",
+   "Cerebral Ischemias, Transient",
+   "Cerebral Ischemia, Transient",
+   "Crescendo Transient Ischemic Attacks",
+   "Ischemias, Transient Brainstem",
+   "Ischemias, Transient Cerebral",
+   "Ischemia, Transient Brainstem",
+   "Ischemia, Transient Cerebral",
+   "Ischemic Attacks, Transient",
+   "Posterior Circulation Transient Ischemic Attack",
+   "TIA, Brain",
+   "TIAs (Transient Ischemic Attack)",
+   "TIA (Transient Ischemic Attack)",
+   "Transient Brainstem Ischemia",
+   "Transient Cerebral Ischemia",
+   "Transient Cerebral Ischemias",
+   "Transient Ischemic Attack",
+   "Transient Ischemic Attack, Anterior Circulation",
+   "Transient Ischemic Attack, Brainstem",
+   "Transient Ischemic Attack, Brain Stem",
+   "Transient Ischemic Attack, Carotid Circulation",
+   "Transient Ischemic Attack, Posterior Circulation",
+   "Transient Ischemic Attacks",
+   "Transient Ischemic Attacks, Crescendo",
+   "Transient Ischemic Attack, Vertebrobasilar Circulation",
+   "Vertebrobasilar Circulation Transient Ischemic Attack"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Nervous system disease"
+  ]
+ },
+ "MESH:D007627": {
+  "name": "Keloid",
+  "definition": "A sharply elevated, irregularly shaped, progressively enlarging scar resulting from formation of excessive amounts of collagen in the dermis during connective tissue repair. It is differentiated from a hypertrophic scar (CICATRIX, HYPERTROPHIC) in that the former does not spread to surrounding tissues.",
+  "parents": [
+   "MESH:D002921",
+   "MESH:D003095"
+  ],
+  "synonyms": [
+   "Keloids"
+  ],
+  "slim_terms": [
+   "Connective tissue disease",
+   "Pathology (process)"
+  ]
+ },
+ "MESH:D007676": {
+  "name": "Kidney Failure, Chronic",
+  "definition": "The end-stage of CHRONIC RENAL INSUFFICIENCY. It is characterized by the severe irreversible kidney damage (as measured by the level of PROTEINURIA) and the reduction in GLOMERULAR FILTRATION RATE to less than 15 ml per min (Kidney Foundation: Kidney Disease Outcome Quality Initiative, 2002). These patients generally require HEMODIALYSIS or KIDNEY TRANSPLANTATION.",
+  "parents": [
+   "MESH:D051436"
+  ],
+  "synonyms": [
+   "Chronic Kidney Failure",
+   "Chronic Renal Failure",
+   "Disease, End-Stage Kidney",
+   "Disease, End-Stage Renal",
+   "End Stage Kidney Disease",
+   "End-Stage Kidney Disease",
+   "End Stage Renal Disease",
+   "End-Stage Renal Disease",
+   "End-Stage Renal Failure",
+   "ESRD",
+   "Kidney Disease, End-Stage",
+   "Renal Disease, End Stage",
+   "Renal Disease, End-Stage",
+   "Renal Failure, Chronic",
+   "Renal Failure, End Stage",
+   "Renal Failure, End-Stage"
+  ],
+  "slim_terms": [
+   "Pathology (process)",
+   "Urogenital disease (female)",
+   "Urogenital disease (male)"
+  ]
+ },
+ "MESH:D008103": {
+  "name": "Liver Cirrhosis",
+  "definition": "Liver disease in which the normal microcirculation, the gross vascular anatomy, and the hepatic architecture have been variably destroyed and altered with fibrous septa surrounding regenerated or regenerating parenchymal nodules.",
+  "parents": [
+   "MESH:D005355",
+   "MESH:D008107"
+  ],
+  "synonyms": [
+   "Cirrhosis, Hepatic",
+   "Cirrhosis, Liver",
+   "Fibrosis, Liver",
+   "Hepatic Cirrhosis",
+   "Liver Fibrosis"
+  ],
+  "slim_terms": [
+   "Digestive system disease",
+   "Pathology (process)"
+  ]
+ },
+ "MESH:D008269": {
+  "name": "Macular Edema",
+  "definition": "Fluid accumulation in the outer layer of the MACULA LUTEA that results from intraocular or systemic insults. It may develop in a diffuse pattern where the macula appears thickened or it may acquire the characteristic petaloid appearance referred to as cystoid macular edema. Although macular edema may be associated with various underlying conditions, it is most commonly seen following intraocular surgery, venous occlusive disease, DIABETIC RETINOPATHY, and posterior segment inflammatory disease. (From Survey of Ophthalmology 2004; 49(5) 470-90)",
+  "parents": [
+   "MESH:D008268"
+  ],
+  "synonyms": [
+   "Central Retinal Edema, Cystoid",
+   "CYMD",
+   "Cystoid Macular Dystrophy",
+   "Cystoid Macular Edema",
+   "Cystoid Macular Edema, Postoperative",
+   "DCMD",
+   "Edema, Cystoid Macular",
+   "Edema, Macular",
+   "Irvine Gass Syndrome",
+   "Irvine-Gass Syndrome",
+   "Macular Dystrophy, Dominant Cystoid",
+   "Macular Edema, Cystoid",
+   "MDDC",
+   "Syndrome, Irvine-Gass"
+  ],
+  "slim_terms": [
+   "Eye disease"
+  ]
+ },
+ "OMIM:157300": {
+  "name": "MIGRAINE WITH OR WITHOUT AURA, SUSCEPTIBILITY TO, 1",
+  "definition": "",
+  "parents": [
+   "MESH:D020325",
+   "MESH:D020326"
+  ],
+  "synonyms": [
+   "MA",
+   "MGAU",
+   "MGR1",
+   "MIGRAINE"
+  ],
+  "slim_terms": [
+   "Nervous system disease"
+  ]
+ },
+ "MESH:D009203": {
+  "name": "Myocardial Infarction",
+  "definition": "NECROSIS of the MYOCARDIUM caused by an obstruction of the blood supply to the heart (CORONARY CIRCULATION).",
+  "parents": [
+   "MESH:D007238",
+   "MESH:D017202"
+  ],
+  "synonyms": [
+   "Cardiovascular Stroke",
+   "Cardiovascular Strokes",
+   "Heart Attack",
+   "Heart Attacks",
+   "Infarction, Myocardial",
+   "Infarctions, Myocardial",
+   "Infarct, Myocardial",
+   "Infarcts, Myocardial",
+   "MCI1, INCLUDED",
+   "MCI2",
+   "Myocardial Infarct",
+   "MYOCARDIAL INFARCTION, PROTECTION AGAINST, INCLUDED",
+   "Myocardial Infarctions",
+   "MYOCARDIAL INFARCTION, SUSCEPTIBILITY TO",
+   "MYOCARDIAL INFARCTION, SUSCEPTIBILITY TO, 1, INCLUDED",
+   "MYOCARDIAL INFARCTION, SUSCEPTIBILITY TO, 2",
+   "Myocardial Infarcts",
+   "Stroke, Cardiovascular",
+   "Strokes, Cardiovascular"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Pathology (process)"
+  ]
+ },
+ "MESH:D009404": {
+  "name": "Nephrotic Syndrome",
+  "definition": "A condition characterized by severe PROTEINURIA, greater than 3.5 g/day in an average adult. The substantial loss of protein in the urine results in complications such as HYPOPROTEINEMIA; generalized EDEMA; HYPERTENSION; and HYPERLIPIDEMIAS. Diseases associated with nephrotic syndrome generally cause chronic kidney dysfunction.",
+  "parents": [
+   "MESH:D009401"
+  ],
+  "synonyms": [
+   "Childhood Idiopathic Nephrotic Syndrome",
+   "Frequently Relapsing Nephrotic Syndrome",
+   "Multi Drug Resistant Nephrotic Syndrome",
+   "Multi-Drug Resistant Nephrotic Syndrome",
+   "Nephrotic Syndromes",
+   "Nephrotic Syndrome, Steroid-Dependent",
+   "Nephrotic Syndrome, Steroid-Resistant",
+   "Nephrotic Syndrome, Steroid-Sensitive",
+   "Pediatric Idiopathic Nephrotic Syndrome",
+   "Steroid Dependent Nephrotic Syndrome",
+   "Steroid-Dependent Nephrotic Syndrome",
+   "Steroid-Dependent Nephrotic Syndromes",
+   "Steroid Resistant Nephrotic Syndrome",
+   "Steroid-Resistant Nephrotic Syndrome",
+   "Steroid-Resistant Nephrotic Syndromes",
+   "Steroid Sensitive Nephrotic Syndrome",
+   "Steroid-Sensitive Nephrotic Syndrome",
+   "Steroid-Sensitive Nephrotic Syndromes",
+   "Syndrome, Nephrotic",
+   "Syndrome, Steroid-Sensitive Nephrotic"
+  ],
+  "slim_terms": [
+   "Urogenital disease (female)",
+   "Urogenital disease (male)"
+  ]
+ },
+ "MESH:D009798": {
+  "name": "Ocular Hypertension",
+  "definition": "A condition in which the intraocular pressure is elevated above normal and which may lead to glaucoma.",
+  "parents": [
+   "MESH:D005128"
+  ],
+  "synonyms": [
+   "Glaucomas, Suspect",
+   "Glaucoma, Suspect",
+   "Hypertension, Ocular",
+   "Hypertensions, Ocular",
+   "Ocular Hypertensions",
+   "Suspect Glaucoma",
+   "Suspect Glaucomas"
+  ],
+  "slim_terms": [
+   "Eye disease"
+  ]
+ },
+ "MESH:D010003": {
+  "name": "Osteoarthritis",
+  "definition": "A progressive, degenerative joint disease, the most common form of arthritis, especially in older persons. The disease is thought to result not from the aging process but from biochemical changes and biomechanical stresses affecting articular cartilage. In the foreign literature it is often called osteoarthrosis deformans.",
+  "parents": [
+   "MESH:D001168",
+   "MESH:D012216"
+  ],
+  "synonyms": [
+   "Arthritides, Degenerative",
+   "Arthritis, Degenerative",
+   "Arthroses",
+   "Arthrosis",
+   "Degenerative Arthritides",
+   "Degenerative Arthritis",
+   "DIPOA",
+   "GOA1",
+   "HAND OSTEOARTHRITIS;HOA  HEBERDEN NODES, INCLUDED",
+   "OA",
+   "OADIP",
+   "OS1",
+   "OS2",
+   "OS3",
+   "OS4",
+   "OS5",
+   "OS6",
+   "Osteoarthritides",
+   "OSTEOARTHRITIS, GENERALIZED, WITHOUT DYSPLASIA",
+   "OSTEOARTHRITIS OF DISTAL INTERPHALANGEAL JOINTS",
+   "OSTEOARTHRITIS OF HIP",
+   "OSTEOARTHRITIS OF HIP, FEMALE-SPECIFIC, SUSCEPTIBILITY TO",
+   "OSTEOARTHRITIS OF KNEE",
+   "OSTEOARTHRITIS OF KNEE/HIP",
+   "OSTEOARTHRITIS SUSCEPTIBILITY 1",
+   "OSTEOARTHRITIS SUSCEPTIBILITY 2",
+   "OSTEOARTHRITIS SUSCEPTIBILITY 3",
+   "OSTEOARTHRITIS SUSCEPTIBILITY 4",
+   "OSTEOARTHRITIS SUSCEPTIBILITY 5",
+   "OSTEOARTHRITIS SUSCEPTIBILITY 6",
+   "Osteoarthroses",
+   "Osteoarthrosis",
+   "Osteoarthrosis Deformans"
+  ],
+  "slim_terms": [
+   "Musculoskeletal disease"
+  ]
+ },
+ "MESH:D010031": {
+  "name": "Otitis",
+  "definition": "Inflammation of the ear, which may be marked by pain (EARACHE), fever, HEARING DISORDERS, and VERTIGO. Inflammation of the external ear is OTITIS EXTERNA; of the middle ear, OTITIS MEDIA; of the inner ear, LABYRINTHITIS.",
+  "parents": [
+   "MESH:D004427"
+  ],
+  "synonyms": [
+   "Ear Infection",
+   "Ear Infections",
+   "Ear Inflammation",
+   "Ear Inflammations",
+   "Infection, Ear",
+   "Infections, Ear",
+   "Inflammation, Ear",
+   "Inflammations, Ear",
+   "Otitides"
+  ],
+  "slim_terms": [
+   "Ear-nose-throat disease"
+  ]
+ },
+ "MESH:D010032": {
+  "name": "Otitis Externa",
+  "definition": "Inflammation of the OUTER EAR including the external EAR CANAL, cartilages of the auricle (EAR CARTILAGE), and the TYMPANIC MEMBRANE.",
+  "parents": [
+   "MESH:D010031"
+  ],
+  "synonyms": [
+   "Ear Inflammation, External",
+   "External Ear Inflammation",
+   "External Ear Inflammations",
+   "External Otitides",
+   "External Otitis",
+   "Externa, Otitis",
+   "Inflammation, External Ear",
+   "Otitides, External",
+   "Otitis, External"
+  ],
+  "slim_terms": [
+   "Ear-nose-throat disease"
+  ]
+ },
+ "MESH:D010300": {
+  "name": "Parkinson Disease",
+  "definition": "A progressive, degenerative neurologic disease characterized by a TREMOR that is maximal at rest, retropulsion (i.e. a tendency to fall backwards), rigidity, stooped posture, slowness of voluntary movements, and a masklike facial expression. Pathologic features include loss of melanin containing neurons in the substantia nigra and other pigmented nuclei of the brainstem. LEWY BODIES are present in the substantia nigra and locus coeruleus but may also be found in a related condition (LEWY BODY DISEASE, DIFFUSE) characterized by dementia in combination with varying degrees of parkinsonism. (Adams et al., Principles of Neurology, 6th ed, p1059, pp1067-75)",
+  "parents": [
+   "MESH:D000080874",
+   "MESH:D020734"
+  ],
+  "synonyms": [
+   "Idiopathic Parkinson Disease",
+   "Idiopathic Parkinson's Disease",
+   "Lewy Body Parkinson Disease",
+   "Lewy Body Parkinson's Disease",
+   "Paralysis Agitans",
+   "Parkinson Disease, Idiopathic",
+   "Parkinsonism, Primary",
+   "Parkinson's Disease",
+   "Parkinson's Disease, Idiopathic",
+   "Parkinson's Disease, Lewy Body",
+   "Primary Parkinsonism"
+  ],
+  "slim_terms": [
+   "Nervous system disease"
+  ]
+ },
+ "MESH:D058729": {
+  "name": "Peripheral Arterial Disease",
+  "definition": "Lack of perfusion in the EXTREMITIES resulting from atherosclerosis. It is characterized by INTERMITTENT CLAUDICATION, and an ANKLE BRACHIAL INDEX of 0.9 or less.",
+  "parents": [
+   "MESH:D016491",
+   "MESH:D050197"
+  ],
+  "synonyms": [
+   "Arterial Disease, Peripheral",
+   "Arterial Diseases, Peripheral",
+   "Artery Disease, Peripheral",
+   "Artery Diseases, Peripheral",
+   "Disease, Peripheral Arterial",
+   "Disease, Peripheral Artery",
+   "Diseases, Peripheral Arterial",
+   "Diseases, Peripheral Artery",
+   "Peripheral Arterial Diseases",
+   "Peripheral Artery Disease",
+   "Peripheral Artery Diseases"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease"
+  ]
+ },
+ "MESH:D010673": {
+  "name": "Pheochromocytoma",
+  "definition": "A usually benign, well-encapsulated, lobular, vascular tumor of chromaffin tissue of the ADRENAL MEDULLA or sympathetic paraganglia. The cardinal symptom, reflecting the increased secretion of EPINEPHRINE and NOREPINEPHRINE, is HYPERTENSION, which may be persistent or intermittent. During severe attacks, there may be HEADACHE; SWEATING, palpitation, apprehension, TREMOR; PALLOR or FLUSHING of the face, NAUSEA and VOMITING, pain in the CHEST and ABDOMEN, and paresthesias of the extremities. The incidence of malignancy is as low as 5% but the pathologic distinction between benign and malignant pheochromocytomas is not clear. (Dorland, 27th ed; DeVita Jr et al., Cancer: Principles & Practice of Oncology, 3d ed, p1298)",
+  "parents": [
+   "MESH:D010235"
+  ],
+  "synonyms": [
+   "Extra-Adrenal Pheochromocytoma",
+   "Extra-Adrenal Pheochromocytomas",
+   "Pheochromocytoma, Extra Adrenal",
+   "Pheochromocytoma, Extra-Adrenal",
+   "Pheochromocytomas",
+   "Pheochromocytomas, Extra-Adrenal",
+   "PHEOCHROMOCYTOMA, SUSCEPTIBILITY TO"
+  ],
+  "slim_terms": [
+   "Cancer"
+  ]
+ },
+ "MESH:D011470": {
+  "name": "Prostatic Hyperplasia",
+  "definition": "Increase in constituent cells in the PROSTATE, leading to enlargement of the organ (hypertrophy) and adverse impact on the lower urinary tract function. This can be caused by increased rate of cell proliferation, reduced rate of cell death, or both.",
+  "parents": [
+   "MESH:D011469"
+  ],
+  "synonyms": [
+   "Adenoma, Prostatic",
+   "Adenomas, Prostatic",
+   "Benign Prostatic Hyperplasia",
+   "Benign Prostatic Hyperplasias",
+   "Benign Prostatic Hypertrophy",
+   "Hyperplasia, Benign Prostatic",
+   "Hyperplasia, Prostatic",
+   "Hyperplasias, Benign Prostatic",
+   "Hypertrophies, Prostatic",
+   "Hypertrophy, Benign Prostatic",
+   "Hypertrophy, Prostatic",
+   "Prostatic Adenoma",
+   "Prostatic Adenomas",
+   "Prostatic Hyperplasia, Benign",
+   "Prostatic Hyperplasias, Benign",
+   "Prostatic Hypertrophies",
+   "Prostatic Hypertrophy",
+   "Prostatic Hypertrophy, Benign"
+  ],
+  "slim_terms": [
+   "Urogenital disease (male)"
+  ]
+ },
+ "MESH:D011507": {
+  "name": "Proteinuria",
+  "definition": "The presence of proteins in the urine, an indicator of KIDNEY DISEASES.",
+  "parents": [
+   "MESH:D014555",
+   "MESH:D020924"
+  ],
+  "synonyms": [
+   "Proteinurias"
+  ],
+  "slim_terms": [
+   "Signs and symptoms",
+   "Urogenital disease (female)",
+   "Urogenital disease (male)"
+  ]
+ },
+ "MESH:D011565": {
+  "name": "Psoriasis",
+  "definition": "A common genetically determined, chronic, inflammatory skin disease characterized by rounded erythematous, dry, scaling patches. The lesions have a predilection for nails, scalp, genitalia, extensor surfaces, and the lumbosacral region. Accelerated epidermopoiesis is considered to be the fundamental pathologic feature in psoriasis.",
+  "parents": [
+   "MESH:D017444"
+  ],
+  "synonyms": [
+   "ACRODERMATITIS CONTINUA OF HALLOPEAU",
+   "DITRA",
+   "GENERALIZED PUSTULAR PSORIASIS",
+   "GPP",
+   "INTERLEUKIN 36 RECEPTOR ANTAGONIST DEFICIENCY",
+   "Palmoplantaris Pustulosis",
+   "PALMOPLANTAR PUSTULOSIS",
+   "Psoriases",
+   "PSORIASIS 10, SUSCEPTIBILITY TO",
+   "PSORIASIS 11, SUSCEPTIBILITY TO",
+   "PSORIASIS 12, SUSCEPTIBILITY TO",
+   "PSORIASIS 13, SUSCEPTIBILITY TO",
+   "PSORIASIS 14, PUSTULAR",
+   "PSORIASIS 15, PUSTULAR, SUSCEPTIBILITY TO",
+   "PSORIASIS 1, SUSCEPTIBILITY TO",
+   "PSORIASIS 2",
+   "PSORIASIS 3, SUSCEPTIBILITY TO",
+   "PSORIASIS 4, SUSCEPTIBILITY TO",
+   "PSORIASIS 5, SUSCEPTIBILITY TO",
+   "PSORIASIS 6, SUSCEPTIBILITY TO",
+   "PSORIASIS 7, SUSCEPTIBILITY TO",
+   "PSORIASIS 8, SUSCEPTIBILITY TO",
+   "PSORIASIS 9, SUSCEPTIBILITY TO",
+   "PSORP",
+   "PSORS1",
+   "PSORS10",
+   "PSORS11",
+   "PSORS12",
+   "PSORS13",
+   "PSORS14",
+   "PSORS15",
+   "PSORS2",
+   "PSORS3",
+   "PSORS4",
+   "PSORS5",
+   "PSORS6",
+   "PSORS7",
+   "PSORS8",
+   "PSORS9",
+   "Pustular Psoriasis of Palms and Soles",
+   "Pustulosis of Palms and Soles",
+   "Pustulosis Palmaris et Plantaris"
+  ],
+  "slim_terms": [
+   "Skin disease"
+  ]
+ },
+ "MESH:D011928": {
+  "name": "Raynaud Disease",
+  "definition": "An idiopathic vascular disorder characterized by bilateral Raynaud phenomenon, the abrupt onset of digital paleness or CYANOSIS in response to cold exposure or stress.",
+  "parents": [
+   "MESH:D000090122",
+   "MESH:D016491"
+  ],
+  "synonyms": [
+   "Cold Fingers, Hereditary",
+   "Raynaud Phenomenon",
+   "Raynaud's Disease",
+   "Raynauds Disease"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Skin disease"
+  ]
+ },
+ "MESH:D051437": {
+  "name": "Renal Insufficiency",
+  "definition": "Conditions in which the KIDNEYS perform below the normal level in the ability to remove wastes, concentrate URINE, and maintain ELECTROLYTE BALANCE; BLOOD PRESSURE; and CALCIUM metabolism. Renal insufficiency can be classified by the degree of kidney damage (as measured by the level of PROTEINURIA) and reduction in GLOMERULAR FILTRATION RATE.",
+  "parents": [
+   "MESH:D007674"
+  ],
+  "synonyms": [
+   "Failure, Kidney",
+   "Failure, Renal",
+   "Failures, Kidney",
+   "Failures, Renal",
+   "Insufficiency, Kidney",
+   "Kidney Failure",
+   "Kidney Failures",
+   "Kidney Insufficiencies",
+   "Kidney Insufficiency",
+   "Renal Failure",
+   "Renal Failures",
+   "Renal Insufficiencies"
+  ],
+  "slim_terms": [
+   "Urogenital disease (female)",
+   "Urogenital disease (male)"
+  ]
+ },
+ "MESH:D051436": {
+  "name": "Renal Insufficiency, Chronic",
+  "definition": "Conditions in which the KIDNEYS perform below the normal level for more than three months. Chronic kidney insufficiency is classified by five stages according to the decline in GLOMERULAR FILTRATION RATE and the degree of kidney damage (as measured by the level of PROTEINURIA). The most severe form is the end-stage renal disease (CHRONIC KIDNEY FAILURE). (Kidney Foundation: Kidney Disease Outcome Quality Initiative, 2002)",
+  "parents": [
+   "MESH:D002908",
+   "MESH:D051437"
+  ],
+  "synonyms": [
+   "Chronic Kidney Disease",
+   "Chronic Kidney Diseases",
+   "Chronic Kidney Insufficiencies",
+   "Chronic Kidney Insufficiency",
+   "Chronic Renal Disease",
+   "Chronic Renal Diseases",
+   "Chronic Renal Insufficiencies",
+   "Chronic Renal Insufficiency",
+   "Disease, Chronic Kidney",
+   "Disease, Chronic Renal",
+   "Diseases, Chronic Kidney",
+   "Diseases, Chronic Renal",
+   "Kidney Disease, Chronic",
+   "Kidney Diseases, Chronic",
+   "Kidney Insufficiencies, Chronic",
+   "Kidney Insufficiency, Chronic",
+   "Renal Disease, Chronic",
+   "Renal Diseases, Chronic",
+   "Renal Insufficiencies, Chronic"
+  ],
+  "slim_terms": [
+   "Pathology (process)",
+   "Urogenital disease (female)",
+   "Urogenital disease (male)"
+  ]
+ },
+ "MESH:D012141": {
+  "name": "Respiratory Tract Infections",
+  "definition": "Invasion of the host RESPIRATORY SYSTEM by microorganisms, usually leading to pathological processes or diseases.",
+  "parents": [
+   "MESH:D007239",
+   "MESH:D012140"
+  ],
+  "synonyms": [
+   "Infection, Respiratory System",
+   "Infection, Respiratory Tract",
+   "Infections, Respiratory",
+   "Infections, Respiratory Tract",
+   "Infections, Upper Respiratory",
+   "Infections, Upper Respiratory Tract",
+   "Respiratory Infections",
+   "Respiratory Infection, Upper",
+   "Respiratory System Infection",
+   "Respiratory System Infections",
+   "Respiratory Tract Infection",
+   "Upper Respiratory Infections",
+   "Upper Respiratory Tract Infection",
+   "Upper Respiratory Tract Infections"
+  ],
+  "slim_terms": [
+   "Respiratory tract disease"
+  ]
+ },
+ "MESH:D012213": {
+  "name": "Rheumatic Fever",
+  "definition": "A febrile disease occurring as a delayed sequela of infections with STREPTOCOCCUS PYOGENES. It is characterized by multiple focal inflammatory lesions of the connective tissue structures, such as the heart, blood vessels, and joints (POLYARTHRITIS) and brain, and by the presence of ASCHOFF BODIES in the myocardium and skin.",
+  "parents": [
+   "MESH:D001168",
+   "MESH:D012216",
+   "MESH:D013290"
+  ],
+  "synonyms": [
+   "Acute Articular Rheumatism",
+   "Acute Articular Rheumatisms",
+   "Acute Rheumatic Arthritides",
+   "Acute Rheumatic Arthritis",
+   "Acute Rheumatic Fever",
+   "Acute Rheumatic Fevers",
+   "Arthritis, Acute Rheumatic",
+   "Arthritis, Rheumatic",
+   "Arthritis, Rheumatic, Acute",
+   "Articular Rheumatism, Acute",
+   "Fever, Acute Rheumatic",
+   "Fever, Rheumatic",
+   "Fevers, Acute Rheumatic",
+   "Inflammatory Rheumatism",
+   "Inflammatory Rheumatisms",
+   "Polyarthritis Rheumatica",
+   "Polyarthritis Rheumaticas",
+   "Rheumatic Arthritides",
+   "Rheumatic Arthritis",
+   "Rheumatic Arthritis, Acute",
+   "Rheumatic Fever, Acute",
+   "Rheumatic Fevers",
+   "Rheumatism, Acute Articular",
+   "Rheumatism, Articular, Acute",
+   "Rheumatism, Inflammatory"
+  ],
+  "slim_terms": [
+   "Bacterial infection or mycosis",
+   "Connective tissue disease",
+   "Musculoskeletal disease"
+  ]
+ },
+ "MESH:D006255": {
+  "name": "Rhinitis, Allergic, Seasonal",
+  "definition": "Allergic rhinitis that occurs at the same time every year. It is characterized by acute CONJUNCTIVITIS with lacrimation and ITCHING, and regarded as an allergic condition triggered by specific ALLERGENS.",
+  "parents": [
+   "MESH:D065631"
+  ],
+  "synonyms": [
+   "Allergic Rhinitides, Seasonal",
+   "Allergic Rhinitis, Seasonal",
+   "Allergies, Pollen",
+   "Allergy, Pollen",
+   "Fever, Hay",
+   "Hayfever",
+   "Hay Fever",
+   "Pollen Allergies",
+   "Pollen Allergy",
+   "Pollinoses",
+   "Pollinosis",
+   "Rhinitides, Seasonal Allergic",
+   "Rhinitis, Seasonal Allergic",
+   "Seasonal Allergic Rhinitides",
+   "Seasonal Allergic Rhinitis"
+  ],
+  "slim_terms": [
+   "Ear-nose-throat disease",
+   "Immune system disease",
+   "Respiratory tract disease"
+  ]
+ },
+ "MESH:D012713": {
+  "name": "Serum Sickness",
+  "definition": "Immune complex disease caused by the administration of foreign serum or serum proteins and characterized by fever, lymphadenopathy, arthralgia, and urticaria. When they are complexed to protein carriers, some drugs can also cause serum sickness when they act as haptens inducing antibody responses.",
+  "parents": [
+   "MESH:D003875"
+  ],
+  "synonyms": [
+   "Serum Sicknesses",
+   "Sicknesses, Serum",
+   "Sickness, Serum"
+  ],
+  "slim_terms": [
+   "Skin disease"
+  ]
+ },
+ "MESH:D012769": {
+  "name": "Shock",
+  "definition": "A pathological condition manifested by failure to perfuse or oxygenate vital organs.",
+  "parents": [
+   "MESH:D010335"
+  ],
+  "synonyms": [
+   "Circulatory Collapse",
+   "Circulatory Failure",
+   "Collapse, Circulatory",
+   "Failure, Circulatory",
+   "Hypovolemic Shock",
+   "Shock, Hypovolemic"
+  ],
+  "slim_terms": [
+   "Pathology (process)"
+  ]
+ },
+ "MESH:D012772": {
+  "name": "Shock, Septic",
+  "definition": "Sepsis associated with HYPOTENSION or hypoperfusion despite adequate fluid resuscitation. Perfusion abnormalities may include but are not limited to LACTIC ACIDOSIS; OLIGURIA; or acute alteration in mental status.",
+  "parents": [
+   "MESH:D018746",
+   "MESH:D018805"
+  ],
+  "synonyms": [
+   "Endotoxin Shock",
+   "Endotoxin Shocks",
+   "Septic Shock",
+   "Shock, Endotoxic",
+   "Shock, Endotoxin",
+   "Shocks, Endotoxin",
+   "Shock Syndrome, Toxic",
+   "Shock, Toxic",
+   "Toxic Shock",
+   "Toxic Shock Syndrome",
+   "Toxic Shock Syndromes"
+  ],
+  "slim_terms": [
+   "Pathology (process)"
+  ]
+ },
+ "MESH:D013167": {
+  "name": "Spondylitis, Ankylosing",
+  "definition": "A chronic inflammatory condition affecting the axial joints, such as the SACROILIAC JOINT and other intervertebral or costovertebral joints. It occurs predominantly in young males and is characterized by pain and stiffness of joints (ANKYLOSIS) with inflammation at tendon insertions.",
+  "parents": [
+   "MESH:D000089183"
+  ],
+  "synonyms": [
+   "Ankylosing Spondylarthritides",
+   "Ankylosing Spondylarthritis",
+   "Ankylosing Spondylitis",
+   "ANKYLOSING SPONDYLITIS, SUSCEPTIBILITY TO",
+   "Ankylosing Spondyloarthritides",
+   "Ankylosing Spondyloarthritis",
+   "Bechterew Disease",
+   "Bechterew's Disease",
+   "Bechterews Disease",
+   "BECHTEREW SYNDROME",
+   "Marie Struempell Disease",
+   "Marie-Struempell Disease",
+   "MARIE-STRUMPELL SPONDYLITIS",
+   "Rheumatoid Spondylitis",
+   "SPDA1",
+   "Spondylarthritides, Ankylosing",
+   "Spondylarthritis Ankylopoietica",
+   "Spondylarthritis, Ankylosing",
+   "Spondylitis Ankylopoietica",
+   "Spondylitis, Rheumatoid",
+   "Spondyloarthritides, Ankylosing",
+   "Spondyloarthritis Ankylopoietica",
+   "Spondyloarthritis, Ankylosing",
+   "SPONDYLOARTHROPATHY, SUSCEPTIBILITY TO, 1"
+  ],
+  "slim_terms": [
+   "Musculoskeletal disease"
+  ]
+ },
+ "MESH:D020521": {
+  "name": "Stroke",
+  "definition": "A group of pathological conditions characterized by sudden, non-convulsive loss of neurological function due to BRAIN ISCHEMIA or INTRACRANIAL HEMORRHAGES. Stroke is classified by the type of tissue NECROSIS, such as the anatomic location, vasculature involved, etiology, age of the affected individual, and hemorrhagic vs. non-hemorrhagic nature. (From Adams et al., Principles of Neurology, 6th ed, pp777-810)",
+  "parents": [
+   "MESH:D002561"
+  ],
+  "synonyms": [
+   "Acute Cerebrovascular Accident",
+   "Acute Cerebrovascular Accidents",
+   "Acute Stroke",
+   "Acute Strokes",
+   "Apoplexy",
+   "Apoplexy, Cerebrovascular",
+   "Brain Vascular Accident",
+   "Brain Vascular Accidents",
+   "Cerebral Stroke",
+   "Cerebral Strokes",
+   "Cerebrovascular Accident",
+   "Cerebrovascular Accident, Acute",
+   "Cerebrovascular Accidents",
+   "Cerebrovascular Accidents, Acute",
+   "Cerebrovascular Apoplexy",
+   "Cerebrovascular Stroke",
+   "Cerebrovascular Strokes",
+   "CVA (Cerebrovascular Accident)",
+   "CVAs (Cerebrovascular Accident)",
+   "STRK1",
+   "Stroke, Acute",
+   "Stroke, Cerebral",
+   "Stroke, Cerebrovascular",
+   "Strokes",
+   "Strokes, Acute",
+   "Strokes, Cerebral",
+   "Strokes, Cerebrovascular",
+   "STROKE, SUSCEPTIBILITY TO, 1",
+   "Vascular Accident, Brain",
+   "Vascular Accidents, Brain"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Nervous system disease"
+  ]
+ },
+ "MESH:D013575": {
+  "name": "Syncope",
+  "definition": "A transient loss of consciousness and postural tone caused by diminished blood flow to the brain (i.e., BRAIN ISCHEMIA). Presyncope refers to the sensation of lightheadedness and loss of strength that precedes a syncopal event or accompanies an incomplete syncope. (From Adams et al., Principles of Neurology, 6th ed, pp367-9)",
+  "parents": [
+   "MESH:D014474"
+  ],
+  "synonyms": [
+   "Attack, Drop",
+   "Cardiogenic Syncope",
+   "Cardiogenic Syncopes",
+   "Carotid Sinus Syncope",
+   "Carotid Sinus Syncopes",
+   "Convulsive Syncope",
+   "Convulsive Syncopes",
+   "Deglutitional Syncope",
+   "Deglutitional Syncopes",
+   "Drop Attack",
+   "Drop Attacks",
+   "Effort Syncope",
+   "Effort Syncopes",
+   "Episode, Syncopal",
+   "Fainting",
+   "Hyperventilation Syncope",
+   "Hyperventilation Syncopes",
+   "Micturition Syncope",
+   "Micturition Syncopes",
+   "Postural Syncope",
+   "Postural Syncopes",
+   "Presyncope",
+   "Presyncopes",
+   "Situational Syncope",
+   "Situational Syncopes",
+   "Stokes-Adams Syncope",
+   "Stokes-Adams Syncopes",
+   "Syncopal Episode",
+   "Syncopal Episodes",
+   "Syncopal Vertigo",
+   "Syncope, Cardiogenic",
+   "Syncope, Carotid Sinus",
+   "Syncope, Convulsive",
+   "Syncope, Deglutitional",
+   "Syncope, Effort",
+   "Syncope, Hyperventilation",
+   "Syncope, Micturition",
+   "Syncope, Postural",
+   "Syncopes",
+   "Syncopes, Cardiogenic",
+   "Syncopes, Carotid Sinus",
+   "Syncopes, Convulsive",
+   "Syncopes, Deglutitional",
+   "Syncopes, Effort",
+   "Syncopes, Hyperventilation",
+   "Syncope, Situational",
+   "Syncopes, Micturition",
+   "Syncopes, Postural",
+   "Syncopes, Situational",
+   "Syncopes, Stokes-Adams",
+   "Syncope, Stokes Adams",
+   "Syncope, Stokes-Adams",
+   "Syncopes, Tussive",
+   "Syncope, Tussive",
+   "Tussive Syncope",
+   "Tussive Syncopes",
+   "Vertigos, Syncopal",
+   "Vertigo, Syncopal"
+  ],
+  "slim_terms": [
+   "Nervous system disease",
+   "Signs and symptoms"
+  ]
+ },
+ "MESH:D013617": {
+  "name": "Tachycardia, Supraventricular",
+  "definition": "A generic expression for any tachycardia that originates above the BUNDLE OF HIS.",
+  "parents": [
+   "MESH:D013610"
+  ],
+  "synonyms": [
+   "Supraventricular Tachycardia",
+   "Supraventricular Tachycardias",
+   "Tachycardias, Supraventricular"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Pathology (process)"
+  ]
+ },
+ "MESH:D017180": {
+  "name": "Tachycardia, Ventricular",
+  "definition": "An abnormally rapid ventricular rhythm usually in excess of 150 beats per minute. It is generated within the ventricle below the BUNDLE OF HIS, either as autonomic impulse formation or reentrant impulse conduction. Depending on the etiology, onset of ventricular tachycardia can be paroxysmal (sudden) or nonparoxysmal, its wide QRS complexes can be uniform or polymorphic, and the ventricular beating may be independent of the atrial beating (AV dissociation).",
+  "parents": [
+   "MESH:D013610"
+  ],
+  "synonyms": [
+   "Idiopathic Ventricular Tachycardia",
+   "Idiopathic Ventricular Tachycardias",
+   "Nonsustained Ventricular Tachycardia",
+   "Nonsustained Ventricular Tachycardias",
+   "Paroxysmal Supraventricular Tachycardia",
+   "Paroxysmal Supraventricular Tachycardias",
+   "Supraventricular Tachycardia, Paroxysmal",
+   "Tachyarrhythmia, Ventricular",
+   "Tachycardia, Idiopathic Ventricular",
+   "Tachycardia, Nonsustained Ventricular",
+   "Tachycardia, Paroxysmal Supraventricular",
+   "Ventricular Tachyarrhythmia",
+   "Ventricular Tachyarrhythmias",
+   "Ventricular Tachycardia",
+   "Ventricular Tachycardia, Idiopathic",
+   "Ventricular Tachycardia, Nonsustained",
+   "Ventricular Tachycardias"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Pathology (process)"
+  ]
+ },
+ "MESH:D014098": {
+  "name": "Toothache",
+  "definition": "Pain in the adjacent areas of the teeth.",
+  "parents": [
+   "MESH:D005157",
+   "MESH:D014076"
+  ],
+  "synonyms": [
+   "Odontalgia",
+   "Odontalgias",
+   "Toothaches"
+  ],
+  "slim_terms": [
+   "Mouth disease",
+   "Signs and symptoms"
+  ]
+ },
+ "MESH:C565627": {
+  "name": "Trichohepatoenteric Syndrome",
+  "definition": "",
+  "parents": [
+   "MESH:D003968",
+   "MESH:D005317",
+   "MESH:D006201",
+   "MESH:D019066"
+  ],
+  "synonyms": [
+   "Diarrhea, Fatal Infantile, with Trichorrhexis Nodosa",
+   "Diarrhea, Syndromic",
+   "THES1",
+   "THES2",
+   "THE SYNDROME",
+   "TRICHOHEPATOENTERIC SYNDROME 1",
+   "TRICHOHEPATOENTERIC SYNDROME 2"
+  ],
+  "slim_terms": [
+   "Fetal disease",
+   "Pathology (process)",
+   "Pregnancy complication",
+   "Signs and symptoms",
+   "Skin disease"
+  ]
+ },
+ "MESH:D014390": {
+  "name": "Tuberculosis, Meningeal",
+  "definition": "A form of bacterial meningitis caused by MYCOBACTERIUM TUBERCULOSIS or rarely MYCOBACTERIUM BOVIS. The organism seeds the meninges and forms microtuberculomas which subsequently rupture. The clinical course tends to be subacute, with progressions occurring over a period of several days or longer. Headache and meningeal irritation may be followed by SEIZURES, cranial neuropathies, focal neurologic deficits, somnolence, and eventually COMA. The illness may occur in immunocompetent individuals or as an OPPORTUNISTIC INFECTION in the ACQUIRED IMMUNODEFICIENCY SYNDROME and other immunodeficiency syndromes. (From Adams et al., Principles of Neurology, 6th ed, pp717-9)",
+  "parents": [
+   "MESH:D016920",
+   "MESH:D020306"
+  ],
+  "synonyms": [
+   "Hypertrophic Pachymeningitides, Tuberculous",
+   "Hypertrophic Pachymeningitis, Tuberculous",
+   "Meningeal Tuberculoses",
+   "Meningeal Tuberculosis",
+   "Meningitides, Tubercular",
+   "Meningitides, Tuberculosis",
+   "Meningitides, Tuberculous",
+   "Meningitis, Tubercular",
+   "Meningitis, Tuberculosis",
+   "Meningitis, Tuberculous",
+   "Pachymeningitides, Tuberculous Hypertrophic",
+   "Pachymeningitis, Tuberculous Hypertrophic",
+   "TB Meningitides",
+   "TB Meningitis",
+   "Tubercular Meningitides",
+   "Tubercular Meningitis",
+   "Tuberculoses, Meningeal",
+   "Tuberculosis Meningitides",
+   "Tuberculosis Meningitis",
+   "Tuberculous Hypertrophic Pachymeningitides",
+   "Tuberculous Hypertrophic Pachymeningitis",
+   "Tuberculous Meningitides",
+   "Tuberculous Meningitis"
+  ],
+  "slim_terms": [
+   "Bacterial infection or mycosis",
+   "Nervous system disease"
+  ]
+ },
+ "MESH:D014605": {
+  "name": "Uveitis",
+  "definition": "Inflammation of part or all of the uvea, the middle (vascular) tunic of the eye, and commonly involving the other tunics (sclera and cornea, and the retina). (Dorland, 27th ed)",
+  "parents": [
+   "MESH:D014603"
+  ],
+  "synonyms": [
+   "Uveitides"
+  ],
+  "slim_terms": [
+   "Eye disease"
+  ]
+ },
+ "MESH:D018487": {
+  "name": "Ventricular Dysfunction, Left",
+  "definition": "A condition in which the LEFT VENTRICLE of the heart was functionally impaired. This condition usually leads to HEART FAILURE; MYOCARDIAL INFARCTION; and other cardiovascular complications. Diagnosis is made by measuring the diminished ejection fraction and a depressed level of motility of the left ventricular wall.",
+  "parents": [
+   "MESH:D018754"
+  ],
+  "synonyms": [
+   "Diastolic Dysfunction, LV",
+   "Dysfunction, Left Ventricular",
+   "Dysfunction, LV",
+   "Dysfunction, LV Diastolic",
+   "Dysfunction, LV Systolic",
+   "Left Ventricular Diastolic Dysfunction",
+   "Left Ventricular Dysfunction",
+   "Left Ventricular Dysfunctions",
+   "Left Ventricular Systolic Dysfunction",
+   "LV Diastolic Dysfunction",
+   "LV Diastolic Dysfunctions",
+   "LV Dysfunction",
+   "LV Dysfunctions",
+   "LV Systolic Dysfunction",
+   "LV Systolic Dysfunctions",
+   "Systolic Dysfunction, LV"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease"
+  ]
+ },
+ "MESH:D014693": {
+  "name": "Ventricular Fibrillation",
+  "definition": "A potentially lethal cardiac arrhythmia that is characterized by uncoordinated extremely rapid firing of electrical impulses (400-600/min) in HEART VENTRICLES. Such asynchronous ventricular quivering or fibrillation prevents any effective cardiac output and results in unconsciousness (SYNCOPE). It is one of the major electrocardiographic patterns seen with CARDIAC ARREST.",
+  "parents": [
+   "MESH:D001145"
+  ],
+  "synonyms": [
+   "Fibrillations, Ventricular",
+   "Fibrillation, Ventricular",
+   "Ventricular Fibrillations"
+  ],
+  "slim_terms": [
+   "Cardiovascular disease",
+   "Pathology (process)"
+  ]
+ },
+ "MESH:C564286": {
+  "name": "Zinc Deficiency, Neonatal, due to Low Breast Milk Zinc",
+  "definition": "",
+  "parents": [
+   "MESH:D006130"
+  ],
+  "synonyms": [
+   "TNZD",
+   "ZINC DEFICIENCY, NEONATAL, DUE TO LOW BREAST MILK ZINC ZINC IN BREAST MILK, REDUCED, INCLUDED",
+   "ZINC DEFICIENCY, TRANSIENT NEONATAL"
+  ],
+  "slim_terms": [
+   "Pathology (process)"
+  ]
+ }
+}

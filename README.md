@@ -65,6 +65,7 @@ hecores-dr/
 ├── data/                        # Datasets and data processing scripts
 │   ├── raw/                    # Raw source data
 │   └── processed/              # Processed matrices and similarity files
+├── sample/                     # Real subset of the data: run the whole pipeline in 5 minutes
 ├── src/
 │   ├── models.py
 │   ├── training_testing.py
@@ -159,12 +160,13 @@ hecores-dr/
 
 ```bash
 bash standalone/run_hecores.sh --status     # which steps can run with the files in data/
+bash sample/run_sample.sh                   # whole pipeline on a real subset of the data (5 min), compared with expected tables
 bash standalone/run_hecores.sh --quick      # installation test (minutes)
 bash standalone/run_hecores.sh              # everything
 bash standalone/run_hecores.sh --paper --from splits   # evaluation as published
 ```
 
-Instructions: [`standalone/README.md`](standalone/README.md). Changes made for the revision, with the checks against the released data: [`CHANGES_REVISION.md`](CHANGES_REVISION.md).
+The sample needs no download: see [`sample/README.md`](sample/README.md). Full instructions: [`standalone/README.md`](standalone/README.md). Changes made for the revision, with the checks against the released data: [`CHANGES_REVISION.md`](CHANGES_REVISION.md).
 
 ## Installation
 

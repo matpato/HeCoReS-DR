@@ -65,6 +65,10 @@ Without the DrugBank XML (licensed), start from the files the student kept. Put 
 
 Then `bash standalone/run_hecores.sh` runs steps 8 and 11–16 and skips the others. Checked on 9 Nov 2026: step 8 gives the 1,179 drugs, 722 conditions and 4,478 indications of the released `hcs_0.csv`; step 11 gives the released `graph.json`; step 13 gives the released `drug_sims.csv` and `disease_sims.csv`.
 
+## Trying it on the sample
+
+The folder [`../sample/`](../sample/README.md) holds a real subset of the data (133 cardiovascular drugs). `bash sample/run_sample.sh` runs steps 11–16 on it in about 5 minutes and compares the result tables with `sample/expected/`; no download or licence is needed.
+
 ## Commands
 
 ```bash
@@ -78,6 +82,8 @@ bash standalone/run_hecores.sh --paper --from splits    # evaluation as publishe
 bash standalone/run_hecores.sh --pct "20 40 60 80" --from hcs   # ablation (RQ2)
 bash standalone/run_hecores.sh --models "ALSWR HCS" --sets "main"   # some models / test sets
 bash standalone/run_hecores.sh --n-experiments 50   # fewer experiments
+bash standalone/run_hecores.sh --n-perms 50         # fewer HCS permutations (default 200)
+bash standalone/run_hecores.sh --work data/sample   # another work folder (default data/work)
 bash standalone/run_hecores.sh --no-sudo            # plain docker instead of sudo docker (e.g. a Mac)
 bash standalone/run_hecores.sh --local              # without Docker
 bash standalone/run_hecores.sh --shell 'ls -la'     # a command in the container (in data/work)

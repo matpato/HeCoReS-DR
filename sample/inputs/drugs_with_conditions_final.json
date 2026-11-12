@@ -1,0 +1,1237 @@
+{
+ "DB00175": {
+  "name": "Pravastatin",
+  "treats": [
+   "MESH:D006938",
+   "MESH:D009203",
+   "MESH:D006937",
+   "MESH:D050197",
+   "MESH:D002546",
+   "MESH:D050171",
+   "MESH:D006953",
+   "MESH:D020521",
+   "MESH:D003324",
+   "MESH:D003327"
+  ]
+ },
+ "DB00177": {
+  "name": "Valsartan",
+  "treats": [
+   "MESH:D020521",
+   "MESH:D006973",
+   "MESH:D009203"
+  ]
+ },
+ "DB00178": {
+  "name": "Ramipril",
+  "treats": [
+   "MESH:D020521",
+   "MESH:D006973",
+   "MESH:D009203",
+   "MESH:D003920",
+   "MESH:D006333"
+  ]
+ },
+ "DB00187": {
+  "name": "Esmolol",
+  "treats": [
+   "MESH:D001282",
+   "MESH:D001281"
+  ]
+ },
+ "DB00204": {
+  "name": "Dofetilide",
+  "treats": [
+   "MESH:D001282",
+   "MESH:D001281"
+  ]
+ },
+ "DB00214": {
+  "name": "Torasemide",
+  "treats": [
+   "MESH:D004487",
+   "MESH:D051437",
+   "MESH:D006333"
+  ]
+ },
+ "DB00227": {
+  "name": "Lovastatin",
+  "treats": [
+   "MESH:C565230",
+   "MESH:D009203",
+   "MESH:D000090542",
+   "MESH:D050197",
+   "MESH:D058729",
+   "MESH:D003324",
+   "MESH:D000789",
+   "MESH:D020526",
+   "MESH:D006938",
+   "MESH:D054058",
+   "MESH:D006937",
+   "MESH:D003920",
+   "MESH:D002546",
+   "MESH:D050171",
+   "MESH:D020521",
+   "MESH:D051436",
+   "MESH:D003327",
+   "MESH:D060050"
+  ]
+ },
+ "DB00235": {
+  "name": "Milrinone",
+  "treats": [
+   "MESH:D001145",
+   "MESH:D006333"
+  ]
+ },
+ "DB00264": {
+  "name": "Metoprolol",
+  "treats": [
+   "MESH:D009203",
+   "MESH:D003920",
+   "MESH:D000787",
+   "MESH:D006333",
+   "MESH:D006973",
+   "MESH:D013617",
+   "MESH:D001282",
+   "MESH:D001281"
+  ]
+ },
+ "DB00275": {
+  "name": "Olmesartan",
+  "treats": [
+   "MESH:D020521",
+   "MESH:D003928",
+   "MESH:D006973",
+   "MESH:D007238",
+   "MESH:D009203",
+   "MESH:D003924",
+   "MESH:D006333"
+  ]
+ },
+ "DB00280": {
+  "name": "Disopyramide",
+  "treats": [
+   "MESH:D017180",
+   "MESH:D001145"
+  ]
+ },
+ "DB00308": {
+  "name": "Ibutilide",
+  "treats": [
+   "MESH:D001282",
+   "MESH:D001281"
+  ]
+ },
+ "DB00310": {
+  "name": "Chlorthalidone",
+  "treats": [
+   "MESH:D008103",
+   "MESH:D006333",
+   "MESH:D004487",
+   "MESH:D007676",
+   "MESH:D006973",
+   "MESH:D009404",
+   "MESH:D005921"
+  ]
+ },
+ "DB00325": {
+  "name": "Nitroprusside",
+  "treats": [
+   "MESH:D006973",
+   "MESH:D006333"
+  ]
+ },
+ "DB00328": {
+  "name": "Indomethacin",
+  "treats": [
+   "MESH:D013167",
+   "MESH:D001172",
+   "MESH:D015210",
+   "MESH:D002062",
+   "MESH:D004374",
+   "MESH:D010003"
+  ]
+ },
+ "DB00335": {
+  "name": "Atenolol",
+  "treats": [
+   "MESH:D009203",
+   "MESH:D000787",
+   "MESH:D001145",
+   "MESH:D006333",
+   "MESH:D006973",
+   "MESH:D013617",
+   "MESH:D003324",
+   "MESH:D001281"
+  ]
+ },
+ "DB00343": {
+  "name": "Diltiazem",
+  "treats": [
+   "OMIM:157300",
+   "MESH:D005401",
+   "MESH:D002311",
+   "MESH:D017180",
+   "MESH:D011507",
+   "MESH:D003928",
+   "MESH:D006973",
+   "MESH:D006976",
+   "MESH:D000788",
+   "MESH:D001282",
+   "MESH:D001281",
+   "MESH:D060050"
+  ]
+ },
+ "DB00350": {
+  "name": "Minoxidil",
+  "treats": [
+   "MESH:D000505",
+   "MESH:D006973"
+  ]
+ },
+ "DB00368": {
+  "name": "Norepinephrine",
+  "treats": [
+   "MESH:D007022",
+   "MESH:D012769",
+   "MESH:D012772"
+  ]
+ },
+ "DB00373": {
+  "name": "Timolol",
+  "treats": [
+   "MESH:D009798",
+   "MESH:D005902",
+   "MESH:D006973"
+  ]
+ },
+ "DB00375": {
+  "name": "Colestipol",
+  "treats": [
+   "MESH:D006937",
+   "MESH:D050197",
+   "MESH:D003327"
+  ]
+ },
+ "DB00379": {
+  "name": "Mexiletine",
+  "treats": [
+   "MESH:D014693",
+   "MESH:D017180"
+  ]
+ },
+ "DB00381": {
+  "name": "Amlodipine",
+  "treats": [
+   "MESH:D060050",
+   "MESH:D006973",
+   "MESH:D003324",
+   "MESH:D000788",
+   "MESH:D006333"
+  ]
+ },
+ "DB00384": {
+  "name": "Triamterene",
+  "treats": [
+   "MESH:D004487",
+   "MESH:D008103",
+   "MESH:D006929",
+   "MESH:D009404",
+   "MESH:D006333"
+  ]
+ },
+ "DB00388": {
+  "name": "Phenylephrine",
+  "treats": [
+   "MESH:D007022",
+   "MESH:D006940",
+   "MESH:D012769",
+   "MESH:D006484"
+  ]
+ },
+ "DB00390": {
+  "name": "Digoxin",
+  "treats": [
+   "MESH:D001281",
+   "MESH:D006333"
+  ]
+ },
+ "DB00421": {
+  "name": "Spironolactone",
+  "treats": [
+   "MESH:D000505",
+   "MESH:D008103",
+   "MESH:D000075222",
+   "MESH:D006333",
+   "MESH:D004487",
+   "MESH:D006929",
+   "MESH:D009404"
+  ]
+ },
+ "DB00436": {
+  "name": "Bendroflumethiazide",
+  "treats": [
+   "MESH:D004487",
+   "MESH:D006333"
+  ]
+ },
+ "DB00439": {
+  "name": "Cerivastatin",
+  "treats": [
+   "MESH:D006937",
+   "MESH:C537067",
+   "MESH:D050171"
+  ]
+ },
+ "DB00457": {
+  "name": "Prazosin",
+  "treats": [
+   "MESH:D007022",
+   "MESH:D006973"
+  ]
+ },
+ "DB00482": {
+  "name": "Celecoxib",
+  "treats": [
+   "MESH:D013167",
+   "MESH:D001172",
+   "MESH:D004412",
+   "MESH:D010003"
+  ]
+ },
+ "DB00492": {
+  "name": "Fosinopril",
+  "treats": [
+   "MESH:D006973",
+   "MESH:D003920",
+   "MESH:D000419",
+   "MESH:D006333"
+  ]
+ },
+ "DB00519": {
+  "name": "Trandolapril",
+  "treats": [
+   "MESH:D018487",
+   "MESH:D006973",
+   "MESH:D009203",
+   "MESH:D003920",
+   "MESH:D006333"
+  ]
+ },
+ "DB00521": {
+  "name": "Carteolol",
+  "treats": [
+   "MESH:D009798",
+   "MESH:D005902"
+  ]
+ },
+ "DB00528": {
+  "name": "Lercanidipine",
+  "treats": [
+   "MESH:D000787",
+   "MESH:D006973",
+   "MESH:D011928"
+  ]
+ },
+ "DB00571": {
+  "name": "Propranolol",
+  "treats": [
+   "OMIM:157300",
+   "MESH:D009203",
+   "MESH:D000787",
+   "MESH:D006973",
+   "MESH:D003324",
+   "MESH:D001281",
+   "MESH:D010673"
+  ]
+ },
+ "DB00575": {
+  "name": "Clonidine",
+  "treats": [
+   "MESH:D006973",
+   "MESH:D010673"
+  ]
+ },
+ "DB00584": {
+  "name": "Enalapril",
+  "treats": [
+   "MESH:D018487",
+   "MESH:D006333"
+  ]
+ },
+ "DB00590": {
+  "name": "Doxazosin",
+  "treats": [
+   "MESH:D011470",
+   "MESH:D006973"
+  ]
+ },
+ "DB00591": {
+  "name": "Fluocinolone acetonide",
+  "treats": [
+   "MESH:D007627",
+   "MESH:D011565",
+   "MESH:D008269",
+   "MESH:D006484",
+   "MESH:D003876",
+   "MESH:D010032",
+   "MESH:D014605"
+  ]
+ },
+ "DB00594": {
+  "name": "Amiloride",
+  "treats": [
+   "MESH:D006973",
+   "MESH:D006333"
+  ]
+ },
+ "DB00606": {
+  "name": "Cyclothiazide",
+  "treats": [
+   "MESH:D004487",
+   "MESH:D006973",
+   "MESH:D008103",
+   "MESH:D006333"
+  ]
+ },
+ "DB00610": {
+  "name": "Metaraminol",
+  "treats": [
+   "MESH:D007022",
+   "MESH:D012769",
+   "MESH:D006470"
+  ]
+ },
+ "DB00612": {
+  "name": "Bisoprolol",
+  "treats": [
+   "MESH:D000787",
+   "MESH:D001281",
+   "MESH:D006973",
+   "MESH:D006333"
+  ]
+ },
+ "DB00620": {
+  "name": "Triamcinolone",
+  "treats": [
+   "MESH:D003093",
+   "MESH:D013167",
+   "MESH:D001172",
+   "MESH:D015210",
+   "MESH:D006255",
+   "MESH:D011507",
+   "MESH:D014605",
+   "MESH:D012713",
+   "MESH:D007627",
+   "MESH:D001249",
+   "MESH:D011565",
+   "MESH:D010003",
+   "MESH:D008269",
+   "MESH:D000224",
+   "MESH:D012213",
+   "MESH:D002062",
+   "MESH:D003876",
+   "MESH:D014390"
+  ]
+ },
+ "DB00622": {
+  "name": "Nicardipine",
+  "treats": [
+   "MESH:D006973",
+   "MESH:D060050"
+  ]
+ },
+ "DB00627": {
+  "name": "Niacin",
+  "treats": [
+   "MESH:D006949",
+   "MESH:D009203",
+   "MESH:D050197",
+   "MESH:D015228",
+   "MESH:D003324"
+  ]
+ },
+ "DB00641": {
+  "name": "Simvastatin",
+  "treats": [
+   "MESH:D006949",
+   "MESH:C565230",
+   "MESH:D000090542",
+   "MESH:D009203",
+   "MESH:D050197",
+   "MESH:D015228",
+   "MESH:D006953",
+   "MESH:D006952",
+   "MESH:D058729",
+   "MESH:D003324",
+   "MESH:D020526",
+   "MESH:C565627",
+   "MESH:D054058",
+   "MESH:D003920",
+   "MESH:D002546",
+   "MESH:C537067",
+   "MESH:D050171",
+   "MESH:D020521",
+   "MESH:D051436",
+   "MESH:D003327",
+   "MESH:D060050"
+  ]
+ },
+ "DB00657": {
+  "name": "Mecamylamine",
+  "treats": [
+   "MESH:D006974",
+   "MESH:D000075222"
+  ]
+ },
+ "DB00661": {
+  "name": "Verapamil",
+  "treats": [
+   "MESH:D000787",
+   "MESH:D017180",
+   "MESH:D006973",
+   "MESH:D013617",
+   "MESH:D000789",
+   "MESH:D001282",
+   "MESH:D001281",
+   "MESH:D060050"
+  ]
+ },
+ "DB00668": {
+  "name": "Epinephrine",
+  "treats": [
+   "MESH:D012713",
+   "MESH:D006323",
+   "MESH:D001249",
+   "MESH:D006940",
+   "MESH:D007022",
+   "MESH:D004417",
+   "MESH:D006255",
+   "MESH:D013575",
+   "MESH:D005901",
+   "MESH:D012772"
+  ]
+ },
+ "DB00692": {
+  "name": "Phentolamine",
+  "treats": [
+   "MESH:D006973",
+   "MESH:D010673"
+  ]
+ },
+ "DB00695": {
+  "name": "Furosemide",
+  "treats": [
+   "MESH:D008103",
+   "MESH:D006333",
+   "MESH:D004487",
+   "MESH:D006940",
+   "MESH:D006973",
+   "MESH:D009404"
+  ]
+ },
+ "DB00700": {
+  "name": "Eplerenone",
+  "treats": [
+   "MESH:D009203",
+   "MESH:D018487",
+   "MESH:D006333"
+  ]
+ },
+ "DB00722": {
+  "name": "Lisinopril",
+  "treats": [
+   "MESH:D006333",
+   "MESH:D006973",
+   "MESH:D009203"
+  ]
+ },
+ "DB00727": {
+  "name": "Nitroglycerin",
+  "treats": [
+   "MESH:D000787",
+   "MESH:D003324",
+   "MESH:D005401"
+  ]
+ },
+ "DB00741": {
+  "name": "Hydrocortisone",
+  "treats": [
+   "MESH:D004487",
+   "MESH:D003093",
+   "MESH:D000224"
+  ]
+ },
+ "DB00774": {
+  "name": "Hydroflumethiazide",
+  "treats": [
+   "MESH:D004487",
+   "MESH:D006973",
+   "MESH:D008103",
+   "MESH:D006333"
+  ]
+ },
+ "DB00790": {
+  "name": "Perindopril",
+  "treats": [
+   "MESH:D006973",
+   "MESH:D007238",
+   "MESH:D000075222",
+   "MESH:D003327",
+   "MESH:D006333"
+  ]
+ },
+ "DB00800": {
+  "name": "Fenoldopam",
+  "treats": [
+   "MESH:D006974",
+   "MESH:D006973"
+  ]
+ },
+ "DB00808": {
+  "name": "Indapamide",
+  "treats": [
+   "MESH:C565627",
+   "MESH:D006333"
+  ]
+ },
+ "DB00820": {
+  "name": "Tadalafil",
+  "treats": [
+   "MESH:D011470",
+   "MESH:D007172"
+  ]
+ },
+ "DB00860": {
+  "name": "Prednisolone",
+  "treats": [
+   "MESH:D004487",
+   "MESH:D014390"
+  ]
+ },
+ "DB00876": {
+  "name": "Eprosartan",
+  "treats": [
+   "MESH:D003928",
+   "MESH:D006973",
+   "MESH:D006333"
+  ]
+ },
+ "DB00880": {
+  "name": "Chlorothiazide",
+  "treats": [
+   "MESH:D004487",
+   "MESH:D006973",
+   "MESH:D008103",
+   "MESH:D006333"
+  ]
+ },
+ "DB00881": {
+  "name": "Quinapril",
+  "treats": [
+   "MESH:D006973",
+   "MESH:D006333"
+  ]
+ },
+ "DB00883": {
+  "name": "Isosorbide dinitrate",
+  "treats": [
+   "MESH:D000787",
+   "MESH:D003324"
+  ]
+ },
+ "DB00887": {
+  "name": "Bumetanide",
+  "treats": [
+   "MESH:D004487",
+   "MESH:D009404",
+   "MESH:D006333"
+  ]
+ },
+ "DB00903": {
+  "name": "Etacrynic acid",
+  "treats": [
+   "MESH:D004487",
+   "MESH:D051437",
+   "MESH:D006333"
+  ]
+ },
+ "DB00908": {
+  "name": "Quinidine",
+  "treats": [
+   "MESH:D001282",
+   "MESH:D001145"
+  ]
+ },
+ "DB00925": {
+  "name": "Phenoxybenzamine",
+  "treats": [
+   "MESH:D000075222",
+   "MESH:D011470",
+   "MESH:D010673"
+  ]
+ },
+ "DB00930": {
+  "name": "Colesevelam",
+  "treats": [
+   "MESH:D006937",
+   "MESH:C537067"
+  ]
+ },
+ "DB00945": {
+  "name": "Acetylsalicylic acid",
+  "treats": [
+   "MESH:D014098",
+   "MESH:D009203",
+   "MESH:D002056",
+   "MESH:D003324",
+   "MESH:D000789",
+   "MESH:D002062",
+   "MESH:D004412",
+   "MESH:D006261",
+   "MESH:D002546",
+   "MESH:D005334",
+   "MESH:D002544",
+   "MESH:D020521",
+   "MESH:D060050"
+  ]
+ },
+ "DB00960": {
+  "name": "Pindolol",
+  "treats": [
+   "MESH:D000787",
+   "MESH:D006973"
+  ]
+ },
+ "DB00973": {
+  "name": "Ezetimibe",
+  "treats": [
+   "MESH:D006949",
+   "MESH:D006954",
+   "MESH:D000090542"
+  ]
+ },
+ "DB00988": {
+  "name": "Dopamine",
+  "treats": [
+   "MESH:D009203",
+   "MESH:D051437",
+   "MESH:D012769",
+   "MESH:D006333"
+  ]
+ },
+ "DB00999": {
+  "name": "Hydrochlorothiazide",
+  "treats": [
+   "MESH:D004487",
+   "MESH:D007676",
+   "MESH:D006973",
+   "MESH:D008103",
+   "MESH:D009404",
+   "MESH:D005921",
+   "MESH:D006333"
+  ]
+ },
+ "DB01020": {
+  "name": "Isosorbide mononitrate",
+  "treats": [
+   "MESH:D000787",
+   "MESH:D003324"
+  ]
+ },
+ "DB01021": {
+  "name": "Trichlormethiazide",
+  "treats": [
+   "MESH:D004487",
+   "MESH:D006973",
+   "MESH:D006333"
+  ]
+ },
+ "DB01029": {
+  "name": "Irbesartan",
+  "treats": [
+   "MESH:D011507",
+   "MESH:D003928",
+   "MESH:D006973",
+   "MESH:D003924"
+  ]
+ },
+ "DB01050": {
+  "name": "Ibuprofen",
+  "treats": [
+   "MESH:D014098",
+   "MESH:D004374",
+   "MESH:D010003",
+   "MESH:D001172",
+   "MESH:D007024",
+   "MESH:D012213",
+   "OMIM:157300",
+   "MESH:D005157",
+   "MESH:D004412",
+   "MESH:D010300",
+   "MESH:D006261",
+   "MESH:D006333",
+   "MESH:D005334"
+  ]
+ },
+ "DB01056": {
+  "name": "Tocainide",
+  "treats": [
+   "MESH:D017180",
+   "MESH:D001145"
+  ]
+ },
+ "DB01064": {
+  "name": "Isoprenaline",
+  "treats": [
+   "MESH:D006323",
+   "MESH:D012772",
+   "MESH:D012769",
+   "MESH:D006333"
+  ]
+ },
+ "DB01076": {
+  "name": "Atorvastatin",
+  "treats": [
+   "MESH:D006949",
+   "MESH:C565230",
+   "MESH:D009203",
+   "MESH:D050197",
+   "MESH:D015228",
+   "MESH:D006952",
+   "MESH:D058729",
+   "MESH:D003324",
+   "MESH:D020526",
+   "MESH:D006938",
+   "MESH:D054058",
+   "MESH:D006954",
+   "MESH:D003920",
+   "MESH:D000787",
+   "MESH:D003924",
+   "MESH:D002546",
+   "MESH:D050171",
+   "MESH:D006333",
+   "MESH:D020521",
+   "MESH:D051436",
+   "MESH:D003327",
+   "MESH:D060050"
+  ]
+ },
+ "DB01078": {
+  "name": "Deslanoside",
+  "treats": [
+   "MESH:D001145",
+   "MESH:D006333"
+  ]
+ },
+ "DB01086": {
+  "name": "Benzocaine",
+  "treats": [
+   "MESH:D005157",
+   "MESH:D006484"
+  ]
+ },
+ "DB01092": {
+  "name": "Ouabain",
+  "treats": [
+   "MESH:D001282",
+   "MESH:D006333"
+  ]
+ },
+ "DB01095": {
+  "name": "Fluvastatin",
+  "treats": [
+   "MESH:D006937",
+   "MESH:D003324",
+   "MESH:D003327"
+  ]
+ },
+ "DB01098": {
+  "name": "Rosuvastatin",
+  "treats": [
+   "MESH:D006949",
+   "MESH:C565230",
+   "MESH:D009203",
+   "MESH:D000090542",
+   "MESH:D050197",
+   "MESH:D015228",
+   "MESH:D006952",
+   "MESH:D058729",
+   "MESH:D020526",
+   "MESH:D054058",
+   "MESH:D003920",
+   "MESH:D002546",
+   "MESH:D050171",
+   "MESH:D020521",
+   "MESH:D051436",
+   "MESH:D003324",
+   "MESH:D060050"
+  ]
+ },
+ "DB01109": {
+  "name": "Heparin",
+  "treats": [
+   "MESH:D054058",
+   "MESH:D000789",
+   "MESH:D001281"
+  ]
+ },
+ "DB01115": {
+  "name": "Nifedipine",
+  "treats": [
+   "MESH:D006973",
+   "MESH:D000788",
+   "MESH:D060050"
+  ]
+ },
+ "DB01118": {
+  "name": "Amiodarone",
+  "treats": [
+   "MESH:D013617",
+   "MESH:D014693",
+   "MESH:D017180",
+   "MESH:D001281"
+  ]
+ },
+ "DB01136": {
+  "name": "Carvedilol",
+  "treats": [
+   "MESH:D009203",
+   "MESH:D018487",
+   "MESH:D006973",
+   "MESH:D006333"
+  ]
+ },
+ "DB01158": {
+  "name": "Bretylium",
+  "treats": [
+   "MESH:D014693",
+   "MESH:D017180",
+   "MESH:D001145"
+  ]
+ },
+ "DB01170": {
+  "name": "Guanethidine",
+  "treats": [
+   "MESH:D006977",
+   "MESH:D006973"
+  ]
+ },
+ "DB01182": {
+  "name": "Propafenone",
+  "treats": [
+   "MESH:D001281",
+   "MESH:D017180",
+   "MESH:D001145"
+  ]
+ },
+ "DB01195": {
+  "name": "Flecainide",
+  "treats": [
+   "MESH:D013617",
+   "MESH:D001282",
+   "MESH:D001145"
+  ]
+ },
+ "DB01197": {
+  "name": "Captopril",
+  "treats": [
+   "MESH:D003928",
+   "MESH:D018487",
+   "MESH:D009203",
+   "MESH:D006333"
+  ]
+ },
+ "DB01203": {
+  "name": "Nadolol",
+  "treats": [
+   "MESH:D000787",
+   "MESH:D006973"
+  ]
+ },
+ "DB01214": {
+  "name": "Metipranolol",
+  "treats": [
+   "MESH:D009798",
+   "MESH:D005902"
+  ]
+ },
+ "DB01228": {
+  "name": "Encainide",
+  "treats": [
+   "MESH:D001282",
+   "MESH:D001281",
+   "MESH:D017180",
+   "MESH:D014693"
+  ]
+ },
+ "DB01234": {
+  "name": "Dexamethasone",
+  "treats": [
+   "MESH:D004487",
+   "MESH:D008269",
+   "MESH:D010032",
+   "MESH:D014605"
+  ]
+ },
+ "DB01244": {
+  "name": "Bepridil",
+  "treats": [
+   "MESH:D000787",
+   "MESH:D006973",
+   "MESH:D060050"
+  ]
+ },
+ "DB01275": {
+  "name": "Hydralazine",
+  "treats": [
+   "MESH:D006333",
+   "MESH:D000075222"
+  ]
+ },
+ "DB01340": {
+  "name": "Cilazapril",
+  "treats": [
+   "MESH:D006973",
+   "MESH:D006333"
+  ]
+ },
+ "DB01364": {
+  "name": "Ephedrine",
+  "treats": [
+   "MESH:D007022",
+   "MESH:D001249"
+  ]
+ },
+ "DB01393": {
+  "name": "Bezafibrate",
+  "treats": [
+   "MESH:D006949",
+   "MESH:D003920"
+  ]
+ },
+ "DB01396": {
+  "name": "Digitoxin",
+  "treats": [
+   "MESH:D001145",
+   "MESH:D006333"
+  ]
+ },
+ "DB01580": {
+  "name": "Oxprenolol",
+  "treats": [
+   "MESH:D000787",
+   "MESH:D006973",
+   "MESH:D001145"
+  ]
+ },
+ "DB01593": {
+  "name": "Zinc",
+  "treats": [
+   "MESH:D010031",
+   "MESH:D003967",
+   "MESH:D012141",
+   "MESH:C564286"
+  ]
+ },
+ "DB04838": {
+  "name": "Cyclandelate",
+  "treats": [
+   "MESH:D001161",
+   "MESH:D011928",
+   "MESH:D020526"
+  ]
+ },
+ "DB04840": {
+  "name": "Debrisoquine",
+  "treats": [
+   "MESH:D006977",
+   "MESH:D006973"
+  ]
+ },
+ "DB04846": {
+  "name": "Celiprolol",
+  "treats": [
+   "MESH:D000787",
+   "MESH:D006973"
+  ]
+ },
+ "DB04899": {
+  "name": "Nesiritide",
+  "treats": [
+   "MESH:D004417",
+   "MESH:D006333"
+  ]
+ },
+ "DB06152": {
+  "name": "Nylidrin",
+  "treats": [
+   "MESH:D001161",
+   "MESH:D011928"
+  ]
+ },
+ "DB06262": {
+  "name": "Droxidopa",
+  "treats": [
+   "MESH:D007022",
+   "MESH:D010300",
+   "MESH:D013575",
+   "MESH:D007024"
+  ]
+ },
+ "DB06268": {
+  "name": "Sitaxentan",
+  "treats": [
+   "MESH:D006333",
+   "MESH:D006976",
+   "MESH:D006973"
+  ]
+ },
+ "DB06712": {
+  "name": "Nilvadipine",
+  "treats": [
+   "MESH:D000788",
+   "MESH:D006973",
+   "MESH:D060050"
+  ]
+ },
+ "DB08822": {
+  "name": "Azilsartan medoxomil",
+  "treats": [
+   "MESH:D006973",
+   "MESH:D003920",
+   "MESH:D000419",
+   "MESH:D001281"
+  ]
+ },
+ "DB08860": {
+  "name": "Pitavastatin",
+  "treats": [
+   "MESH:D006949",
+   "MESH:C565230",
+   "MESH:D000090542",
+   "MESH:D009203",
+   "MESH:D050197",
+   "MESH:D058729",
+   "MESH:D020526",
+   "MESH:D054058",
+   "MESH:D003920",
+   "MESH:D002546",
+   "MESH:D050171",
+   "MESH:D020521",
+   "MESH:D051436",
+   "MESH:D003324",
+   "MESH:D060050"
+  ]
+ },
+ "DB09083": {
+  "name": "Ivabradine",
+  "treats": [
+   "MESH:D002311",
+   "MESH:D006333"
+  ]
+ },
+ "DB09205": {
+  "name": "Moxisylyte",
+  "treats": [
+   "MESH:D002544",
+   "MESH:D006470",
+   "MESH:D005901",
+   "MESH:D007172"
+  ]
+ },
+ "DB09220": {
+  "name": "Nicorandil",
+  "treats": [
+   "MESH:D054058",
+   "MESH:D060050"
+  ]
+ },
+ "DB09270": {
+  "name": "Ubidecarenone",
+  "treats": [
+   "OMIM:157300",
+   "MESH:D003920",
+   "MESH:D006333"
+  ]
+ },
+ "DB09282": {
+  "name": "Molsidomine",
+  "treats": [
+   "MESH:D000787",
+   "MESH:D006976",
+   "MESH:D006333"
+  ]
+ },
+ "DB09302": {
+  "name": "Alirocumab",
+  "treats": [
+   "MESH:D006949",
+   "MESH:D020521",
+   "MESH:D009203",
+   "MESH:D000090542",
+   "MESH:D000789"
+  ]
+ },
+ "DB09303": {
+  "name": "Evolocumab",
+  "treats": [
+   "MESH:D006949",
+   "MESH:D006938",
+   "MESH:D020521",
+   "MESH:D009203"
+  ]
+ },
+ "DB09345": {
+  "name": "Pramocaine",
+  "treats": [
+   "MESH:D006484",
+   "MESH:D002056"
+  ]
+ },
+ "DB11936": {
+  "name": "Bempedoic acid",
+  "treats": [
+   "MESH:D006949",
+   "MESH:D000090542",
+   "MESH:D009203"
+  ]
+ },
+ "DB13873": {
+  "name": "Fenofibric acid",
+  "treats": [
+   "MESH:D006937",
+   "MESH:D015228",
+   "MESH:C537067",
+   "MESH:D050171"
+  ]
+ },
+ "DB14487": {
+  "name": "Zinc acetate",
+  "treats": [
+   "MESH:D010031",
+   "MESH:D003967",
+   "MESH:D012141",
+   "MESH:C564286"
+  ]
+ },
+ "DB14901": {
+  "name": "Inclisiran",
+  "treats": [
+   "MESH:D000090542",
+   "MESH:D006937",
+   "MESH:D003324",
+   "MESH:D050171"
+  ]
+ },
+ "DB16165": {
+  "name": "Finerenone",
+  "treats": [
+   "MESH:D009203",
+   "MESH:D051436",
+   "MESH:D003924",
+   "MESH:D006333"
+  ]
+ }
+}
