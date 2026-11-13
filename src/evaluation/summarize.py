@@ -5,6 +5,7 @@ Summary tables of the results written by scofi.py.
 
 Reads results_*.csv in the current (work) folder and writes
   summary_main{suffix}.csv, summary_ct12.csv, summary_ct34.csv
+  (summary_ct12_active.csv, summary_ct34_active.csv with HECORES_CT_STATUS=active)
       mean and standard deviation over experiments of each metric, per model
       and training dataset; random controls also averaged into HCS_RANDOM
       (Reviewer 1: report them as one row with SD)
@@ -32,7 +33,7 @@ for f in sorted(glob.glob("results_*.csv")):
     if not m:
         continue
     suffix = m["suffix"] or ""
-    kind = "mps" if suffix == "_mps" else ("ct12" if suffix == "_ct12" else ("ct34" if suffix == "_ct34" else f"main{suffix}"))
+    kind = "mps" if suffix == "_mps" else (suffix[1:] if suffix.startswith("_ct") else f"main{suffix}")
     df = pd.read_csv(f)
     df["model"] = m["model"]
     groups.setdefault(kind, []).append(df)

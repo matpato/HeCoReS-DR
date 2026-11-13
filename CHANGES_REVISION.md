@@ -42,6 +42,7 @@ Each correction can be switched back to the published behaviour (`HECORES_PAPER_
 - `src/evaluation/summarize.py`: mean ± SD tables, random controls averaged (Reviewer 1), RQ3 bootstrap CIs — "Add summarize.py"
 - `standalone/`: Docker image and runner, as in MedJsonify — "Add the pipeline runner"
 - `sample/`: a real subset of the data (133 cardiovascular drugs, 105 conditions, 570 indications, 4,624 trials) that runs steps 11–16 in about 5 minutes and is compared with expected tables; `run_hecores.sh --n-perms` sets the number of HCS permutations (Reviewers) — "Add a runnable sample of the data"
+- Sensitivity analysis of the clinical-trial test sets: `run_hecores.sh --ct-active` (`HECORES_CT_STATUS=active`) drops the pairs supported only by withdrawn, terminated or suspended trials (12.6% of CT I/II, 10.7% of CT III/IV); the dropped pairs can never be test negatives. Files get the suffix `_active`; `src/evaluation/compare_ct_status.py` compares HCS_1 − HCS_0 on both versions. The default (`all`) is unchanged: the sample still gives identical tables — "Add the trial-status sensitivity analysis"
 
 ## 4. Checks (9–11 November 2026)
 
