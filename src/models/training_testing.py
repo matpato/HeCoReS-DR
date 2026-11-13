@@ -11,7 +11,7 @@ from utils.utils import open_json
 import os
 import json
 from utils.config import (PCT, SFX, HETMAT_DIR, N_EXPERIMENTS, N_EXPERIMENTS_MPS,
-                          NEGATIVES, RQ3, describe)
+                          NEGATIVES, RQ3, CT_STATUS, CT_SFX, CT_STOPPED, describe)
 
 # === 1. Precompute and Save ===
 
@@ -410,12 +410,18 @@ def unique_metapath_pairs(file_path, metapath, base_pairs=None, known_pairs=froz
     return set(base_pairs) - (unique_to_this - set(known_pairs))
 
 
-def ct_pair_sets(ct_file, drugs_file):
+def ct_pair_sets(ct_file, drugs_file, exclude_status=None):
     """Clinical-trial test pairs (condition, drug), phases I/II and III/IV,
-    minus known indications -- as in the published code."""
+    minus known indications -- as in the published code.
+
+    exclude_status: set of trial statuses (e.g. {"Withdrawn", "Terminated", "Suspended"}).
+        If given, a pair is kept only if at least one trial of the same phase set that
+        supports it has another status (sensitivity analysis, HECORES_CT_STATUS=active)."""
     ct = open_json(ct_file)
     ct_pairs12, ct_pairs34 = set(), set()
     for k, v in ct.items():
+        if exclude_status and (v.get('overall_status') or '') in exclude_status:
+            continue
         conditions = v['conditions']
         drugs = v['drugs']
         phase = v['phase']
@@ -504,10 +510,25 @@ def main(sets=("main", "ct", "mps")):
         if not os.path.exists('clinical_trials.json'):
             print("clinical_trials.json not found: clinical-trial test sets skipped")
         else:
-            ct_pairs12, ct_pairs34 = ct_pair_sets('clinical_trials.json', "drugs_with_conditions_final.json")
-            print(f"clinical-trial pairs: {len(ct_pairs12)} (phases I/II), {len(ct_pairs34)} (phases III/IV)")
-            for name, pairs in (("CT12", ct_pairs12), ("CT34", ct_pairs34)):
+            all12, all34 = ct_pair_sets('clinical_trials.json', "drugs_with_conditions_final.json")
+            print(f"clinical-trial pairs: {len(all12)} (phases I/II), {len(all34)} (phases III/IV)")
+            active = CT_STATUS == "active"
+            if active:
+                ct_pairs12, ct_pairs34 = ct_pair_sets('clinical_trials.json', "drugs_with_conditions_final.json",
+                                                      exclude_status=CT_STOPPED)
+                print(f"  without pairs supported only by withdrawn/terminated/suspended trials: "
+                      f"{len(ct_pairs12)} (phases I/II), {len(ct_pairs34)} (phases III/IV)")
+            else:
+                ct_pairs12, ct_pairs34 = all12, all34
+            for name, pairs, all_pairs in (("CT12", ct_pairs12, all12), ("CT34", ct_pairs34, all34)):
                 ct_ds = build_dataset_from_pairs(list(pairs), users, items, name, same_item_user_features=False)
+                if active:
+                    # the excluded trial pairs must not become test negatives
+                    all_ds = build_dataset_from_pairs(list(all_pairs), users, items, f"{name}_ALL",
+                                                      same_item_user_features=False)
+                    neg_filter = ([hcs_0] + others if paper else [hcs_0]) + [all_ds]
+                else:
+                    neg_filter = None if paper else [hcs_0]
                 precompute_and_save_pairs(
                     main_dataset=ct_ds,
                     other_datasets=[hcs_0] + others,
@@ -516,8 +537,8 @@ def main(sets=("main", "ct", "mps")):
                     per_positives=0.2,
                     n_negatives=100,
                     n_negatives_per_positive=5,
-                    output_path=f"train_test_pairs_{name.lower()}_{n}.json",
-                    negative_filter=None if paper else [hcs_0]
+                    output_path=f"train_test_pairs_{name.lower()}{CT_SFX}_{n}.json",
+                    negative_filter=neg_filter
                 )
 
     if "mps" in sets:

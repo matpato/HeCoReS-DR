@@ -30,6 +30,13 @@ switched back to the published behaviour, to reproduce the paper's numbers:
   HECORES_RQ3         corrected (default) | paper -- RQ3 matrices = HCS_1 minus the unique pairs
                                                      of one metapath, or significant pairs only (published)
   HECORES_PAPER_MODE=1  sets all three to the published behaviour
+
+Sensitivity analysis (revision):
+  HECORES_CT_STATUS   all (default) | active -- clinical-trial test pairs from every trial, or
+                                                only pairs supported by at least one trial that was
+                                                not withdrawn, terminated or suspended. With 'active'
+                                                the files get the suffix _active, and the excluded
+                                                trial pairs can never be test negatives.
 """
 import os
 
@@ -58,6 +65,11 @@ assert METRICS in ("scores", "labels"), METRICS
 assert NEGATIVES in ("independent", "paper"), NEGATIVES
 assert RQ3 in ("corrected", "paper"), RQ3
 
+CT_STATUS = os.environ.get("HECORES_CT_STATUS", "all")
+assert CT_STATUS in ("all", "active"), CT_STATUS
+CT_SFX = "_active" if CT_STATUS == "active" else ""
+CT_STOPPED = {"Withdrawn", "Terminated", "Suspended"}
+
 
 def raw(name):
     """Path of a downloaded source file."""
@@ -66,4 +78,4 @@ def raw(name):
 
 def describe():
     return (f"pct={PCT or 'full graph'} metrics={METRICS} negatives={NEGATIVES} rq3={RQ3} "
-            f"n_experiments={N_EXPERIMENTS} models={','.join(MODELS)}")
+            f"n_experiments={N_EXPERIMENTS} models={','.join(MODELS)} ct_status={CT_STATUS}")

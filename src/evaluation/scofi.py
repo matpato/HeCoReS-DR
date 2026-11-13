@@ -36,7 +36,7 @@ from src.models.training_testing import (build_dataset_from_pairs, ct_pair_sets,
                                          load_datasets, load_precomputed_pairs, n_metapaths,
                                          reconstruct_datasets_from_pairs, unique_metapath_pairs)
 from utils.config import (PCT, SFX, HETMAT_DIR, MODELS, N_EXPERIMENTS, N_EXPERIMENTS_BNNR,
-                          N_EXPERIMENTS_MPS, RQ3, describe)
+                          N_EXPERIMENTS_MPS, RQ3, CT_STATUS, CT_SFX, CT_STOPPED, describe)
 
 
 def run_pipeline(model_class, reconstructed_sets, params=None, n_experiments=10, output_file="results.csv"):
@@ -111,13 +111,14 @@ def main(sets, model_names):
     if "main" in sets:
         jobs.append(("main", "HCS_0", f"train_test_pairs{SFX}{n}.json", n, SFX, lookup))
     if not PCT and ({"ct12", "ct34"} & set(sets)):
-        ct_pairs12, ct_pairs34 = ct_pair_sets('clinical_trials.json', "drugs_with_conditions_final.json")
+        ct_pairs12, ct_pairs34 = ct_pair_sets('clinical_trials.json', "drugs_with_conditions_final.json",
+                                              exclude_status=CT_STOPPED if CT_STATUS == "active" else None)
         for name, pairs in (("CT12", ct_pairs12), ("CT34", ct_pairs34)):
             if name.lower() in sets:
                 ct_lookup = {**lookup, name: build_dataset_from_pairs(list(pairs), users, items, name,
                                                                       same_item_user_features=False)}
-                jobs.append((name.lower(), name, f"train_test_pairs_{name.lower()}_{n}.json", n,
-                             f"_{name.lower()}", ct_lookup))
+                jobs.append((name.lower(), name, f"train_test_pairs_{name.lower()}{CT_SFX}_{n}.json", n,
+                             f"_{name.lower()}{CT_SFX}", ct_lookup))
     if not PCT and "mps" in sets:
         f = f'{HETMAT_DIR}/path-counts/dwpc_results/all_dwpc_results_with_p.tsv'
         hcs_1 = d["HCS_1"]

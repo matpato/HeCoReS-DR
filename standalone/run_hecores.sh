@@ -31,6 +31,9 @@ set -e
 #   bash standalone/run_hecores.sh --sets "main mps"     -- test sets for step 15 (default
 #                                                           main ct12 ct34 mps)
 #   bash standalone/run_hecores.sh --jobs 4              -- CPU cores for step 12 (default 2)
+#   bash standalone/run_hecores.sh --ct-active           -- sensitivity analysis: clinical-trial test sets
+#                                                           without pairs supported only by withdrawn,
+#                                                           terminated or suspended trials (files *_active)
 #   bash standalone/run_hecores.sh --local               -- no Docker (pip install -r requirements.txt)
 #   bash standalone/run_hecores.sh --no-sudo             -- plain "docker" instead of "sudo docker" (the default),
 #                                                           e.g. Docker Desktop on a Mac
@@ -105,7 +108,7 @@ step_name() {
 # Arguments
 # -----------------------------------------------------------------------
 STEP="all"; FROM_STEP=""; DRY_RUN=0; LIST=0; STATUS=0; CHECK=0; SHELL_CMD=""; REBUILD=0
-LOCAL=0; QUICK=0; PAPER=0; PCTS=""; N_EXP=100; N_PERMS=200; JOBS=2
+LOCAL=0; QUICK=0; PAPER=0; CT_STATUS=all; PCTS=""; N_EXP=100; N_PERMS=200; JOBS=2
 MODELS="ALSWR PMF LogisticMF HCS"; SETS="main ct12 ct34 mps"
 WORK=${WORK:-}
 
@@ -114,6 +117,7 @@ while [[ $# -gt 0 ]]; do
         --step)          STEP=$(step_name "$2"); shift 2 ;;
         --from)          FROM_STEP=$(step_name "$2"); shift 2 ;;
         --paper)         PAPER=1; shift ;;
+        --ct-active)     CT_STATUS=active; shift ;;
         --pct)           PCTS="$2"; shift 2 ;;
         --quick)         QUICK=1; N_EXP=2; N_PERMS=2; shift ;;
         --n-experiments) N_EXP="$2"; shift 2 ;;
@@ -131,7 +135,7 @@ while [[ $# -gt 0 ]]; do
         --status)        STATUS=1; shift ;;
         --check)         CHECK=1; shift ;;
         --shell)         SHELL_CMD="$2"; shift 2 ;;
-        -h|--help)       sed -n '4,65p' "$0"; exit 0 ;;
+        -h|--help)       sed -n '4,70p' "$0"; exit 0 ;;
         *)               echo "Unknown argument: $1"; exit 1 ;;
     esac
 done
@@ -197,10 +201,11 @@ run() { echo "+ $*"; if [ $DRY_RUN == 0 ]; then "$@"; fi; }
 # Python: in a container (default) or local (--local)
 # -----------------------------------------------------------------------
 ENV_ARGS=(HECORES_RAW HECORES_N_EXPERIMENTS HECORES_N_PERMS HECORES_JOBS HECORES_MODELS
-          HECORES_PAPER_MODE HECORES_PCT NEO4J_URI NEO4J_USER NEO4J_PASSWORD)
+          HECORES_PAPER_MODE HECORES_PCT HECORES_CT_STATUS NEO4J_URI NEO4J_USER NEO4J_PASSWORD)
 export HECORES_N_EXPERIMENTS=$N_EXP HECORES_N_PERMS=$N_PERMS HECORES_JOBS=$JOBS
 export HECORES_MODELS=$(echo $MODELS | tr ' ' ',')
 export HECORES_PAPER_MODE=$PAPER
+export HECORES_CT_STATUS=$CT_STATUS
 export NEO4J_USER=${NEO4J_AUTH%%/*} NEO4J_PASSWORD=${NEO4J_AUTH#*/}
 
 if [ $LOCAL == 1 ]; then
@@ -272,6 +277,7 @@ echo "Python:       $ENGINE"
 echo "Mode:         $MODE$([ $PAPER == 1 ] && echo ' (published metrics, negatives and RQ3 matrices)')"
 echo "Experiments:  $N_EXP   Permutations: $N_PERMS   Jobs: $JOBS$([ $QUICK == 1 ] && echo '   (QUICK TEST)')"
 echo "Models:       $MODELS   Test sets: $SETS"
+[ "$CT_STATUS" == active ] && echo "Trial sets:   active trials only (withdrawn, terminated and suspended excluded)"
 [ -n "$PCTS" ] && echo "Ablation:     $PCTS % of edges removed (steps 12-16)"
 echo "Commit:       $(git -C "$ROOT" rev-parse --short HEAD 2>/dev/null || echo '?')"
 echo "========================================"
